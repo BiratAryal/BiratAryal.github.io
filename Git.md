@@ -12,6 +12,9 @@
 | `git config --global core.editor code`           | Set default editor (e.g., VS Code) |
 
 ---
+## 📌 Git Global Configuration
+
+---
 
 ## 📁 Initialize & Clone
 
