@@ -7,8 +7,12 @@ theme:
     - navigation.instant.progress
     - navigation.instant.preview
     - navigation.tracking
-    - navigation.tabs
-
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - toc.integrate
+    - toc.follow
+    
 nav:
   - Home: index.md
   - Git: Git.md
