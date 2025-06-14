@@ -10,9 +10,17 @@ theme:
     - navigation.expand
     - navigation.path
     - navigation.top
-    - toc.integrate
+    - navigation.indexes
+    - navigation.prune
+    # - toc.integrate
     - toc.follow
-    
+    - search.suggest
+    - search.highlight
+    - search.share
+
+plugins:
+  - search
+
 nav:
   - Home: index.md
   - Git: Git.md
