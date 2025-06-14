@@ -22,7 +22,19 @@
 | `git clone <url> <folder>` | Clone into a specific folder    |
 
 ---
+## 📂 Project Setup Steps
 
+| Step | Command                                                          | Description                                                |
+| ---- | ---------------------------------------------------------------- | ---------------------------------------------------------- |
+| 1️⃣  | `echo "# Automation" >> README.md`                               | Creates a `README.md` file with the title "Automation".    |
+| 2️⃣  | `git init`                                                       | Initializes a new Git repository in the current directory. |
+| 3️⃣  | `git add README.md`                                              | Stages the `README.md` file for the first commit.          |
+| 4️⃣  | `git commit -m "first commit"`                                   | Commits the staged file with a message.                    |
+| 5️⃣  | `git branch -M master`                                           | Renames the default branch to `master`.                    |
+| 6️⃣  | `git remote add origin git@github.com:BiratAryal/Automation.git` | Sets the remote repository URL.                            |
+| 7️⃣  | `git push -u origin master`                                      | Pushes the code to GitHub and sets upstream tracking.      |
+
+---
 ## 🔍 Check Status & Logs
 
 | Command             | Description                         |
