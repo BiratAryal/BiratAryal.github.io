@@ -1,2 +1,5 @@
 # Obsidian
-Gir repository for the Obsidian documentations
+Git repository for the Obsidian documentations
+
+### Documentations required for the daily uses.
+
