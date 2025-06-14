@@ -164,16 +164,3 @@ git push origin hotfix/bug-123
 ```
 
 ---
-
-## 🎯 Visual Summary (Emoji Flow)
-
-```
-🌱 git init ➡️ 💻 Work ➡️ ➕ git add ➡️ ✅ git commit ➡️ ⬆️ git push
-🌿 git branch & 🔁 git checkout ➡️ 🔀 git merge
-💾 git stash ➡️ 🧳 git stash apply
-💣 git reset/revert ➡️ 🚑 Fix
-```
-
----
-
-Let me know if you'd like a **PDF export**, **diagram version**, or a **printable cheat sheet** version of this.
