@@ -1,5 +1,15 @@
 site_name: Birat Aryal Technical Docs
 site_url: https://birataryal.github.io/
+theme:
+  name: material
+  features: 
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.tabs
+
 nav:
-  - Home: README.md
+  - Home: index.md
   - Git: Git.md
+  - About: about.md
