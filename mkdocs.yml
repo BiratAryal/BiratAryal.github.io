@@ -1,1 +1,5 @@
-site_name: Technical Documentations
+site_name: Birat Aryal Technical Docs
+site_url: https://birataryal.github.io/
+nav:
+  - Home: README.md
+  - Git: Git.md
