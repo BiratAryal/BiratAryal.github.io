@@ -1,41 +1,37 @@
-Here's a complete and **easy-to-visualize Markdown cheat sheet** for the most commonly used **Git commands** and their **use cases**, organized into categories with tables and short explanations:
-
----
-
 # 🧠 Git Commands Cheat Sheet
 
 ---
 
 ## 📌 Git Configuration
 
-|Command|Description|
-|---|---|
-|`git config --global user.name "Your Name"`|Set your name (used in commits)|
-|`git config --global user.email "you@example.com"`|Set your email|
-|`git config --list`|List all Git config values|
-|`git config --global core.editor code`|Set default editor (e.g., VS Code)|
+| Command                                          | Description                        |
+| ------------------------------------------------ | ---------------------------------- |
+| `git config --global user.name "Birat Aryal"`    | Set your name (used in commits)    |
+| `git config --global user.email "Email address"` | Set your email                     |
+| `git config --list`                              | List all Git config values         |
+| `git config --global core.editor code`           | Set default editor (e.g., VS Code) |
 
 ---
 
 ## 📁 Initialize & Clone
 
-|Command|Description|
-|---|---|
-|`git init`|Initialize a new Git repository|
-|`git clone <url>`|Clone an existing repo|
-|`git clone <url> <folder>`|Clone into a specific folder|
+| Command                    | Description                     |
+| -------------------------- | ------------------------------- |
+| `git init`                 | Initialize a new Git repository |
+| `git clone <url>`          | Clone an existing repo          |
+| `git clone <url> <folder>` | Clone into a specific folder    |
 
 ---
 
 ## 🔍 Check Status & Logs
 
-|Command|Description|
-|---|---|
-|`git status`|Show changed files & staging status|
-|`git log`|View commit history|
-|`git log --oneline`|View compact commit history|
-|`git diff`|Show unstaged changes|
-|`git diff --staged`|Show staged changes|
+| Command             | Description                         |
+| ------------------- | ----------------------------------- |
+| `git status`        | Show changed files & staging status |
+| `git log`           | View commit history                 |
+| `git log --oneline` | View compact commit history         |
+| `git diff`          | Show unstaged changes               |
+| `git diff --staged` | Show staged changes                 |
 
 ---
 
