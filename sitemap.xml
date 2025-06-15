@@ -2,14 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://birataryal.github.io/</loc>
-         <lastmod>2025-06-14</lastmod>
+         <lastmod>2025-06-15</lastmod>
     </url>
     <url>
          <loc>https://birataryal.github.io/Git/</loc>
-         <lastmod>2025-06-14</lastmod>
+         <lastmod>2025-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://birataryal.github.io/Mkdocs/</loc>
+         <lastmod>2025-06-15</lastmod>
     </url>
     <url>
          <loc>https://birataryal.github.io/about/</loc>
-         <lastmod>2025-06-14</lastmod>
+         <lastmod>2025-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://birataryal.github.io/projects/</loc>
+         <lastmod>2025-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://birataryal.github.io/skills/</loc>
+         <lastmod>2025-06-15</lastmod>
+    </url>
+    <url>
+         <loc>https://birataryal.github.io/blog/</loc>
+         <lastmod>2025-06-15</lastmod>
     </url>
 </urlset>
