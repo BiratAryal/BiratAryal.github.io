@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mssql-replication-debugging-guide" class="md-skip">
+        <a href="#2-check-replication-job-schedules" class="md-skip">
           Skip to content
         </a>
       
@@ -644,8 +644,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -678,8 +676,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -688,117 +684,123 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#2-check-replication-job-schedules" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Overview
+      ⏰ 2. Check Replication Job Schedules
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-what-kind-of-replication-is-configured" class="md-nav__link">
+  <a href="#3-identify-active-replication-agent-queries-and-high-cpu-consumers" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 Check What Kind of Replication is Configured
+      🔍 3. Identify Active Replication Agent Queries and High CPU Consumers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 3. Identify Active Replication Agent Queries and High CPU Consumers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-monitor-live-high-cpu-queries-at-the-peak-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) Monitor live high CPU queries at the peak time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-filter-for-replication-agent-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Filter for replication agent queries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-discover-replication-publications-and-subscriptions-for-db01-db02-cdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 4. Discover Replication Publications and Subscriptions for DB01, DB02 → CDB
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monitor-high-cpu-queries-live" class="md-nav__link">
+  <a href="#5-monitor-pending-replication-commands-replication-latency" class="md-nav__link">
     <span class="md-ellipsis">
-      🔎 Monitor High CPU Queries (Live)
+      📤 5. Monitor Pending Replication Commands (Replication Latency)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#identify-active-replication-agent-queries" class="md-nav__link">
+  <a href="#6-automate-checking-all-replication-subscriptions-at-once" class="md-nav__link">
     <span class="md-ellipsis">
-      🔄 Identify Active Replication Agent Queries
+      🛠 6. Automate Checking All Replication Subscriptions at Once
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monitor-pending-replication-commands-latency" class="md-nav__link">
+  <a href="#7-analyze-replicated-tables-for-performance-issues" class="md-nav__link">
     <span class="md-ellipsis">
-      📤 Monitor Pending Replication Commands (Latency)
+      🧱 7. Analyze Replicated Tables for Performance Issues
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#analyze-the-replicated-table" class="md-nav__link">
+  <a href="#8-view-replication-agent-errors-and-history" class="md-nav__link">
     <span class="md-ellipsis">
-      🧱 Analyze the Replicated Table
+      ⚠️ 8. View Replication Agent Errors and History
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#view-replication-agent-errors-history" class="md-nav__link">
+  <a href="#9-check-replication-agent-sql-server-agent-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚠️ View Replication Agent Errors &amp; History
+      📂 9. Check Replication Agent SQL Server Agent Jobs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#view-agent-jobs-manually" class="md-nav__link">
+  <a href="#10-read-sql-server-error-logs-including-replication-errors" class="md-nav__link">
     <span class="md-ellipsis">
-      📋 View Agent Jobs Manually
+      📑 10. Read SQL Server Error Logs (Including Replication Errors)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#read-sql-server-agent-logs" class="md-nav__link">
+  <a href="#11-recommendations-for-performance-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      📂 Read SQL Server Agent Logs
+      🧹 11. Recommendations for Performance Optimization
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommendations-for-optimization" class="md-nav__link">
+  <a href="#useful-links-references" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠 Recommendations for Optimization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-log-high-cpu-queries-automatically" class="md-nav__link">
-    <span class="md-ellipsis">
-      📅 Optional: Log High-CPU Queries Automatically
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clean-and-maintain-replication" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧼 Clean and Maintain Replication
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 Resources
+      📚 Useful Links &amp; References
     </span>
   </a>
   
@@ -845,8 +847,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -855,117 +855,123 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#2-check-replication-job-schedules" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Overview
+      ⏰ 2. Check Replication Job Schedules
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-what-kind-of-replication-is-configured" class="md-nav__link">
+  <a href="#3-identify-active-replication-agent-queries-and-high-cpu-consumers" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 Check What Kind of Replication is Configured
+      🔍 3. Identify Active Replication Agent Queries and High CPU Consumers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 3. Identify Active Replication Agent Queries and High CPU Consumers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-monitor-live-high-cpu-queries-at-the-peak-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) Monitor live high CPU queries at the peak time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-filter-for-replication-agent-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Filter for replication agent queries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-discover-replication-publications-and-subscriptions-for-db01-db02-cdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 4. Discover Replication Publications and Subscriptions for DB01, DB02 → CDB
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monitor-high-cpu-queries-live" class="md-nav__link">
+  <a href="#5-monitor-pending-replication-commands-replication-latency" class="md-nav__link">
     <span class="md-ellipsis">
-      🔎 Monitor High CPU Queries (Live)
+      📤 5. Monitor Pending Replication Commands (Replication Latency)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#identify-active-replication-agent-queries" class="md-nav__link">
+  <a href="#6-automate-checking-all-replication-subscriptions-at-once" class="md-nav__link">
     <span class="md-ellipsis">
-      🔄 Identify Active Replication Agent Queries
+      🛠 6. Automate Checking All Replication Subscriptions at Once
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monitor-pending-replication-commands-latency" class="md-nav__link">
+  <a href="#7-analyze-replicated-tables-for-performance-issues" class="md-nav__link">
     <span class="md-ellipsis">
-      📤 Monitor Pending Replication Commands (Latency)
+      🧱 7. Analyze Replicated Tables for Performance Issues
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#analyze-the-replicated-table" class="md-nav__link">
+  <a href="#8-view-replication-agent-errors-and-history" class="md-nav__link">
     <span class="md-ellipsis">
-      🧱 Analyze the Replicated Table
+      ⚠️ 8. View Replication Agent Errors and History
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#view-replication-agent-errors-history" class="md-nav__link">
+  <a href="#9-check-replication-agent-sql-server-agent-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚠️ View Replication Agent Errors &amp; History
+      📂 9. Check Replication Agent SQL Server Agent Jobs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#view-agent-jobs-manually" class="md-nav__link">
+  <a href="#10-read-sql-server-error-logs-including-replication-errors" class="md-nav__link">
     <span class="md-ellipsis">
-      📋 View Agent Jobs Manually
+      📑 10. Read SQL Server Error Logs (Including Replication Errors)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#read-sql-server-agent-logs" class="md-nav__link">
+  <a href="#11-recommendations-for-performance-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      📂 Read SQL Server Agent Logs
+      🧹 11. Recommendations for Performance Optimization
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommendations-for-optimization" class="md-nav__link">
+  <a href="#useful-links-references" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠 Recommendations for Optimization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-log-high-cpu-queries-automatically" class="md-nav__link">
-    <span class="md-ellipsis">
-      📅 Optional: Log High-CPU Queries Automatically
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clean-and-maintain-replication" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧼 Clean and Maintain Replication
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 Resources
+      📚 Useful Links &amp; References
     </span>
   </a>
   
@@ -987,18 +993,29 @@
 
 
 
-<hr />
-<h1 id="mssql-replication-debugging-guide">📘 MSSQL Replication Debugging Guide</h1>
-<p>This guide documents the key SQL queries and commands used to monitor, troubleshoot, and optimize <strong>Transactional Replication</strong> in Microsoft SQL Server, particularly when CPU usage spikes due to replication activities.</p>
-<hr />
-<h2 id="overview">🧠 Overview</h2>
-<p>This guide is helpful if:
-- You have configured <strong>transactional replication</strong> (evident by running Snapshot and Log Reader Agents).
-- You observe <strong>high CPU spikes</strong>, especially after adding new tables to replication.
-- You want to identify <strong>replication agent load</strong>, job schedules, query performance, and indexing issues.</p>
-<hr />
-<h2 id="check-what-kind-of-replication-is-configured">🔍 Check What Kind of Replication is Configured</h2>
-<pre><code class="language-sql">USE distribution;
+  <h1>Replication Troubleshoot</h1>
+
+<p>Certainly! Here's your detailed and well-organized <strong>MSSQL Replication Debugging Guide</strong> including the queries for discovering parameters for <code>sp_replmonitorsubscriptionpendingcmds</code> and customized for your DB01, DB02 → CDB scenario:</p>
+<pre><code class="language-markdown"># 📘 MSSQL Replication Debugging Guide
+
+This guide documents key SQL queries and commands to monitor, troubleshoot, and optimize **Transactional Replication** in Microsoft SQL Server, especially when experiencing CPU spikes related to replication activities.
+
+---
+
+## 🧠 Overview
+
+This guide is useful if:
+
+- You have configured **transactional replication** (e.g., Snapshot and Log Reader Agents are running).
+- You notice **daily CPU spikes**, especially after adding new tables to replication.
+- You want to analyze replication agent load, job schedules, query performance, and indexing.
+
+---
+
+## 🔍 1. Check What Kind of Replication Is Configured
+
+```sql
+USE distribution;
 GO
 
 SELECT 
@@ -1014,14 +1031,10 @@ SELECT
         ELSE 'Unknown'
     END AS replication_type
 FROM dbo.MSpublications pub;
-````
-
----
-
-## ⏰ Check Replication Job Schedules
-
-```sql
-USE msdb;
+</code></pre>
+<hr />
+<h2 id="2-check-replication-job-schedules">⏰ 2. Check Replication Job Schedules</h2>
+<pre><code class="language-sql">USE msdb;
 GO
 
 SELECT 
@@ -1034,11 +1047,11 @@ JOIN dbo.sysschedules s ON js.schedule_id = s.schedule_id
 WHERE j.name LIKE '%snapshot%' OR j.name LIKE '%logreader%';
 </code></pre>
 <blockquote>
-<p>Useful to identify if a <strong>Snapshot Agent</strong> or <strong>Log Reader Agent</strong> runs at specific times (e.g., 10:00 AM).</p>
+<p>Useful to identify when Snapshot or Log Reader Agents run (e.g., at 10:00 AM daily).</p>
 </blockquote>
 <hr />
-<h2 id="monitor-high-cpu-queries-live">🔎 Monitor High CPU Queries (Live)</h2>
-<p>Run this at the time of high CPU (e.g., 10:00 AM):</p>
+<h2 id="3-identify-active-replication-agent-queries-and-high-cpu-consumers">🔍 3. Identify Active Replication Agent Queries and High CPU Consumers</h2>
+<h3 id="a-monitor-live-high-cpu-queries-at-the-peak-time">a) Monitor live high CPU queries at the peak time</h3>
 <pre><code class="language-sql">SELECT 
     r.session_id,
     r.status,
@@ -1051,8 +1064,7 @@ FROM sys.dm_exec_requests r
 CROSS APPLY sys.dm_exec_sql_text(r.sql_handle) t
 ORDER BY r.cpu_time DESC;
 </code></pre>
-<hr />
-<h2 id="identify-active-replication-agent-queries">🔄 Identify Active Replication Agent Queries</h2>
+<h3 id="b-filter-for-replication-agent-queries">b) Filter for replication agent queries</h3>
 <pre><code class="language-sql">SELECT 
     s.session_id,
     r.status,
@@ -1065,37 +1077,86 @@ JOIN sys.dm_exec_sessions s ON r.session_id = s.session_id
 CROSS APPLY sys.dm_exec_sql_text(r.sql_handle) t
 WHERE s.program_name LIKE '%Repl%';
 </code></pre>
-<blockquote>
-<p>This helps identify which <strong>replication agent jobs</strong> are actively consuming CPU or locking resources.</p>
-</blockquote>
 <hr />
-<h2 id="monitor-pending-replication-commands-latency">📤 Monitor Pending Replication Commands (Latency)</h2>
-<pre><code class="language-sql">EXEC sp_replmonitorsubscriptionpendingcmds 
-    @publisher = 'YourPublisherName', 
-    @publisher_db = 'YourPublisherDB',
-    @publication = 'YourPublicationName',
-    @subscriber = 'YourSubscriberName',
-    @subscriber_db = 'YourSubscriberDB';
+<h2 id="4-discover-replication-publications-and-subscriptions-for-db01-db02-cdb">📋 4. Discover Replication Publications and Subscriptions for DB01, DB02 → CDB</h2>
+<p>Run this on the <strong>distribution</strong> database:</p>
+<pre><code class="language-sql">USE distribution;
+GO
+
+SELECT 
+    a.publisher AS PublisherServer,
+    a.publisher_db AS PublisherDB,
+    a.publication AS PublicationName,
+    s.subscriber AS SubscriberServer,
+    s.subscriber_db AS SubscriberDB
+FROM MSpublications a
+JOIN MSsubscriptions s ON a.publication_id = s.publication_id
+WHERE a.publisher_db IN ('DB01', 'DB02')
+  AND s.subscriber_db = 'CDB'
+ORDER BY a.publisher_db, a.publication;
 </code></pre>
-<blockquote>
-<p>Shows how many commands are waiting to be replicated. A large number may indicate a bottleneck.</p>
-</blockquote>
 <hr />
-<h2 id="analyze-the-replicated-table">🧱 Analyze the Replicated Table</h2>
-<pre><code class="language-sql">-- Table size
+<h2 id="5-monitor-pending-replication-commands-replication-latency">📤 5. Monitor Pending Replication Commands (Replication Latency)</h2>
+<p>Using the output from the above query, run for each publication/subscription:</p>
+<pre><code class="language-sql">EXEC sp_replmonitorsubscriptionpendingcmds 
+    @publisher = '&lt;PublisherServer&gt;',
+    @publisher_db = '&lt;PublisherDB&gt;',
+    @publication = '&lt;PublicationName&gt;',
+    @subscriber = '&lt;SubscriberServer&gt;',
+    @subscriber_db = 'CDB';
+</code></pre>
+<hr />
+<h2 id="6-automate-checking-all-replication-subscriptions-at-once">🛠 6. Automate Checking All Replication Subscriptions at Once</h2>
+<p>Run this script in the <strong>distribution</strong> database to loop through all relevant subscriptions:</p>
+<pre><code class="language-sql">DECLARE @publisher sysname, @publisher_db sysname, @publication sysname, @subscriber sysname, @subscriber_db sysname;
+
+DECLARE subscription_cursor CURSOR FOR
+SELECT 
+    a.publisher,
+    a.publisher_db,
+    a.publication,
+    s.subscriber,
+    s.subscriber_db
+FROM MSpublications a
+JOIN MSsubscriptions s ON a.publication_id = s.publication_id
+WHERE a.publisher_db IN ('DB01', 'DB02')
+  AND s.subscriber_db = 'CDB';
+
+OPEN subscription_cursor;
+FETCH NEXT FROM subscription_cursor INTO @publisher, @publisher_db, @publication, @subscriber, @subscriber_db;
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    PRINT 'Checking pending commands for publication: ' + @publication + ', subscriber: ' + @subscriber;
+    EXEC sp_replmonitorsubscriptionpendingcmds 
+        @publisher = @publisher,
+        @publisher_db = @publisher_db,
+        @publication = @publication,
+        @subscriber = @subscriber,
+        @subscriber_db = @subscriber_db;
+
+    FETCH NEXT FROM subscription_cursor INTO @publisher, @publisher_db, @publication, @subscriber, @subscriber_db;
+END
+
+CLOSE subscription_cursor;
+DEALLOCATE subscription_cursor;
+</code></pre>
+<hr />
+<h2 id="7-analyze-replicated-tables-for-performance-issues">🧱 7. Analyze Replicated Tables for Performance Issues</h2>
+<pre><code class="language-sql">-- Table size and space usage
 EXEC sp_spaceused 'YourTableName';
 
 -- Row count
 SELECT COUNT(*) FROM YourTableName;
 
--- Indexes on the table
+-- Index info
 EXEC sp_helpindex 'YourTableName';
 </code></pre>
 <blockquote>
-<p>Ensure the table has a <strong>primary key</strong> and sufficient indexing to avoid heavy log scanning.</p>
+<p>Ensure replicated tables have <strong>primary keys</strong> and proper indexing to minimize replication overhead.</p>
 </blockquote>
 <hr />
-<h2 id="view-replication-agent-errors-history">⚠️ View Replication Agent Errors &amp; History</h2>
+<h2 id="8-view-replication-agent-errors-and-history">⚠️ 8. View Replication Agent Errors and History</h2>
 <pre><code class="language-sql">USE distribution;
 GO
 
@@ -1111,67 +1172,43 @@ FROM dbo.MSdistribution_history h
 JOIN dbo.MSdistribution_agents a ON h.agent_id = a.id
 ORDER BY h.run_date DESC, h.run_time DESC;
 </code></pre>
-<blockquote>
-<p><code>run_status</code>:</p>
+<p>Run status codes:</p>
 <ul>
-<li><code>1</code> = Success</li>
-<li><code>2</code> = Retry</li>
-<li><code>3</code> = Failure</li>
-<li><code>4</code> = Canceled</li>
-<li><code>5</code> = In Progress</li>
+<li>1 = Success</li>
+<li>2 = Retry</li>
+<li>3 = Failure</li>
+<li>4 = Canceled</li>
+<li>5 = In Progress</li>
 </ul>
-</blockquote>
 <hr />
-<h2 id="view-agent-jobs-manually">📋 View Agent Jobs Manually</h2>
-<pre><code class="language-sql">-- List all replication-related SQL Agent jobs
+<h2 id="9-check-replication-agent-sql-server-agent-jobs">📂 9. Check Replication Agent SQL Server Agent Jobs</h2>
+<pre><code class="language-sql">-- List all replication-related jobs
 SELECT name FROM msdb.dbo.sysjobs WHERE name LIKE '%Repl%';
-</code></pre>
-<pre><code class="language-sql">-- Job history for specific job
+
+-- Job history for a specific job
 EXEC msdb.dbo.sp_help_jobhistory 
     @job_name = 'YourJobNameHere',
     @mode = 'FULL';
 </code></pre>
 <hr />
-<h2 id="read-sql-server-agent-logs">📂 Read SQL Server Agent Logs</h2>
-<pre><code class="language-sql">-- Read the latest SQL error logs (including replication-related logs)
-EXEC xp_readerrorlog;
+<h2 id="10-read-sql-server-error-logs-including-replication-errors">📑 10. Read SQL Server Error Logs (Including Replication Errors)</h2>
+<pre><code class="language-sql">EXEC xp_readerrorlog;
 </code></pre>
-<blockquote>
-<p>You can also check these logs via SSMS under <strong>SQL Server Agent → Error Logs</strong>.</p>
-</blockquote>
+<p>You can also view error logs via SSMS under <strong>SQL Server Agent → Error Logs</strong>.</p>
 <hr />
-<h2 id="recommendations-for-optimization">🛠 Recommendations for Optimization</h2>
+<h2 id="11-recommendations-for-performance-optimization">🧹 11. Recommendations for Performance Optimization</h2>
 <ul>
-<li><strong>Avoid daily snapshots</strong> unless required.</li>
-<li>Schedule heavy replication tasks during off-peak hours.</li>
-<li>Use proper <strong>indexes</strong> on frequently updated columns in replicated tables.</li>
-<li>If one table causes spikes, consider moving it to a <strong>separate publication</strong>.</li>
+<li>Avoid daily snapshots unless necessary.</li>
+<li>Schedule replication agents during off-peak hours.</li>
+<li>Index frequently updated columns in replicated tables.</li>
+<li>Consider splitting problematic tables into separate publications.</li>
+<li>Clean up old/unused subscriptions and publications.</li>
+<li>Regularly monitor and maintain the distribution database size.</li>
 </ul>
 <hr />
-<h2 id="optional-log-high-cpu-queries-automatically">📅 Optional: Log High-CPU Queries Automatically</h2>
-<p>You can schedule this query to run at 10:00 AM daily to track high CPU queries:</p>
-<pre><code class="language-sql">SELECT 
-    r.session_id,
-    r.cpu_time,
-    r.total_elapsed_time,
-    t.text AS query_text,
-    r.start_time
-INTO dbo.HighCpuQueries_Log
-FROM sys.dm_exec_requests r
-CROSS APPLY sys.dm_exec_sql_text(r.sql_handle) t
-WHERE r.cpu_time &gt; 1000;
-</code></pre>
-<hr />
-<h2 id="clean-and-maintain-replication">🧼 Clean and Maintain Replication</h2>
+<h2 id="useful-links-references">📚 Useful Links &amp; References</h2>
 <ul>
-<li>Remove unnecessary subscriptions or publications.</li>
-<li>Reinitialize only if required.</li>
-<li>Periodically clean the <strong>distribution database</strong> if it grows too large.</li>
-</ul>
-<hr />
-<h2 id="resources">📚 Resources</h2>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/replication/">Microsoft Docs – Replication Overview</a></li>
+<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/replication/">Replication Overview - Microsoft Docs</a></li>
 <li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-replmonitorsubscriptionpendingcmds-transact-sql">sp_replmonitorsubscriptionpendingcmds</a></li>
 <li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql">sys.dm_exec_requests</a></li>
 </ul>
@@ -1210,11 +1247,6 @@ WHERE r.cpu_time &gt; 1000;
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
   
 </div>
       
