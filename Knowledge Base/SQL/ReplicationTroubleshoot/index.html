@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Git/Git/">
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/SQL/ReplicationTroubleshoot/">
       
       
-        <link rel="prev" href="../../..">
+        <link rel="prev" href="../../Nginx/Nginx/">
       
-      
-        <link rel="next" href="../../Mkdocs/Mkdocs/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Git Intro - Birat Aryal Technical Docs</title>
+        <title>Replication Troubleshoot - Birat Aryal Technical Docs</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-commands-cheat-sheet" class="md-skip">
+        <a href="#mssql-replication-debugging-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git Intro
+              Replication Troubleshoot
             
           </span>
         </div>
@@ -435,33 +433,33 @@
                 
   
   
+  
+  
     
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
   
   
-    
-    
+    <a href="../../Git/Git/" class="md-nav__link">
       
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -470,242 +468,12 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            Git
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Git Intro
-    
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Git Intro
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#git-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Git Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-global-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Git Global Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initialize-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      📁 Initialize &amp; Clone
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-setup-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 Project Setup Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-status-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Check Status &amp; Logs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-commit-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      ➕ Add &amp; Commit Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#push-pull" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⬆️ Push &amp; ⬇️ Pull
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branching" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌿 Branching
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undo-reset-revert" class="md-nav__link">
-    <span class="md-ellipsis">
-      💥 Undo / Reset / Revert
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stash-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Stash Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tagging" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 Tagging
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collaborating-remote" class="md-nav__link">
-    <span class="md-ellipsis">
-      🤝 Collaborating (Remote)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Misc &amp; Utilities
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧭 Common Workflows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧭 Common Workflows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#feature-branch-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Feature Branch Workflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#release-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 Release Workflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hotfix-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🐞 Hotfix Workflow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -818,6 +586,8 @@
                 
   
   
+    
+  
   
   
     
@@ -833,18 +603,16 @@
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-  
-    <a href="../../SQL/ReplicationTroubleshoot/" class="md-nav__link">
-      
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -853,12 +621,200 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            SQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-        <span class="md-nav__icon md-icon"></span>
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-    </a>
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Replication Troubleshoot
+    
+  </span>
   
 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Replication Troubleshoot
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-what-kind-of-replication-is-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Check What Kind of Replication is Configured
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-high-cpu-queries-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔎 Monitor High CPU Queries (Live)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identify-active-replication-agent-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Identify Active Replication Agent Queries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitor-pending-replication-commands-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 Monitor Pending Replication Commands (Latency)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyze-the-replicated-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Analyze the Replicated Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-replication-agent-errors-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ View Replication Agent Errors &amp; History
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-agent-jobs-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 View Agent Jobs Manually
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-sql-server-agent-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 Read SQL Server Agent Logs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations-for-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Recommendations for Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-log-high-cpu-queries-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      📅 Optional: Log High-CPU Queries Automatically
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-and-maintain-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧼 Clean and Maintain Replication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -899,161 +855,119 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-configuration" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Git Configuration
+      🧠 Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-global-configuration" class="md-nav__link">
+  <a href="#check-what-kind-of-replication-is-configured" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Git Global Configuration
+      🔍 Check What Kind of Replication is Configured
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-clone" class="md-nav__link">
+  <a href="#monitor-high-cpu-queries-live" class="md-nav__link">
     <span class="md-ellipsis">
-      📁 Initialize &amp; Clone
+      🔎 Monitor High CPU Queries (Live)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-setup-steps" class="md-nav__link">
+  <a href="#identify-active-replication-agent-queries" class="md-nav__link">
     <span class="md-ellipsis">
-      📂 Project Setup Steps
+      🔄 Identify Active Replication Agent Queries
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-status-logs" class="md-nav__link">
+  <a href="#monitor-pending-replication-commands-latency" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 Check Status &amp; Logs
+      📤 Monitor Pending Replication Commands (Latency)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-commit-changes" class="md-nav__link">
+  <a href="#analyze-the-replicated-table" class="md-nav__link">
     <span class="md-ellipsis">
-      ➕ Add &amp; Commit Changes
+      🧱 Analyze the Replicated Table
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#push-pull" class="md-nav__link">
+  <a href="#view-replication-agent-errors-history" class="md-nav__link">
     <span class="md-ellipsis">
-      ⬆️ Push &amp; ⬇️ Pull
+      ⚠️ View Replication Agent Errors &amp; History
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#branching" class="md-nav__link">
+  <a href="#view-agent-jobs-manually" class="md-nav__link">
     <span class="md-ellipsis">
-      🌿 Branching
+      📋 View Agent Jobs Manually
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#undo-reset-revert" class="md-nav__link">
+  <a href="#read-sql-server-agent-logs" class="md-nav__link">
     <span class="md-ellipsis">
-      💥 Undo / Reset / Revert
+      📂 Read SQL Server Agent Logs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stash-changes" class="md-nav__link">
+  <a href="#recommendations-for-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 Stash Changes
+      🛠 Recommendations for Optimization
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tagging" class="md-nav__link">
+  <a href="#optional-log-high-cpu-queries-automatically" class="md-nav__link">
     <span class="md-ellipsis">
-      🔗 Tagging
+      📅 Optional: Log High-CPU Queries Automatically
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#collaborating-remote" class="md-nav__link">
+  <a href="#clean-and-maintain-replication" class="md-nav__link">
     <span class="md-ellipsis">
-      🤝 Collaborating (Remote)
+      🧼 Clean and Maintain Replication
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#misc-utilities" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Misc &amp; Utilities
+      📚 Resources
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧭 Common Workflows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧭 Common Workflows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#feature-branch-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Feature Branch Workflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#release-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 Release Workflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hotfix-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🐞 Hotfix Workflow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1073,403 +987,201 @@
 
 
 
-<h1 id="git-commands-cheat-sheet">🧠 Git Commands Cheat Sheet</h1>
 <hr />
-<h2 id="git-configuration">📌 Git Configuration</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git config --global user.name "Birat Aryal"</code></td>
-<td>Set your name (used in commits)</td>
-</tr>
-<tr>
-<td><code>git config --global user.email "Email address"</code></td>
-<td>Set your email</td>
-</tr>
-<tr>
-<td><code>git config --list</code></td>
-<td>List all Git config values</td>
-</tr>
-<tr>
-<td><code>git config --global core.editor code</code></td>
-<td>Set default editor (e.g., VS Code)</td>
-</tr>
-</tbody>
-</table>
+<h1 id="mssql-replication-debugging-guide">📘 MSSQL Replication Debugging Guide</h1>
+<p>This guide documents the key SQL queries and commands used to monitor, troubleshoot, and optimize <strong>Transactional Replication</strong> in Microsoft SQL Server, particularly when CPU usage spikes due to replication activities.</p>
 <hr />
-<h2 id="git-global-configuration">📌 Git Global Configuration</h2>
+<h2 id="overview">🧠 Overview</h2>
+<p>This guide is helpful if:
+- You have configured <strong>transactional replication</strong> (evident by running Snapshot and Log Reader Agents).
+- You observe <strong>high CPU spikes</strong>, especially after adding new tables to replication.
+- You want to identify <strong>replication agent load</strong>, job schedules, query performance, and indexing issues.</p>
 <hr />
-<h2 id="initialize-clone">📁 Initialize &amp; Clone</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git init</code></td>
-<td>Initialize a new Git repository</td>
-</tr>
-<tr>
-<td><code>git clone &lt;url&gt;</code></td>
-<td>Clone an existing repo</td>
-</tr>
-<tr>
-<td><code>git clone &lt;url&gt; &lt;folder&gt;</code></td>
-<td>Clone into a specific folder</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="project-setup-steps">📂 Project Setup Steps</h2>
-<table>
-<thead>
-<tr>
-<th>Step</th>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1️⃣</td>
-<td><code>echo "# Automation" &gt;&gt; README.md</code></td>
-<td>Creates a <code>README.md</code> file with the title "Automation".</td>
-</tr>
-<tr>
-<td>2️⃣</td>
-<td><code>git init</code></td>
-<td>Initializes a new Git repository in the current directory.</td>
-</tr>
-<tr>
-<td>3️⃣</td>
-<td><code>git add README.md</code></td>
-<td>Stages the <code>README.md</code> file for the first commit.</td>
-</tr>
-<tr>
-<td>4️⃣</td>
-<td><code>git commit -m "first commit"</code></td>
-<td>Commits the staged file with a message.</td>
-</tr>
-<tr>
-<td>5️⃣</td>
-<td><code>git branch -M master</code></td>
-<td>Renames the default branch to <code>master</code>.</td>
-</tr>
-<tr>
-<td>6️⃣</td>
-<td><code>git remote add origin git@github.com:BiratAryal/Automation.git</code></td>
-<td>Sets the remote repository URL.</td>
-</tr>
-<tr>
-<td>7️⃣</td>
-<td><code>git push -u origin master</code></td>
-<td>Pushes the code to GitHub and sets upstream tracking.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="check-status-logs">🔍 Check Status &amp; Logs</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git status</code></td>
-<td>Show changed files &amp; staging status</td>
-</tr>
-<tr>
-<td><code>git log</code></td>
-<td>View commit history</td>
-</tr>
-<tr>
-<td><code>git log --oneline</code></td>
-<td>View compact commit history</td>
-</tr>
-<tr>
-<td><code>git diff</code></td>
-<td>Show unstaged changes</td>
-</tr>
-<tr>
-<td><code>git diff --staged</code></td>
-<td>Show staged changes</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="add-commit-changes">➕ Add &amp; Commit Changes</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git add &lt;file&gt;</code></td>
-<td>Stage a specific file</td>
-</tr>
-<tr>
-<td><code>git add .</code></td>
-<td>Stage all modified files</td>
-</tr>
-<tr>
-<td><code>git commit -m "message"</code></td>
-<td>Commit with a message</td>
-</tr>
-<tr>
-<td><code>git commit -am "message"</code></td>
-<td>Add &amp; commit tracked files only</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="push-pull">⬆️ Push &amp; ⬇️ Pull</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git push</code></td>
-<td>Push changes to remote</td>
-</tr>
-<tr>
-<td><code>git push -u origin &lt;branch&gt;</code></td>
-<td>Push and set upstream</td>
-</tr>
-<tr>
-<td><code>git pull</code></td>
-<td>Fetch and merge from remote</td>
-</tr>
-<tr>
-<td><code>git fetch</code></td>
-<td>Only fetch, don’t merge</td>
-</tr>
-<tr>
-<td><code>git remote -v</code></td>
-<td>Show remote URLs</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="branching">🌿 Branching</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git branch</code></td>
-<td>List local branches</td>
-</tr>
-<tr>
-<td><code>git branch &lt;name&gt;</code></td>
-<td>Create a new branch</td>
-</tr>
-<tr>
-<td><code>git checkout &lt;branch&gt;</code></td>
-<td>Switch to a branch</td>
-</tr>
-<tr>
-<td><code>git checkout -b &lt;branch&gt;</code></td>
-<td>Create &amp; switch branch</td>
-</tr>
-<tr>
-<td><code>git branch -d &lt;branch&gt;</code></td>
-<td>Delete a branch</td>
-</tr>
-<tr>
-<td><code>git merge &lt;branch&gt;</code></td>
-<td>Merge another branch into current</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="undo-reset-revert">💥 Undo / Reset / Revert</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git restore &lt;file&gt;</code></td>
-<td>Discard changes in a file</td>
-</tr>
-<tr>
-<td><code>git restore --staged &lt;file&gt;</code></td>
-<td>Unstage a file</td>
-</tr>
-<tr>
-<td><code>git reset HEAD~1</code></td>
-<td>Undo last commit, keep changes</td>
-</tr>
-<tr>
-<td><code>git revert &lt;commit&gt;</code></td>
-<td>Create a new commit that undoes an old one</td>
-</tr>
-<tr>
-<td><code>git reset --hard</code></td>
-<td>Remove all local changes (⚠️ irreversible)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="stash-changes">🔍 Stash Changes</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git stash</code></td>
-<td>Save changes temporarily</td>
-</tr>
-<tr>
-<td><code>git stash list</code></td>
-<td>List stashed changes</td>
-</tr>
-<tr>
-<td><code>git stash apply</code></td>
-<td>Reapply last stash</td>
-</tr>
-<tr>
-<td><code>git stash drop</code></td>
-<td>Delete the latest stash</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="tagging">🔗 Tagging</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git tag</code></td>
-<td>List all tags</td>
-</tr>
-<tr>
-<td><code>git tag &lt;name&gt;</code></td>
-<td>Create a lightweight tag</td>
-</tr>
-<tr>
-<td><code>git tag -a &lt;name&gt; -m "msg"</code></td>
-<td>Annotated tag</td>
-</tr>
-<tr>
-<td><code>git push origin &lt;tag&gt;</code></td>
-<td>Push tag to remote</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="collaborating-remote">🤝 Collaborating (Remote)</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git remote add origin &lt;url&gt;</code></td>
-<td>Add a new remote</td>
-</tr>
-<tr>
-<td><code>git push origin --tags</code></td>
-<td>Push all tags to remote</td>
-</tr>
-<tr>
-<td><code>git remote remove origin</code></td>
-<td>Remove remote</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="misc-utilities">🧪 Misc &amp; Utilities</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git show &lt;commit&gt;</code></td>
-<td>Show details of a commit</td>
-</tr>
-<tr>
-<td><code>git blame &lt;file&gt;</code></td>
-<td>Show who modified each line</td>
-</tr>
-<tr>
-<td><code>git clean -fd</code></td>
-<td>Remove untracked files &amp; folders</td>
-</tr>
-<tr>
-<td><code>git reflog</code></td>
-<td>Log of all HEAD movements (recover lost commits)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="common-workflows">🧭 Common Workflows</h2>
-<h3 id="feature-branch-workflow">✅ Feature Branch Workflow</h3>
-<pre><code class="language-bash">git checkout -b feature/xyz
-# work &amp; commit
-git push origin feature/xyz
+<h2 id="check-what-kind-of-replication-is-configured">🔍 Check What Kind of Replication is Configured</h2>
+<pre><code class="language-sql">USE distribution;
+GO
+
+SELECT 
+    pub.publisher_db,
+    pub.publication,
+    pub.publication_type,
+    CASE pub.publication_type
+        WHEN 0 THEN 'Transactional'
+        WHEN 1 THEN 'Snapshot'
+        WHEN 2 THEN 'Transactional with Updatable Subscriptions (deprecated)'
+        WHEN 3 THEN 'Peer-to-Peer Transactional'
+        WHEN 4 THEN 'Merge'
+        ELSE 'Unknown'
+    END AS replication_type
+FROM dbo.MSpublications pub;
+````
+
+---
+
+## ⏰ Check Replication Job Schedules
+
+```sql
+USE msdb;
+GO
+
+SELECT 
+    j.name AS JobName,
+    s.next_run_date,
+    s.next_run_time
+FROM dbo.sysjobs j
+JOIN dbo.sysjobschedules js ON j.job_id = js.job_id
+JOIN dbo.sysschedules s ON js.schedule_id = s.schedule_id
+WHERE j.name LIKE '%snapshot%' OR j.name LIKE '%logreader%';
 </code></pre>
-<h3 id="release-workflow">🚀 Release Workflow</h3>
-<pre><code class="language-bash">git checkout -b release/v1.0
-git merge develop
-</code></pre>
-<h3 id="hotfix-workflow">🐞 Hotfix Workflow</h3>
-<pre><code class="language-bash">git checkout -b hotfix/bug-123 main
-# fix &amp; commit
-git push origin hotfix/bug-123
+<blockquote>
+<p>Useful to identify if a <strong>Snapshot Agent</strong> or <strong>Log Reader Agent</strong> runs at specific times (e.g., 10:00 AM).</p>
+</blockquote>
+<hr />
+<h2 id="monitor-high-cpu-queries-live">🔎 Monitor High CPU Queries (Live)</h2>
+<p>Run this at the time of high CPU (e.g., 10:00 AM):</p>
+<pre><code class="language-sql">SELECT 
+    r.session_id,
+    r.status,
+    r.command,
+    r.cpu_time,
+    r.total_elapsed_time,
+    r.start_time,
+    t.text AS query_text
+FROM sys.dm_exec_requests r
+CROSS APPLY sys.dm_exec_sql_text(r.sql_handle) t
+ORDER BY r.cpu_time DESC;
 </code></pre>
 <hr />
+<h2 id="identify-active-replication-agent-queries">🔄 Identify Active Replication Agent Queries</h2>
+<pre><code class="language-sql">SELECT 
+    s.session_id,
+    r.status,
+    r.command,
+    t.text AS query_text,
+    r.cpu_time,
+    r.start_time
+FROM sys.dm_exec_requests r
+JOIN sys.dm_exec_sessions s ON r.session_id = s.session_id
+CROSS APPLY sys.dm_exec_sql_text(r.sql_handle) t
+WHERE s.program_name LIKE '%Repl%';
+</code></pre>
+<blockquote>
+<p>This helps identify which <strong>replication agent jobs</strong> are actively consuming CPU or locking resources.</p>
+</blockquote>
+<hr />
+<h2 id="monitor-pending-replication-commands-latency">📤 Monitor Pending Replication Commands (Latency)</h2>
+<pre><code class="language-sql">EXEC sp_replmonitorsubscriptionpendingcmds 
+    @publisher = 'YourPublisherName', 
+    @publisher_db = 'YourPublisherDB',
+    @publication = 'YourPublicationName',
+    @subscriber = 'YourSubscriberName',
+    @subscriber_db = 'YourSubscriberDB';
+</code></pre>
+<blockquote>
+<p>Shows how many commands are waiting to be replicated. A large number may indicate a bottleneck.</p>
+</blockquote>
+<hr />
+<h2 id="analyze-the-replicated-table">🧱 Analyze the Replicated Table</h2>
+<pre><code class="language-sql">-- Table size
+EXEC sp_spaceused 'YourTableName';
+
+-- Row count
+SELECT COUNT(*) FROM YourTableName;
+
+-- Indexes on the table
+EXEC sp_helpindex 'YourTableName';
+</code></pre>
+<blockquote>
+<p>Ensure the table has a <strong>primary key</strong> and sufficient indexing to avoid heavy log scanning.</p>
+</blockquote>
+<hr />
+<h2 id="view-replication-agent-errors-history">⚠️ View Replication Agent Errors &amp; History</h2>
+<pre><code class="language-sql">USE distribution;
+GO
+
+SELECT 
+    h.agent_id,
+    a.name AS agent_name,
+    h.run_status,
+    h.run_duration,
+    h.run_date,
+    h.run_time,
+    h.[message]
+FROM dbo.MSdistribution_history h
+JOIN dbo.MSdistribution_agents a ON h.agent_id = a.id
+ORDER BY h.run_date DESC, h.run_time DESC;
+</code></pre>
+<blockquote>
+<p><code>run_status</code>:</p>
+<ul>
+<li><code>1</code> = Success</li>
+<li><code>2</code> = Retry</li>
+<li><code>3</code> = Failure</li>
+<li><code>4</code> = Canceled</li>
+<li><code>5</code> = In Progress</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="view-agent-jobs-manually">📋 View Agent Jobs Manually</h2>
+<pre><code class="language-sql">-- List all replication-related SQL Agent jobs
+SELECT name FROM msdb.dbo.sysjobs WHERE name LIKE '%Repl%';
+</code></pre>
+<pre><code class="language-sql">-- Job history for specific job
+EXEC msdb.dbo.sp_help_jobhistory 
+    @job_name = 'YourJobNameHere',
+    @mode = 'FULL';
+</code></pre>
+<hr />
+<h2 id="read-sql-server-agent-logs">📂 Read SQL Server Agent Logs</h2>
+<pre><code class="language-sql">-- Read the latest SQL error logs (including replication-related logs)
+EXEC xp_readerrorlog;
+</code></pre>
+<blockquote>
+<p>You can also check these logs via SSMS under <strong>SQL Server Agent → Error Logs</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="recommendations-for-optimization">🛠 Recommendations for Optimization</h2>
+<ul>
+<li><strong>Avoid daily snapshots</strong> unless required.</li>
+<li>Schedule heavy replication tasks during off-peak hours.</li>
+<li>Use proper <strong>indexes</strong> on frequently updated columns in replicated tables.</li>
+<li>If one table causes spikes, consider moving it to a <strong>separate publication</strong>.</li>
+</ul>
+<hr />
+<h2 id="optional-log-high-cpu-queries-automatically">📅 Optional: Log High-CPU Queries Automatically</h2>
+<p>You can schedule this query to run at 10:00 AM daily to track high CPU queries:</p>
+<pre><code class="language-sql">SELECT 
+    r.session_id,
+    r.cpu_time,
+    r.total_elapsed_time,
+    t.text AS query_text,
+    r.start_time
+INTO dbo.HighCpuQueries_Log
+FROM sys.dm_exec_requests r
+CROSS APPLY sys.dm_exec_sql_text(r.sql_handle) t
+WHERE r.cpu_time &gt; 1000;
+</code></pre>
+<hr />
+<h2 id="clean-and-maintain-replication">🧼 Clean and Maintain Replication</h2>
+<ul>
+<li>Remove unnecessary subscriptions or publications.</li>
+<li>Reinitialize only if required.</li>
+<li>Periodically clean the <strong>distribution database</strong> if it grows too large.</li>
+</ul>
+<hr />
+<h2 id="resources">📚 Resources</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/replication/">Microsoft Docs – Replication Overview</a></li>
+<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-replmonitorsubscriptionpendingcmds-transact-sql">sp_replmonitorsubscriptionpendingcmds</a></li>
+<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql">sys.dm_exec_requests</a></li>
+</ul>
+<hr />
 
 
 
 
 
 
-
-  
-  
 
 
 

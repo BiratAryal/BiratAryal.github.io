@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://birataryal.github.io/</loc>
-         <lastmod>2025-06-15</lastmod>
+         <lastmod>2025-06-16</lastmod>
     </url>
     <url>
          <loc>https://birataryal.github.io/about/</loc>
-         <lastmod>2025-06-15</lastmod>
+         <lastmod>2025-06-16</lastmod>
     </url>
     <url>
          <loc>https://birataryal.github.io/projects/</loc>
-         <lastmod>2025-06-15</lastmod>
+         <lastmod>2025-06-16</lastmod>
     </url>
     <url>
          <loc>https://birataryal.github.io/skills/</loc>
-         <lastmod>2025-06-15</lastmod>
+         <lastmod>2025-06-16</lastmod>
     </url>
     <url>
          <loc>https://birataryal.github.io/Knowledge%20Base/Git/Git/</loc>
-         <lastmod>2025-06-15</lastmod>
+         <lastmod>2025-06-16</lastmod>
     </url>
     <url>
          <loc>https://birataryal.github.io/Knowledge%20Base/Mkdocs/Mkdocs/</loc>
-         <lastmod>2025-06-15</lastmod>
+         <lastmod>2025-06-16</lastmod>
     </url>
     <url>
          <loc>https://birataryal.github.io/Knowledge%20Base/Nginx/Nginx/</loc>
-         <lastmod>2025-06-15</lastmod>
+         <lastmod>2025-06-16</lastmod>
+    </url>
+    <url>
+         <loc>https://birataryal.github.io/Knowledge%20Base/SQL/ReplicationTroubleshoot/</loc>
+         <lastmod>2025-06-16</lastmod>
     </url>
 </urlset>
