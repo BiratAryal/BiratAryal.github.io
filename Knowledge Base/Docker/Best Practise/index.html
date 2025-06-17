@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/SQL/FileTruncation/">
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Docker/Best%20Practise/">
       
       
-        <link rel="prev" href="../DB_Details/">
+        <link rel="prev" href="../Components/">
       
       
-        <link rel="next" href="../ReplicationTroubleshoot/">
+        <link rel="next" href="../Container%20Management/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Truncatation - Birat Aryal Technical Docs</title>
+        <title>Best Practise - Birat Aryal Technical Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-server-transaction-log-ldf-truncation-guide" class="md-skip">
+        <a href="#dockerfile-best-practices" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Truncatation
+              Best Practise
             
           </span>
         </div>
@@ -592,12 +592,73 @@
                 
   
   
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../SQL/Recovery_modes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
   
     
     
+      
+        
+      
+        
       
         
       
@@ -620,15 +681,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    SQL
+    Docker
     
   </span>
   
@@ -636,10 +697,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
-            SQL
+            Docker
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -650,12 +711,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Recovery_modes/" class="md-nav__link">
+      <a href="../Introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Recovery Modes
+    Introduction
     
   </span>
   
@@ -673,12 +734,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../DB_Details/" class="md-nav__link">
+      <a href="../Components/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    DB Details
+    Components
     
   </span>
   
@@ -710,7 +771,7 @@
   
   
   <span class="md-ellipsis">
-    Truncatation
+    Best Practise
     
   </span>
   
@@ -723,7 +784,7 @@
   
   
   <span class="md-ellipsis">
-    Truncatation
+    Best Practise
     
   </span>
   
@@ -746,87 +807,90 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-identify-mdf-and-ldf-file-names" class="md-nav__link">
+  <a href="#1-choose-a-minimal-base-image" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 1. Identify MDF and LDF File Names
+      1. Choose a Minimal Base Image
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-steps-to-truncate-and-shrink-the-files" class="md-nav__link">
+  <a href="#2-leverage-layer-caching" class="md-nav__link">
     <span class="md-ellipsis">
-      🧾 2. Steps to Truncate and Shrink the Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧾 2. Steps to Truncate and Shrink the Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-issue-checkpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 1: Issue Checkpoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-switch-recovery-model-to-simple" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 Step 2: Switch Recovery Model to SIMPLE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-shrink-the-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      📉 Step 3: Shrink the Files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-revert-to-full-recovery-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      ♻️ Step 4: Revert to FULL Recovery Model
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-replace-with-your-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      📝 Example (Replace with Your Values)
+      2. Leverage Layer Caching
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes-best-practices" class="md-nav__link">
+  <a href="#3-use-dockerignore" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Notes &amp; Best Practices
+      3. Use .dockerignore
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-references" class="md-nav__link">
+  <a href="#4-avoid-installing-unnecessary-packages" class="md-nav__link">
     <span class="md-ellipsis">
-      📚 Additional References
+      4. Avoid Installing Unnecessary Packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-use-multi-stage-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Use Multi-Stage Builds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-set-a-non-root-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Set a Non-Root User
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-use-copy-instead-of-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Use COPY Instead of ADD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-use-labels-for-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Use Labels for Metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-specify-exact-version-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Specify Exact Version Numbers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-always-use-cmd-or-entrypoint-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Always Use CMD or ENTRYPOINT Correctly
     </span>
   </a>
   
@@ -848,12 +912,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../ReplicationTroubleshoot/" class="md-nav__link">
+      <a href="../Container%20Management/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Replication Troubleshoot
+    Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker%20Compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Compose
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Container%20Troubleshoot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot
     
   </span>
   
@@ -866,67 +976,6 @@
             
           </ul>
         </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Docker/Introduction/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    Docker
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
       
     </li>
   
@@ -967,87 +1016,90 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-identify-mdf-and-ldf-file-names" class="md-nav__link">
+  <a href="#1-choose-a-minimal-base-image" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 1. Identify MDF and LDF File Names
+      1. Choose a Minimal Base Image
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-steps-to-truncate-and-shrink-the-files" class="md-nav__link">
+  <a href="#2-leverage-layer-caching" class="md-nav__link">
     <span class="md-ellipsis">
-      🧾 2. Steps to Truncate and Shrink the Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧾 2. Steps to Truncate and Shrink the Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-issue-checkpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 1: Issue Checkpoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-switch-recovery-model-to-simple" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 Step 2: Switch Recovery Model to SIMPLE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-shrink-the-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      📉 Step 3: Shrink the Files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-revert-to-full-recovery-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      ♻️ Step 4: Revert to FULL Recovery Model
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-replace-with-your-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      📝 Example (Replace with Your Values)
+      2. Leverage Layer Caching
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes-best-practices" class="md-nav__link">
+  <a href="#3-use-dockerignore" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Notes &amp; Best Practices
+      3. Use .dockerignore
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-references" class="md-nav__link">
+  <a href="#4-avoid-installing-unnecessary-packages" class="md-nav__link">
     <span class="md-ellipsis">
-      📚 Additional References
+      4. Avoid Installing Unnecessary Packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-use-multi-stage-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Use Multi-Stage Builds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-set-a-non-root-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Set a Non-Root User
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-use-copy-instead-of-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Use COPY Instead of ADD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-use-labels-for-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Use Labels for Metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-specify-exact-version-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Specify Exact Version Numbers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-always-use-cmd-or-entrypoint-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Always Use CMD or ENTRYPOINT Correctly
     </span>
   </a>
   
@@ -1073,156 +1125,102 @@
 <p class="admonition-title"><em>Written by</em></p>
 <p><strong>Birat Aryal</strong> on <strong>2025-06-17</strong></p>
 </div>
-<h1 id="sql-server-transaction-log-ldf-truncation-guide">🗂 SQL Server Transaction Log (LDF) Truncation Guide</h1>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">LDF Truncate Guide</label><label for="__tabbed_1_2">MDF Truncate Guide</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>This guide demonstrates how to <strong>safely truncate and shrink the transaction log file (LDF)</strong> of a SQL Server database using T-SQL. It is useful when the log file grows too large due to:</p>
-<div class="admonition abstract">
-<p class="admonition-title">Use Cases</p>
+<h1 id="dockerfile-best-practices">🛠 Dockerfile Best Practices</h1>
+<p>Creating efficient, secure, and maintainable Dockerfiles is essential for performance and reproducibility. Below are recommended best practices:</p>
+<h3 id="1-choose-a-minimal-base-image">1. <strong>Choose a Minimal Base Image</strong></h3>
 <ul>
-<li>Long-running transactions</li>
-<li>Replication issues</li>
-<li>Missing backup chain or disabled log backups</li>
+<li>
+<p>Use official minimal images like <code>alpine</code> or <code>debian-slim</code> when possible.</p>
+</li>
+<li>
+<p>Avoid bloated base images to reduce image size and vulnerabilities.</p>
+</li>
 </ul>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Caution</p>
-<p>Always back up your database before performing these actions, especially when changing recovery models.</p>
-</div>
-</div>
-<div class="tabbed-block">
-<p>This guide explains how to <strong>safely shrink and truncate the data file (MDF)</strong> of a SQL Server database using T-SQL. It is especially useful when:</p>
-<div class="admonition abstract">
-<p class="admonition-title">Use Cases</p>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">node:20-alpine</span>
+</code></pre></div>
+<h3 id="2-leverage-layer-caching">2. <strong>Leverage Layer Caching</strong></h3>
 <ul>
-<li>The data file has grown significantly, and unused space is not being reclaimed automatically.</li>
-<li>Large amounts of data were deleted, archived, or moved.</li>
-<li>Issues like replication lag or long-running transactions have been resolved.</li>
+<li>
+<p>Place commands that change least at the top of the Dockerfile.</p>
+</li>
+<li>
+<p>Group <code>RUN</code> instructions to minimize image layers.</p>
+</li>
 </ul>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Shrinking MDF files should be done cautiously and rarely in production. It can cause index fragmentation and impact performance.</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Caution</p>
-<p>Always back up your database before performing shrink operations and changing recovery models.</p>
-</div>
-</div>
-</div>
-</div>
-<hr />
-<h2 id="1-identify-mdf-and-ldf-file-names">📌 1. Identify MDF and LDF File Names</h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Run this query to get the logical and physical file names for your target database:</p>
-</div>
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">YourDatabaseName</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">GO</span>
-
-<span class="k">SELECT</span><span class="w"> </span>
-<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">LogicalFileName</span><span class="p">,</span>
-<span class="w">    </span><span class="n">physical_name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">PhysicalFilePath</span><span class="p">,</span>
-<span class="w">    </span><span class="n">type_desc</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">FileType</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">database_files</span><span class="p">;</span>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>curl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Replace <code>&lt;YourDatabaseName&gt;</code> with the actual name of your database.</p>
-</div>
-<hr />
-<h2 id="2-steps-to-truncate-and-shrink-the-files">🧾 2. Steps to Truncate and Shrink the Files</h2>
-<p>Follow these steps after identifying the correct file name.</p>
-<h3 id="step-1-issue-checkpoints">✅ Step 1: Issue Checkpoints</h3>
-<p>Flush dirty pages to disk before shrinking the database files:</p>
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">YourDatabaseName</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">GO</span>
-
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-</code></pre></div>
-<hr />
-<h3 id="step-2-switch-recovery-model-to-simple">🔁 Step 2: Switch Recovery Model to SIMPLE</h3>
-<p>Temporarily switch to the <code>SIMPLE</code> recovery model to allow truncation:</p>
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">YourDatabaseName</span><span class="o">&gt;</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">SIMPLE</span><span class="p">;</span>
-</code></pre></div>
-<hr />
-<h3 id="step-3-shrink-the-files">📉 Step 3: Shrink the Files</h3>
-<p>Shrink the transaction log file to a target size (e.g., 1,000 MB = 1 GB):</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">LDF</label><label for="__tabbed_2_2">MDF</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">DBCC</span><span class="w"> </span><span class="n">SHRINKFILE</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">YourLDFLogicalName</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">-- Size in MB</span>
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Replace <code>&lt;YourLDFLogicalName&gt;</code> with the actual logical name of the log file.</p>
-</div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">DBCC</span><span class="w"> </span><span class="n">SHRINKFILE</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">YourMDFLogicalName</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">-- Size in MB</span>
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Replace <code>&lt;YourMDFLogicalName&gt;</code> with the actual logical name of the data file.</p>
-</div>
-</div>
-</div>
-</div>
-<hr />
-<h3 id="step-4-revert-to-full-recovery-model">♻️ Step 4: Revert to FULL Recovery Model</h3>
-<p>Restore the original recovery model:</p>
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">YourDatabaseName</span><span class="o">&gt;</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">FULL</span><span class="p">;</span>
-</code></pre></div>
-<hr />
-<h2 id="example-replace-with-your-values">📝 Example (Replace with Your Values)</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">LDF Truncate</label><label for="__tabbed_3_2">MDF Truncate</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="p">;</span>
-<span class="k">GO</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-
-<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">SIMPLE</span><span class="p">;</span>
-<span class="n">DBCC</span><span class="w"> </span><span class="n">SHRINKFILE</span><span class="w"> </span><span class="p">(</span><span class="n">MyDatabase_Log</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
-<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">FULL</span><span class="p">;</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="p">;</span>
-<span class="k">GO</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-
-<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">SIMPLE</span><span class="p">;</span>
-<span class="n">DBCC</span><span class="w"> </span><span class="n">SHRINKFILE</span><span class="w"> </span><span class="p">(</span><span class="n">MyDatabase</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
-<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">FULL</span><span class="p">;</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<hr />
-<h2 id="notes-best-practices">📌 Notes &amp; Best Practices</h2>
-<div class="admonition note">
-<p class="admonition-title">🔐 Recommendations</p>
+<h3 id="3-use-dockerignore">3. <strong>Use <code>.dockerignore</code></strong></h3>
 <ul>
-<li><strong>Always take a full backup</strong> after switching back to <code>FULL</code> to restart the log backup chain.</li>
-<li>Shrinking should be a one-time operation, not part of regular maintenance.</li>
-<li>Analyze why the file grew in the first place (e.g., large transactions, replication backlog).</li>
-<li>Rebuild indexes if fragmentation increases significantly after shrink.</li>
+<li>Prevent unnecessary files from being copied into the image.</li>
 </ul>
-</div>
-<hr />
-<h2 id="additional-references">📚 Additional References</h2>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>node_modules
+.git
+*.log
+Dockerfile
+</code></pre></div>
+<h3 id="4-avoid-installing-unnecessary-packages">4. <strong>Avoid Installing Unnecessary Packages</strong></h3>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-set-options">ALTER DATABASE – SET RECOVERY</a></li>
-<li><a href="https://learn.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql">DBCC SHRINKFILE</a></li>
-<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-database-files-transact-sql">sys.database_files</a></li>
+<li>
+<p>Keep your image clean and secure.</p>
+</li>
+<li>
+<p>Use <code>--no-install-recommends</code> with <code>apt</code>.</p>
+</li>
 </ul>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--no-install-recommends<span class="w"> </span>-y<span class="w"> </span>python3
+</code></pre></div>
+<h3 id="5-use-multi-stage-builds">5. <strong>Use Multi-Stage Builds</strong></h3>
+<ul>
+<li>Compile or build in one stage, copy only what’s needed to final image.</li>
+</ul>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.20</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>.
+
+<span class="k">FROM</span><span class="w"> </span><span class="s">alpine</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/app/main<span class="w"> </span>/main
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/main&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="6-set-a-non-root-user">6. <strong>Set a Non-Root User</strong></h3>
+<ul>
+<li>Reduce security risk by not running containers as <code>root</code>.</li>
+</ul>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">RUN</span><span class="w"> </span>addgroup<span class="w"> </span>-S<span class="w"> </span>appgroup<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>adduser<span class="w"> </span>-S<span class="w"> </span>appuser<span class="w"> </span>-G<span class="w"> </span>appgroup
+<span class="k">USER</span><span class="w"> </span><span class="s">appuser</span>
+</code></pre></div>
+<h3 id="7-use-copy-instead-of-add">7. <strong>Use <code>COPY</code> Instead of <code>ADD</code></strong></h3>
+<ul>
+<li><code>COPY</code> is more predictable. Use <code>ADD</code> only for auto-extracting archives or remote URLs.</li>
+</ul>
+<h3 id="8-use-labels-for-metadata">8. <strong>Use Labels for Metadata</strong></h3>
+<ul>
+<li>Add maintainer, version, description, etc.</li>
+</ul>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">LABEL</span><span class="w"> </span><span class="nv">maintainer</span><span class="o">=</span><span class="s2">&quot;yourname@example.com&quot;</span>
+<span class="k">LABEL</span><span class="w"> </span><span class="nv">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span>
+<span class="k">LABEL</span><span class="w"> </span><span class="nv">description</span><span class="o">=</span><span class="s2">&quot;My awesome app&quot;</span>
+</code></pre></div>
+<h3 id="9-specify-exact-version-numbers">9. <strong>Specify Exact Version Numbers</strong></h3>
+<ul>
+<li>Helps avoid unexpected updates or changes.</li>
+</ul>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">nginx</span><span class="o">=</span><span class="m">1</span>.18.*
+</code></pre></div>
+<h3 id="10-always-use-cmd-or-entrypoint-correctly">10. <strong>Always Use <code>CMD</code> or <code>ENTRYPOINT</code> Correctly</strong></h3>
+<ul>
+<li>
+<p><code>CMD</code> is the default command.</p>
+</li>
+<li>
+<p><code>ENTRYPOINT</code> is useful for scripts and passing arguments.</p>
+</li>
+</ul>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;nginx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-g&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;daemon off;&quot;</span><span class="p">]</span>
+</code></pre></div>
+<hr />
 
 
 

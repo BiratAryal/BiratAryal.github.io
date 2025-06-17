@@ -14,6 +14,8 @@
         <link rel="prev" href="../FileTruncation/">
       
       
+        <link rel="next" href="../../Docker/Introduction/">
+      
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#replicationtroubleshoot" class="md-skip">
+        <a href="#mssql-replication-debugging-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -337,6 +339,8 @@
       
         
       
+        
+      
     
     
     
@@ -542,6 +546,8 @@
       
         
       
+        
+      
     
     
     
@@ -560,7 +566,7 @@
   
   
   
-    <a href="../../Nginx/Nginx/" class="md-nav__link">
+    <a href="../../Nginx/Introduction/" class="md-nav__link">
       
   
   
@@ -722,6 +728,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Replication Troubleshoot
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -734,6 +753,166 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-check-what-kind-of-replication-is-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 1. Check What Kind of Replication Is Configured
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-check-replication-job-schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏰ 2. Check Replication Job Schedules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-identify-active-replication-agent-queries-and-high-cpu-consumers" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 3. Identify Active Replication Agent Queries and High CPU Consumers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 3. Identify Active Replication Agent Queries and High CPU Consumers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-monitor-live-high-cpu-queries-at-the-peak-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) Monitor live high CPU queries at the peak time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-filter-for-replication-agent-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Filter for replication agent queries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-discover-replication-publications-and-subscriptions-for-db01-db02-cdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 4. Discover Replication Publications and Subscriptions for DB01, DB02 → CDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-monitor-pending-replication-commands-replication-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 5. Monitor Pending Replication Commands (Replication Latency)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-automate-checking-all-replication-subscriptions-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 6. Automate Checking All Replication Subscriptions at Once
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-analyze-replicated-tables-for-performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 7. Analyze Replicated Tables for Performance Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-view-replication-agent-errors-and-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 8. View Replication Agent Errors and History
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-check-replication-agent-sql-server-agent-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 9. Check Replication Agent SQL Server Agent Jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-read-sql-server-error-logs-including-replication-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      📑 10. Read SQL Server Error Logs (Including Replication Errors)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-recommendations-for-performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧹 11. Recommendations for Performance Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Useful Links &amp; References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -741,6 +920,67 @@
             
           </ul>
         </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Docker/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -774,6 +1014,155 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-check-what-kind-of-replication-is-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 1. Check What Kind of Replication Is Configured
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-check-replication-job-schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏰ 2. Check Replication Job Schedules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-identify-active-replication-agent-queries-and-high-cpu-consumers" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 3. Identify Active Replication Agent Queries and High CPU Consumers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 3. Identify Active Replication Agent Queries and High CPU Consumers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-monitor-live-high-cpu-queries-at-the-peak-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) Monitor live high CPU queries at the peak time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-filter-for-replication-agent-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Filter for replication agent queries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-discover-replication-publications-and-subscriptions-for-db01-db02-cdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 4. Discover Replication Publications and Subscriptions for DB01, DB02 → CDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-monitor-pending-replication-commands-replication-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 5. Monitor Pending Replication Commands (Replication Latency)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-automate-checking-all-replication-subscriptions-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 6. Automate Checking All Replication Subscriptions at Once
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-analyze-replicated-tables-for-performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 7. Analyze Replicated Tables for Performance Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-view-replication-agent-errors-and-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 8. View Replication Agent Errors and History
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-check-replication-agent-sql-server-agent-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 9. Check Replication Agent SQL Server Agent Jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-read-sql-server-error-logs-including-replication-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      📑 10. Read SQL Server Error Logs (Including Replication Errors)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-recommendations-for-performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧹 11. Recommendations for Performance Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Useful Links &amp; References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -788,7 +1177,6 @@
 
 
 
-<h1 id="replicationtroubleshoot">ReplicationTroubleshoot</h1>
 <div class="admonition tip">
 <p class="admonition-title"><em>Written by</em></p>
 <p><strong>Birat Aryal</strong> on <strong>2025-06-17</strong></p>

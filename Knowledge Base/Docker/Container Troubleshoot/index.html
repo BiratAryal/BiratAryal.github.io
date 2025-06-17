@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/SQL/FileTruncation/">
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Docker/Container%20Troubleshoot/">
       
       
-        <link rel="prev" href="../DB_Details/">
+        <link rel="prev" href="../Docker%20Compose/">
       
-      
-        <link rel="next" href="../ReplicationTroubleshoot/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Truncatation - Birat Aryal Technical Docs</title>
+        <title>Troubleshoot - Birat Aryal Technical Docs</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-server-transaction-log-ldf-truncation-guide" class="md-skip">
+        <a href="#building-and-debugging-docker-images" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Truncatation
+              Troubleshoot
             
           </span>
         </div>
@@ -592,12 +590,73 @@
                 
   
   
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../SQL/Recovery_modes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
   
     
     
+      
+        
+      
+        
       
         
       
@@ -620,15 +679,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    SQL
+    Docker
     
   </span>
   
@@ -636,10 +695,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
-            SQL
+            Docker
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -650,12 +709,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Recovery_modes/" class="md-nav__link">
+      <a href="../Introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Recovery Modes
+    Introduction
     
   </span>
   
@@ -673,12 +732,81 @@
   
   
     <li class="md-nav__item">
-      <a href="../DB_Details/" class="md-nav__link">
+      <a href="../Components/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    DB Details
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Best%20Practise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Best Practise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Container%20Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker%20Compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Compose
     
   </span>
   
@@ -710,7 +838,7 @@
   
   
   <span class="md-ellipsis">
-    Truncatation
+    Troubleshoot
     
   </span>
   
@@ -723,7 +851,7 @@
   
   
   <span class="md-ellipsis">
-    Truncatation
+    Troubleshoot
     
   </span>
   
@@ -746,55 +874,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-identify-mdf-and-ldf-file-names" class="md-nav__link">
+  <a href="#building-docker-images" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 1. Identify MDF and LDF File Names
+      🏗 Building Docker Images
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-steps-to-truncate-and-shrink-the-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 2. Steps to Truncate and Shrink the Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧾 2. Steps to Truncate and Shrink the Files">
+    <nav class="md-nav" aria-label="🏗 Building Docker Images">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-issue-checkpoints" class="md-nav__link">
+  <a href="#basic-build-command" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Step 1: Issue Checkpoints
+      Basic Build Command
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-switch-recovery-model-to-simple" class="md-nav__link">
+  <a href="#specify-dockerfile-location" class="md-nav__link">
     <span class="md-ellipsis">
-      🔁 Step 2: Switch Recovery Model to SIMPLE
+      Specify Dockerfile Location
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-shrink-the-files" class="md-nav__link">
+  <a href="#add-build-arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      📉 Step 3: Shrink the Files
+      Add Build Arguments
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-revert-to-full-recovery-model" class="md-nav__link">
+  <a href="#build-with-no-cache" class="md-nav__link">
     <span class="md-ellipsis">
-      ♻️ Step 4: Revert to FULL Recovery Model
+      Build with No Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-only-specific-targets-multi-stage-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Only Specific Targets (Multi-stage Builds)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-image-size-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit Image Size (Best Practices)
     </span>
   </a>
   
@@ -806,29 +943,146 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-replace-with-your-values" class="md-nav__link">
+  <a href="#debugging-docker-builds" class="md-nav__link">
     <span class="md-ellipsis">
-      📝 Example (Replace with Your Values)
+      🐞 Debugging Docker Builds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐞 Debugging Docker Builds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-build-output-verbosely" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Build Output Verbosely
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#notes-best-practices" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#shell-access-during-build-interactive-debugging" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Notes &amp; Best Practices
+      Shell Access During Build (Interactive Debugging)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-references" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#export-and-analyze-image-layers" class="md-nav__link">
     <span class="md-ellipsis">
-      📚 Additional References
+      Export and Analyze Image Layers
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-intermediate-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect Intermediate Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-buildkit-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use BuildKit Debugging Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lint-and-validate-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lint and Validate Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-temporary-containers-to-test-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Temporary Containers to Test Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Testing Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-locally-and-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Locally and Verify
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-testing-with-docker-compose-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Testing with docker-compose + CI/CD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-and-share-built-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Export and Share Built Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Export and Share Built Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-and-load-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save and Load Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-to-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Push to Registry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -841,92 +1095,8 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ReplicationTroubleshoot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Replication Troubleshoot
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Docker/Introduction/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    Docker
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
       
     </li>
   
@@ -967,55 +1137,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-identify-mdf-and-ldf-file-names" class="md-nav__link">
+  <a href="#building-docker-images" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 1. Identify MDF and LDF File Names
+      🏗 Building Docker Images
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-steps-to-truncate-and-shrink-the-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 2. Steps to Truncate and Shrink the Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧾 2. Steps to Truncate and Shrink the Files">
+    <nav class="md-nav" aria-label="🏗 Building Docker Images">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-issue-checkpoints" class="md-nav__link">
+  <a href="#basic-build-command" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Step 1: Issue Checkpoints
+      Basic Build Command
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-switch-recovery-model-to-simple" class="md-nav__link">
+  <a href="#specify-dockerfile-location" class="md-nav__link">
     <span class="md-ellipsis">
-      🔁 Step 2: Switch Recovery Model to SIMPLE
+      Specify Dockerfile Location
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-shrink-the-files" class="md-nav__link">
+  <a href="#add-build-arguments" class="md-nav__link">
     <span class="md-ellipsis">
-      📉 Step 3: Shrink the Files
+      Add Build Arguments
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-revert-to-full-recovery-model" class="md-nav__link">
+  <a href="#build-with-no-cache" class="md-nav__link">
     <span class="md-ellipsis">
-      ♻️ Step 4: Revert to FULL Recovery Model
+      Build with No Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-only-specific-targets-multi-stage-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Only Specific Targets (Multi-stage Builds)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-image-size-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit Image Size (Best Practices)
     </span>
   </a>
   
@@ -1027,29 +1206,146 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-replace-with-your-values" class="md-nav__link">
+  <a href="#debugging-docker-builds" class="md-nav__link">
     <span class="md-ellipsis">
-      📝 Example (Replace with Your Values)
+      🐞 Debugging Docker Builds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐞 Debugging Docker Builds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-build-output-verbosely" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Build Output Verbosely
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#notes-best-practices" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#shell-access-during-build-interactive-debugging" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Notes &amp; Best Practices
+      Shell Access During Build (Interactive Debugging)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-references" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#export-and-analyze-image-layers" class="md-nav__link">
     <span class="md-ellipsis">
-      📚 Additional References
+      Export and Analyze Image Layers
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-intermediate-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect Intermediate Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-buildkit-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use BuildKit Debugging Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lint-and-validate-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lint and Validate Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-temporary-containers-to-test-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Temporary Containers to Test Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Testing Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-locally-and-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Locally and Verify
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-testing-with-docker-compose-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Testing with docker-compose + CI/CD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-and-share-built-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Export and Share Built Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Export and Share Built Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-and-load-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save and Load Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-to-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Push to Registry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1073,156 +1369,125 @@
 <p class="admonition-title"><em>Written by</em></p>
 <p><strong>Birat Aryal</strong> on <strong>2025-06-17</strong></p>
 </div>
-<h1 id="sql-server-transaction-log-ldf-truncation-guide">🗂 SQL Server Transaction Log (LDF) Truncation Guide</h1>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">LDF Truncate Guide</label><label for="__tabbed_1_2">MDF Truncate Guide</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>This guide demonstrates how to <strong>safely truncate and shrink the transaction log file (LDF)</strong> of a SQL Server database using T-SQL. It is useful when the log file grows too large due to:</p>
-<div class="admonition abstract">
-<p class="admonition-title">Use Cases</p>
+<h1 id="building-and-debugging-docker-images">🧪 Building and Debugging Docker Images</h1>
+<p>This guide covers best practices, useful options, and techniques for building and debugging Docker images efficiently and effectively.</p>
+<hr />
+<h2 id="building-docker-images">🏗 Building Docker Images</h2>
+<h3 id="basic-build-command">Basic Build Command</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>myapp:latest<span class="w"> </span>.
+</code></pre></div>
 <ul>
-<li>Long-running transactions</li>
-<li>Replication issues</li>
-<li>Missing backup chain or disabled log backups</li>
+<li>
+<p><code>-t</code>: Tags the image with a name and optionally a tag (default is <code>latest</code>)</p>
+</li>
+<li>
+<p><code>.</code>: Context path where the <code>Dockerfile</code> resides</p>
+</li>
 </ul>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Caution</p>
-<p>Always back up your database before performing these actions, especially when changing recovery models.</p>
-</div>
-</div>
-<div class="tabbed-block">
-<p>This guide explains how to <strong>safely shrink and truncate the data file (MDF)</strong> of a SQL Server database using T-SQL. It is especially useful when:</p>
-<div class="admonition abstract">
-<p class="admonition-title">Use Cases</p>
+<h3 id="specify-dockerfile-location">Specify Dockerfile Location</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-f<span class="w"> </span>path/to/Dockerfile<span class="w"> </span>.
+</code></pre></div>
+<h3 id="add-build-arguments">Add Build Arguments</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">VERSION</span><span class="o">=</span><span class="m">1</span>.2.3<span class="w"> </span>-t<span class="w"> </span>app:1.2.3<span class="w"> </span>.
+</code></pre></div>
 <ul>
-<li>The data file has grown significantly, and unused space is not being reclaimed automatically.</li>
-<li>Large amounts of data were deleted, archived, or moved.</li>
-<li>Issues like replication lag or long-running transactions have been resolved.</li>
+<li>Use <code>ARG</code> in Dockerfile to access this value</li>
 </ul>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Shrinking MDF files should be done cautiously and rarely in production. It can cause index fragmentation and impact performance.</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Caution</p>
-<p>Always back up your database before performing shrink operations and changing recovery models.</p>
-</div>
-</div>
-</div>
-</div>
-<hr />
-<h2 id="1-identify-mdf-and-ldf-file-names">📌 1. Identify MDF and LDF File Names</h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Run this query to get the logical and physical file names for your target database:</p>
-</div>
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">YourDatabaseName</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">GO</span>
-
-<span class="k">SELECT</span><span class="w"> </span>
-<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">LogicalFileName</span><span class="p">,</span>
-<span class="w">    </span><span class="n">physical_name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">PhysicalFilePath</span><span class="p">,</span>
-<span class="w">    </span><span class="n">type_desc</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">FileType</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">database_files</span><span class="p">;</span>
+<h3 id="build-with-no-cache">Build with No Cache</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>-t<span class="w"> </span>fresh-build<span class="w"> </span>.
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Replace <code>&lt;YourDatabaseName&gt;</code> with the actual name of your database.</p>
-</div>
-<hr />
-<h2 id="2-steps-to-truncate-and-shrink-the-files">🧾 2. Steps to Truncate and Shrink the Files</h2>
-<p>Follow these steps after identifying the correct file name.</p>
-<h3 id="step-1-issue-checkpoints">✅ Step 1: Issue Checkpoints</h3>
-<p>Flush dirty pages to disk before shrinking the database files:</p>
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">YourDatabaseName</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">GO</span>
-
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-</code></pre></div>
-<hr />
-<h3 id="step-2-switch-recovery-model-to-simple">🔁 Step 2: Switch Recovery Model to SIMPLE</h3>
-<p>Temporarily switch to the <code>SIMPLE</code> recovery model to allow truncation:</p>
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">YourDatabaseName</span><span class="o">&gt;</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">SIMPLE</span><span class="p">;</span>
-</code></pre></div>
-<hr />
-<h3 id="step-3-shrink-the-files">📉 Step 3: Shrink the Files</h3>
-<p>Shrink the transaction log file to a target size (e.g., 1,000 MB = 1 GB):</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">LDF</label><label for="__tabbed_2_2">MDF</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">DBCC</span><span class="w"> </span><span class="n">SHRINKFILE</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">YourLDFLogicalName</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">-- Size in MB</span>
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Replace <code>&lt;YourLDFLogicalName&gt;</code> with the actual logical name of the log file.</p>
-</div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">DBCC</span><span class="w"> </span><span class="n">SHRINKFILE</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">YourMDFLogicalName</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">-- Size in MB</span>
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Replace <code>&lt;YourMDFLogicalName&gt;</code> with the actual logical name of the data file.</p>
-</div>
-</div>
-</div>
-</div>
-<hr />
-<h3 id="step-4-revert-to-full-recovery-model">♻️ Step 4: Revert to FULL Recovery Model</h3>
-<p>Restore the original recovery model:</p>
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">YourDatabaseName</span><span class="o">&gt;</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">FULL</span><span class="p">;</span>
-</code></pre></div>
-<hr />
-<h2 id="example-replace-with-your-values">📝 Example (Replace with Your Values)</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">LDF Truncate</label><label for="__tabbed_3_2">MDF Truncate</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="p">;</span>
-<span class="k">GO</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-
-<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">SIMPLE</span><span class="p">;</span>
-<span class="n">DBCC</span><span class="w"> </span><span class="n">SHRINKFILE</span><span class="w"> </span><span class="p">(</span><span class="n">MyDatabase_Log</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
-<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">FULL</span><span class="p">;</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="p">;</span>
-<span class="k">GO</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-<span class="k">CHECKPOINT</span><span class="p">;</span>
-
-<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">SIMPLE</span><span class="p">;</span>
-<span class="n">DBCC</span><span class="w"> </span><span class="n">SHRINKFILE</span><span class="w"> </span><span class="p">(</span><span class="n">MyDatabase</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
-<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">MyDatabase</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">RECOVERY</span><span class="w"> </span><span class="k">FULL</span><span class="p">;</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<hr />
-<h2 id="notes-best-practices">📌 Notes &amp; Best Practices</h2>
-<div class="admonition note">
-<p class="admonition-title">🔐 Recommendations</p>
 <ul>
-<li><strong>Always take a full backup</strong> after switching back to <code>FULL</code> to restart the log backup chain.</li>
-<li>Shrinking should be a one-time operation, not part of regular maintenance.</li>
-<li>Analyze why the file grew in the first place (e.g., large transactions, replication backlog).</li>
-<li>Rebuild indexes if fragmentation increases significantly after shrink.</li>
+<li>Avoids using intermediate image cache layers</li>
 </ul>
-</div>
-<hr />
-<h2 id="additional-references">📚 Additional References</h2>
+<h3 id="build-only-specific-targets-multi-stage-builds">Build Only Specific Targets (Multi-stage Builds)</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>--target<span class="w"> </span>builder<span class="w"> </span>-t<span class="w"> </span>intermediate<span class="w"> </span>.
+</code></pre></div>
+<h3 id="limit-image-size-best-practices">Limit Image Size (Best Practices)</h3>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-set-options">ALTER DATABASE – SET RECOVERY</a></li>
-<li><a href="https://learn.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql">DBCC SHRINKFILE</a></li>
-<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-database-files-transact-sql">sys.database_files</a></li>
+<li>
+<p>Use minimal base images like <code>alpine</code></p>
+</li>
+<li>
+<p>Remove build dependencies after install</p>
+</li>
+<li>
+<p>Use <code>.dockerignore</code> to reduce context</p>
+</li>
 </ul>
+<hr />
+<h2 id="debugging-docker-builds">🐞 Debugging Docker Builds</h2>
+<h3 id="view-build-output-verbosely">View Build Output Verbosely</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>--progress<span class="o">=</span>plain<span class="w"> </span>.
+</code></pre></div>
+<ul>
+<li>Prints step-by-step output and environment details</li>
+</ul>
+<h3 id="shell-access-during-build-interactive-debugging">Shell Access During Build (Interactive Debugging)</h3>
+<p>Use temporary steps in Dockerfile:</p>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Debug here&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">3600</span>
+</code></pre></div>
+<p>Then <code>docker exec</code> into the container in another shell (use another build process or dev container).</p>
+<h3 id="export-and-analyze-image-layers">Export and Analyze Image Layers</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span><span class="nb">history</span><span class="w"> </span>myapp:latest
+</code></pre></div>
+<ul>
+<li>See size and command of each layer</li>
+</ul>
+<h3 id="inspect-intermediate-images">Inspect Intermediate Images</h3>
+<ol>
+<li>Enable buildkit:</li>
+</ol>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">DOCKER_BUILDKIT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>.
+</code></pre></div>
+<ol>
+<li>
+<p>Add debug lines in Dockerfile with <code>RUN sleep</code> or <code>RUN echo</code> commands</p>
+</li>
+<li>
+<p>Use <code>--target</code> to stop at a specific build stage</p>
+</li>
+</ol>
+<h3 id="use-buildkit-debugging-tools">Use BuildKit Debugging Tools</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">DOCKER_BUILDKIT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>--progress<span class="o">=</span>plain<span class="w"> </span>.
+</code></pre></div>
+<ul>
+<li>Enables more detailed output and progress bars</li>
+</ul>
+<h3 id="lint-and-validate-dockerfile">Lint and Validate Dockerfile</h3>
+<p>Use external tools like:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-i<span class="w"> </span>hadolint/hadolint<span class="w"> </span>&lt;<span class="w"> </span>Dockerfile
+</code></pre></div>
+<ul>
+<li><a href="https://github.com/hadolint/hadolint">Hadolint</a> is a linter for Dockerfiles</li>
+</ul>
+<h3 id="use-temporary-containers-to-test-commands">Use Temporary Containers to Test Commands</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>myimage<span class="w"> </span>/bin/sh
+</code></pre></div>
+<hr />
+<h2 id="testing-images">🧪 Testing Images</h2>
+<h3 id="run-locally-and-verify">Run Locally and Verify</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>myapp:latest<span class="w"> </span>/bin/sh
+</code></pre></div>
+<h3 id="automated-testing-with-docker-compose-cicd">Automated Testing with <code>docker-compose</code> + CI/CD</h3>
+<ul>
+<li>
+<p>Define test services with health checks</p>
+</li>
+<li>
+<p>Use <code>docker-compose run</code> or <code>docker-compose exec</code> to validate</p>
+</li>
+</ul>
+<hr />
+<h2 id="export-and-share-built-images">📦 Export and Share Built Images</h2>
+<h3 id="save-and-load-images">Save and Load Images</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>save<span class="w"> </span>myapp:latest<span class="w"> </span>-o<span class="w"> </span>myapp.tar
+docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>myapp.tar
+</code></pre></div>
+<h3 id="push-to-registry">Push to Registry</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>tag<span class="w"> </span>myapp:latest<span class="w"> </span>myregistry.com/myapp:latest
+docker<span class="w"> </span>push<span class="w"> </span>myregistry.com/myapp:latest
+</code></pre></div>
+<hr />
 
 
 

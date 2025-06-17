@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#db_details" class="md-skip">
+        <a href="#sql-server-and-table-insights" class="md-skip">
           Skip to content
         </a>
       
@@ -339,6 +339,8 @@
       
         
       
+        
+      
     
     
     
@@ -544,6 +546,8 @@
       
         
       
+        
+      
     
     
     
@@ -562,7 +566,7 @@
   
   
   
-    <a href="../../Nginx/Nginx/" class="md-nav__link">
+    <a href="../../Nginx/Introduction/" class="md-nav__link">
       
   
   
@@ -678,6 +682,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    DB Details
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -689,6 +706,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-verify-table-names-and-row-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 1. Verify Table Names and Row Counts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-table-size-in-mb" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 2. Get Table Size in MB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-list-all-stored-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 3. List All Stored Procedures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-list-all-user-defined-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 4. List All User-Defined Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-list-all-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗃 5. List All Indexes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Notes and Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Recommended Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Additional Reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -749,6 +857,67 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Docker/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -776,6 +945,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-verify-table-names-and-row-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 1. Verify Table Names and Row Counts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-table-size-in-mb" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 2. Get Table Size in MB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-list-all-stored-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 3. List All Stored Procedures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-list-all-user-defined-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 4. List All User-Defined Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-list-all-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗃 5. List All Indexes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Notes and Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Recommended Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Additional Reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -790,7 +1039,6 @@
 
 
 
-<h1 id="db_details">DB_Details</h1>
 <div class="admonition tip">
 <p class="admonition-title"><em>Written by</em></p>
 <p><strong>Birat Aryal</strong> on <strong>2025-06-17</strong></p>
