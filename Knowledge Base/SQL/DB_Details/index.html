@@ -121,19 +121,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -141,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -988,103 +978,118 @@
 <p>This document provides a set of SQL queries to explore and audit database objects in a Microsoft SQL Server environment. These queries help verify table sizes, row counts, indexes, procedures, and functions — useful for database health checks, performance tuning, and replication diagnostics.</p>
 <hr />
 <h2 id="1-verify-table-names-and-row-counts">📋 1. Verify Table Names and Row Counts</h2>
+<div class="admonition info">
 <p>This query returns all user tables with their corresponding row counts. It excludes system-generated or temporary tables like <code>dt%</code>.</p>
-<pre><code class="language-sql">SELECT 
-    t.NAME AS TableName,
-    p.rows AS RowCounts
-FROM 
-    sys.tables t
-INNER JOIN 
-    sys.indexes i ON t.OBJECT_ID = i.object_id
-INNER JOIN 
-    sys.partitions p ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
-WHERE 
-    t.NAME NOT LIKE 'dt%'
-    AND i.index_id &lt;= 1
-ORDER BY 
-    t.name ASC;
-</code></pre>
+</div>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">NAME</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="k">rows</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">RowCounts</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="n">tables</span><span class="w"> </span><span class="n">t</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="n">indexes</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">OBJECT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">object_id</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="n">partitions</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">object_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">OBJECT_ID</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">index_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">index_id</span>
+<span class="k">WHERE</span><span class="w"> </span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">NAME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;dt%&#39;</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">index_id</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="2-get-table-size-in-mb">📦 2. Get Table Size in MB</h2>
+<div class="admonition info">
 <p>This query provides a breakdown of total, used, and unused space (in MB) per table.</p>
-<pre><code class="language-sql">SELECT
-    s.Name AS SchemaName,
-    t.Name AS TableName,
-    p.rows AS NumRows,
-    CAST(ROUND((SUM(a.total_pages) / 128.00), 2) AS NUMERIC(36, 2)) AS Total_MB,
-    CAST(ROUND((SUM(a.used_pages) / 128.00), 2) AS NUMERIC(36, 2)) AS Used_MB,
-    CAST(ROUND((SUM(a.total_pages) - SUM(a.used_pages)) / 128.00, 2) AS NUMERIC(36, 2)) AS Unused_MB
-FROM
-    sys.tables t
-    JOIN sys.indexes i ON t.OBJECT_ID = i.object_id
-    JOIN sys.partitions p ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
-    JOIN sys.allocation_units a ON p.partition_id = a.container_id
-    LEFT OUTER JOIN sys.schemas s ON t.schema_id = s.schema_id
-WHERE
-    t.name NOT LIKE 'dt%'
-    AND t.is_ms_shipped = 0
-    AND i.object_id &gt; 255
-GROUP BY
-    t.Name, s.Name, p.Rows
-ORDER BY
-    Total_MB DESC, t.Name;
-</code></pre>
+</div>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">SchemaName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="k">rows</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NumRows</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CAST</span><span class="p">(</span><span class="n">ROUND</span><span class="p">((</span><span class="k">SUM</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">total_pages</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">128</span><span class="p">.</span><span class="mi">00</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Total_MB</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CAST</span><span class="p">(</span><span class="n">ROUND</span><span class="p">((</span><span class="k">SUM</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">used_pages</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">128</span><span class="p">.</span><span class="mi">00</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Used_MB</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CAST</span><span class="p">(</span><span class="n">ROUND</span><span class="p">((</span><span class="k">SUM</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">total_pages</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">used_pages</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">128</span><span class="p">.</span><span class="mi">00</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Unused_MB</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="n">tables</span><span class="w"> </span><span class="n">t</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">indexes</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">OBJECT_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">object_id</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">partitions</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">object_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">OBJECT_ID</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">index_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">index_id</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">allocation_units</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">partition_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">container_id</span>
+<span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">schemas</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">schema_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">schema_id</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;dt%&#39;</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">is_ms_shipped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">object_id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">255</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="k">Rows</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span>
+<span class="w">    </span><span class="n">Total_MB</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="3-list-all-stored-procedures">⚙️ 3. List All Stored Procedures</h2>
+<div class="admonition info">
 <p>Returns all stored procedures in the database, ordered alphabetically.</p>
-<pre><code class="language-sql">SELECT * 
-FROM sys.procedures 
-ORDER BY name ASC;
-</code></pre>
+</div>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">procedures</span><span class="w"> </span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="4-list-all-user-defined-functions">🧮 4. List All User-Defined Functions</h2>
+<div class="admonition info">
 <p>Displays scalar (<code>FN</code>, <code>FS</code>), inline table-valued (<code>IF</code>), and multi-statement table-valued (<code>TF</code>) functions with definitions.</p>
-<pre><code class="language-sql">SELECT 
-    o.name AS FunctionName,
-    o.type_desc AS ObjectType,
-    m.definition AS FunctionDefinition
-FROM 
-    sys.objects o
-JOIN 
-    sys.sql_modules m ON o.object_id = m.object_id
-WHERE 
-    o.type IN ('FN', 'IF', 'TF', 'FS', 'FT')
-ORDER BY 
-    o.name;
-</code></pre>
+</div>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">FunctionName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">type_desc</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ObjectType</span><span class="p">,</span>
+<span class="w">    </span><span class="n">m</span><span class="p">.</span><span class="n">definition</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">FunctionDefinition</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="n">objects</span><span class="w"> </span><span class="n">o</span>
+<span class="k">JOIN</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="n">sql_modules</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">object_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">object_id</span>
+<span class="k">WHERE</span><span class="w"> </span>
+<span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="k">type</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;FN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;IF&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;TF&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;FS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;FT&#39;</span><span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
+<span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="5-list-all-indexes">🗃 5. List All Indexes</h2>
+<div class="admonition info">
 <p>Displays index metadata, including uniqueness, primary key status, and whether the index is disabled.</p>
-<pre><code class="language-sql">SELECT 
-    OBJECT_NAME(i.OBJECT_ID) AS TableName,
-    i.name AS IndexName,
-    i.type_desc AS IndexType,
-    i.is_unique AS IsUnique,
-    i.is_primary_key AS IsPrimaryKey,
-    i.is_unique_constraint AS IsUniqueConstraint,
-    i.is_disabled AS IsDisabled
-FROM 
-    sys.indexes i
-INNER JOIN 
-    sys.tables t ON i.object_id = t.object_id
-WHERE 
-    t.NAME NOT LIKE 'dt%'
-ORDER BY 
-    TableName,
-    IndexName;
-</code></pre>
+</div>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">OBJECT_NAME</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">OBJECT_ID</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">i</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">IndexName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">i</span><span class="p">.</span><span class="n">type_desc</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">IndexType</span><span class="p">,</span>
+<span class="w">    </span><span class="n">i</span><span class="p">.</span><span class="n">is_unique</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">IsUnique</span><span class="p">,</span>
+<span class="w">    </span><span class="n">i</span><span class="p">.</span><span class="n">is_primary_key</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">IsPrimaryKey</span><span class="p">,</span>
+<span class="w">    </span><span class="n">i</span><span class="p">.</span><span class="n">is_unique_constraint</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">IsUniqueConstraint</span><span class="p">,</span>
+<span class="w">    </span><span class="n">i</span><span class="p">.</span><span class="n">is_disabled</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">IsDisabled</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="n">indexes</span><span class="w"> </span><span class="n">i</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="n">tables</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">object_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">object_id</span>
+<span class="k">WHERE</span><span class="w"> </span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">NAME</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;dt%&#39;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span>
+<span class="w">    </span><span class="n">TableName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">IndexName</span><span class="p">;</span>
+</code></pre></div>
 <h2 id="notes-and-best-practices">🔐 Notes and Best Practices</h2>
+<div class="admonition note">
 <ul>
 <li>Most queries exclude system tables (<code>dt%</code>) and system objects (<code>is_ms_shipped = 0</code>).</li>
 <li>Run these queries in <strong>SSMS</strong> (SQL Server Management Studio) or any T-SQL-compatible client.</li>
 <li>Adjust <code>WHERE</code> conditions if you have a different naming convention or wish to include system tables.</li>
 </ul>
+</div>
 <h2 id="recommended-use-cases">🛠 Recommended Use Cases</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ul>
 <li>Before configuring replication or migrating tables.</li>
 <li>During performance tuning to find large tables or missing indexes.</li>
 <li>For regular audits and reporting of database object metadata.</li>
 </ul>
+</div>
 <h2 id="additional-reading">📚 Additional Reading</h2>
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-tables-transact-sql">Microsoft Docs – sys.tables</a></li>

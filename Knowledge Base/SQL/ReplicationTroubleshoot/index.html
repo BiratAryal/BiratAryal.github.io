@@ -119,19 +119,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -139,7 +129,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -1134,163 +1124,163 @@ Including the queries for discovering parameters for <code>sp_replmonitorsubscri
 </ul>
 <hr />
 <h2 id="1-check-what-kind-of-replication-is-configured">🔍 1. Check What Kind of Replication Is Configured</h2>
-<pre><code class="language-sql">USE distribution;
-GO
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">distribution</span><span class="p">;</span>
+<span class="k">GO</span>
 
-SELECT 
-    pub.publisher_db,
-    pub.publication,
-    pub.publication_type,
-    CASE pub.publication_type
-        WHEN 0 THEN 'Transactional'
-        WHEN 1 THEN 'Snapshot'
-        WHEN 2 THEN 'Transactional with Updatable Subscriptions (deprecated)'
-        WHEN 3 THEN 'Peer-to-Peer Transactional'
-        WHEN 4 THEN 'Merge'
-        ELSE 'Unknown'
-    END AS replication_type
-FROM dbo.MSpublications pub;
-</code></pre>
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">pub</span><span class="p">.</span><span class="n">publisher_db</span><span class="p">,</span>
+<span class="w">    </span><span class="n">pub</span><span class="p">.</span><span class="n">publication</span><span class="p">,</span>
+<span class="w">    </span><span class="n">pub</span><span class="p">.</span><span class="n">publication_type</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CASE</span><span class="w"> </span><span class="n">pub</span><span class="p">.</span><span class="n">publication_type</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Transactional&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Snapshot&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Transactional with Updatable Subscriptions (deprecated)&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Peer-to-Peer Transactional&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Merge&#39;</span>
+<span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;Unknown&#39;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">replication_type</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">MSpublications</span><span class="w"> </span><span class="n">pub</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="2-check-replication-job-schedules">⏰ 2. Check Replication Job Schedules</h2>
-<pre><code class="language-sql">USE msdb;
-GO
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">msdb</span><span class="p">;</span>
+<span class="k">GO</span>
 
-SELECT 
-    j.name AS JobName,
-    s.next_run_date,
-    s.next_run_time
-FROM dbo.sysjobs j
-JOIN dbo.sysjobschedules js ON j.job_id = js.job_id
-JOIN dbo.sysschedules s ON js.schedule_id = s.schedule_id
-WHERE j.name LIKE '%snapshot%' OR j.name LIKE '%logreader%';
-</code></pre>
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">JobName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">next_run_date</span><span class="p">,</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">next_run_time</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">sysjobs</span><span class="w"> </span><span class="n">j</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">sysjobschedules</span><span class="w"> </span><span class="n">js</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">job_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="n">job_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">sysschedules</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="n">schedule_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">schedule_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%snapshot%&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%logreader%&#39;</span><span class="p">;</span>
+</code></pre></div>
 <blockquote>
 <p>Useful to identify when Snapshot or Log Reader Agents run (e.g., at 10:00 AM daily).</p>
 </blockquote>
 <hr />
 <h2 id="3-identify-active-replication-agent-queries-and-high-cpu-consumers">🔍 3. Identify Active Replication Agent Queries and High CPU Consumers</h2>
 <h3 id="a-monitor-live-high-cpu-queries-at-the-peak-time">a) Monitor live high CPU queries at the peak time</h3>
-<pre><code class="language-sql">SELECT 
-    r.session_id,
-    r.status,
-    r.command,
-    r.cpu_time,
-    r.total_elapsed_time,
-    r.start_time,
-    t.text AS query_text
-FROM sys.dm_exec_requests r
-CROSS APPLY sys.dm_exec_sql_text(r.sql_handle) t
-ORDER BY r.cpu_time DESC;
-</code></pre>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">session_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">status</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">command</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">cpu_time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">total_elapsed_time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">start_time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="nb">text</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">query_text</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">dm_exec_requests</span><span class="w"> </span><span class="n">r</span>
+<span class="k">CROSS</span><span class="w"> </span><span class="n">APPLY</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">dm_exec_sql_text</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">sql_handle</span><span class="p">)</span><span class="w"> </span><span class="n">t</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">cpu_time</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="b-filter-for-replication-agent-queries">b) Filter for replication agent queries</h3>
-<pre><code class="language-sql">SELECT 
-    s.session_id,
-    r.status,
-    r.command,
-    t.text AS query_text,
-    r.cpu_time,
-    r.start_time
-FROM sys.dm_exec_requests r
-JOIN sys.dm_exec_sessions s ON r.session_id = s.session_id
-CROSS APPLY sys.dm_exec_sql_text(r.sql_handle) t
-WHERE s.program_name LIKE '%Repl%';
-</code></pre>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">session_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">status</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">command</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="nb">text</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">query_text</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">cpu_time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">start_time</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">dm_exec_requests</span><span class="w"> </span><span class="n">r</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">dm_exec_sessions</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">session_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">session_id</span>
+<span class="k">CROSS</span><span class="w"> </span><span class="n">APPLY</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">dm_exec_sql_text</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">sql_handle</span><span class="p">)</span><span class="w"> </span><span class="n">t</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">program_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Repl%&#39;</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="4-discover-replication-publications-and-subscriptions-for-db01-db02-cdb">📋 4. Discover Replication Publications and Subscriptions for DB01, DB02 → CDB</h2>
 <p>Run this on the <strong>distribution</strong> database:</p>
-<pre><code class="language-sql">USE distribution;
-GO
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">distribution</span><span class="p">;</span>
+<span class="k">GO</span>
 
-SELECT 
-    a.publisher AS PublisherServer,
-    a.publisher_db AS PublisherDB,
-    a.publication AS PublicationName,
-    s.subscriber AS SubscriberServer,
-    s.subscriber_db AS SubscriberDB
-FROM MSpublications a
-JOIN MSsubscriptions s ON a.publication_id = s.publication_id
-WHERE a.publisher_db IN ('DB01', 'DB02')
-  AND s.subscriber_db = 'CDB'
-ORDER BY a.publisher_db, a.publication;
-</code></pre>
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">publisher</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">PublisherServer</span><span class="p">,</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">publisher_db</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">PublisherDB</span><span class="p">,</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">publication</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">PublicationName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">subscriber</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">SubscriberServer</span><span class="p">,</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">subscriber_db</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">SubscriberDB</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">MSpublications</span><span class="w"> </span><span class="n">a</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">MSsubscriptions</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">publication_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">publication_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">publisher_db</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;DB01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;DB02&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">subscriber_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;CDB&#39;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">publisher_db</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">publication</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="5-monitor-pending-replication-commands-replication-latency">📤 5. Monitor Pending Replication Commands (Replication Latency)</h2>
 <p>Using the output from the above query, run for each publication/subscription:</p>
-<pre><code class="language-sql">EXEC sp_replmonitorsubscriptionpendingcmds 
-    @publisher = '&lt;PublisherServer&gt;',
-    @publisher_db = '&lt;PublisherDB&gt;',
-    @publication = '&lt;PublicationName&gt;',
-    @subscriber = '&lt;SubscriberServer&gt;',
-    @subscriber_db = 'CDB';
-</code></pre>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">EXEC</span><span class="w"> </span><span class="n">sp_replmonitorsubscriptionpendingcmds</span><span class="w"> </span>
+<span class="w">    </span><span class="o">@</span><span class="n">publisher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;PublisherServer&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="o">@</span><span class="n">publisher_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;PublisherDB&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="o">@</span><span class="n">publication</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;PublicationName&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="o">@</span><span class="n">subscriber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;SubscriberServer&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="o">@</span><span class="n">subscriber_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;CDB&#39;</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="6-automate-checking-all-replication-subscriptions-at-once">🛠 6. Automate Checking All Replication Subscriptions at Once</h2>
 <p>Run this script in the <strong>distribution</strong> database to loop through all relevant subscriptions:</p>
-<pre><code class="language-sql">DECLARE @publisher sysname, @publisher_db sysname, @publication sysname, @subscriber sysname, @subscriber_db sysname;
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">publisher</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">publisher_db</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">publication</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber_db</span><span class="w"> </span><span class="n">sysname</span><span class="p">;</span>
 
-DECLARE subscription_cursor CURSOR FOR
-SELECT 
-    a.publisher,
-    a.publisher_db,
-    a.publication,
-    s.subscriber,
-    s.subscriber_db
-FROM MSpublications a
-JOIN MSsubscriptions s ON a.publication_id = s.publication_id
-WHERE a.publisher_db IN ('DB01', 'DB02')
-  AND s.subscriber_db = 'CDB';
+<span class="k">DECLARE</span><span class="w"> </span><span class="n">subscription_cursor</span><span class="w"> </span><span class="k">CURSOR</span><span class="w"> </span><span class="k">FOR</span>
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">publisher</span><span class="p">,</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">publisher_db</span><span class="p">,</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">publication</span><span class="p">,</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">subscriber</span><span class="p">,</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">subscriber_db</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">MSpublications</span><span class="w"> </span><span class="n">a</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">MSsubscriptions</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">publication_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">publication_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">publisher_db</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;DB01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;DB02&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">subscriber_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;CDB&#39;</span><span class="p">;</span>
 
-OPEN subscription_cursor;
-FETCH NEXT FROM subscription_cursor INTO @publisher, @publisher_db, @publication, @subscriber, @subscriber_db;
+<span class="k">OPEN</span><span class="w"> </span><span class="n">subscription_cursor</span><span class="p">;</span>
+<span class="k">FETCH</span><span class="w"> </span><span class="k">NEXT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">subscription_cursor</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">@</span><span class="n">publisher</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">publisher_db</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">publication</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber_db</span><span class="p">;</span>
 
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    PRINT 'Checking pending commands for publication: ' + @publication + ', subscriber: ' + @subscriber;
-    EXEC sp_replmonitorsubscriptionpendingcmds 
-        @publisher = @publisher,
-        @publisher_db = @publisher_db,
-        @publication = @publication,
-        @subscriber = @subscriber,
-        @subscriber_db = @subscriber_db;
+<span class="n">WHILE</span><span class="w"> </span><span class="o">@@</span><span class="n">FETCH_STATUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="n">PRINT</span><span class="w"> </span><span class="s1">&#39;Checking pending commands for publication: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">@</span><span class="n">publication</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;, subscriber: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber</span><span class="p">;</span>
+<span class="w">    </span><span class="k">EXEC</span><span class="w"> </span><span class="n">sp_replmonitorsubscriptionpendingcmds</span><span class="w"> </span>
+<span class="w">        </span><span class="o">@</span><span class="n">publisher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="n">publisher</span><span class="p">,</span>
+<span class="w">        </span><span class="o">@</span><span class="n">publisher_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="n">publisher_db</span><span class="p">,</span>
+<span class="w">        </span><span class="o">@</span><span class="n">publication</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="n">publication</span><span class="p">,</span>
+<span class="w">        </span><span class="o">@</span><span class="n">subscriber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber</span><span class="p">,</span>
+<span class="w">        </span><span class="o">@</span><span class="n">subscriber_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber_db</span><span class="p">;</span>
 
-    FETCH NEXT FROM subscription_cursor INTO @publisher, @publisher_db, @publication, @subscriber, @subscriber_db;
-END
+<span class="w">    </span><span class="k">FETCH</span><span class="w"> </span><span class="k">NEXT</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">subscription_cursor</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">@</span><span class="n">publisher</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">publisher_db</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">publication</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber_db</span><span class="p">;</span>
+<span class="k">END</span>
 
-CLOSE subscription_cursor;
-DEALLOCATE subscription_cursor;
-</code></pre>
+<span class="k">CLOSE</span><span class="w"> </span><span class="n">subscription_cursor</span><span class="p">;</span>
+<span class="k">DEALLOCATE</span><span class="w"> </span><span class="n">subscription_cursor</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="7-analyze-replicated-tables-for-performance-issues">🧱 7. Analyze Replicated Tables for Performance Issues</h2>
-<pre><code class="language-sql">-- Table size and space usage
-EXEC sp_spaceused 'YourTableName';
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="c1">-- Table size and space usage</span>
+<span class="k">EXEC</span><span class="w"> </span><span class="n">sp_spaceused</span><span class="w"> </span><span class="s1">&#39;YourTableName&#39;</span><span class="p">;</span>
 
--- Row count
-SELECT COUNT(*) FROM YourTableName;
+<span class="c1">-- Row count</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">YourTableName</span><span class="p">;</span>
 
--- Index info
-EXEC sp_helpindex 'YourTableName';
-</code></pre>
+<span class="c1">-- Index info</span>
+<span class="k">EXEC</span><span class="w"> </span><span class="n">sp_helpindex</span><span class="w"> </span><span class="s1">&#39;YourTableName&#39;</span><span class="p">;</span>
+</code></pre></div>
 <blockquote>
 <p>Ensure replicated tables have <strong>primary keys</strong> and proper indexing to minimize replication overhead.</p>
 </blockquote>
 <hr />
 <h2 id="8-view-replication-agent-errors-and-history">⚠️ 8. View Replication Agent Errors and History</h2>
-<pre><code class="language-sql">USE distribution;
-GO
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">distribution</span><span class="p">;</span>
+<span class="k">GO</span>
 
-SELECT 
-    h.agent_id,
-    a.name AS agent_name,
-    h.run_status,
-    h.run_duration,
-    h.run_date,
-    h.run_time,
-    h.[message]
-FROM dbo.MSdistribution_history h
-JOIN dbo.MSdistribution_agents a ON h.agent_id = a.id
-ORDER BY h.run_date DESC, h.run_time DESC;
-</code></pre>
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">agent_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">agent_name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">run_status</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">run_duration</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">run_date</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">run_time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.[</span><span class="n">message</span><span class="p">]</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">MSdistribution_history</span><span class="w"> </span><span class="n">h</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">MSdistribution_agents</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">agent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">run_date</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">run_time</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
 <p>Run status codes:</p>
 <ul>
 <li>1 = Success</li>
@@ -1301,18 +1291,18 @@ ORDER BY h.run_date DESC, h.run_time DESC;
 </ul>
 <hr />
 <h2 id="9-check-replication-agent-sql-server-agent-jobs">📂 9. Check Replication Agent SQL Server Agent Jobs</h2>
-<pre><code class="language-sql">-- List all replication-related jobs
-SELECT name FROM msdb.dbo.sysjobs WHERE name LIKE '%Repl%';
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="c1">-- List all replication-related jobs</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">msdb</span><span class="p">.</span><span class="n">dbo</span><span class="p">.</span><span class="n">sysjobs</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Repl%&#39;</span><span class="p">;</span>
 
--- Job history for a specific job
-EXEC msdb.dbo.sp_help_jobhistory 
-    @job_name = 'YourJobNameHere',
-    @mode = 'FULL';
-</code></pre>
+<span class="c1">-- Job history for a specific job</span>
+<span class="k">EXEC</span><span class="w"> </span><span class="n">msdb</span><span class="p">.</span><span class="n">dbo</span><span class="p">.</span><span class="n">sp_help_jobhistory</span><span class="w"> </span>
+<span class="w">    </span><span class="o">@</span><span class="n">job_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;YourJobNameHere&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="o">@</span><span class="k">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;FULL&#39;</span><span class="p">;</span>
+</code></pre></div>
 <hr />
 <h2 id="10-read-sql-server-error-logs-including-replication-errors">📑 10. Read SQL Server Error Logs (Including Replication Errors)</h2>
-<pre><code class="language-sql">EXEC xp_readerrorlog;
-</code></pre>
+<div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">EXEC</span><span class="w"> </span><span class="n">xp_readerrorlog</span><span class="p">;</span>
+</code></pre></div>
 <p>You can also view error logs via SSMS under <strong>SQL Server Agent → Error Logs</strong>.</p>
 <hr />
 <h2 id="11-recommendations-for-performance-optimization">🧹 11. Recommendations for Performance Optimization</h2>

@@ -121,19 +121,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -141,7 +131,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -667,15 +657,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-this-command-serves-the-static-site-from-the-md-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      - This command serves the static site from the md files.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#step-6-deploy-to-github-pages" class="md-nav__link">
     <span class="md-ellipsis">
       ☁️ Step 6: Deploy to GitHub Pages
@@ -930,15 +911,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-this-command-serves-the-static-site-from-the-md-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      - This command serves the static site from the md files.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#step-6-deploy-to-github-pages" class="md-nav__link">
     <span class="md-ellipsis">
       ☁️ Step 6: Deploy to GitHub Pages
@@ -985,47 +957,47 @@
 <p>Follow the steps below to set up your MkDocs documentation environment, customize your content, and deploy it to GitHub Pages.</p>
 <hr />
 <h2 id="step-1-navigate-to-the-documentation-directory">🚀 Step 1: Navigate to the Documentation Directory</h2>
-<pre><code class="language-bash">cd D:\ObsidianDocumentation\ObsidianDocumentation\documentations
-</code></pre>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="nb">cd </span><span class="n">D</span><span class="p">:\</span><span class="n">ObsidianDocumentation</span><span class="p">\</span><span class="n">ObsidianDocumentation</span><span class="p">\</span><span class="n">documentations</span>
+</code></pre></div>
 <hr />
 <h2 id="step-2-activate-python-virtual-environment">🐍 Step 2: Activate Python Virtual Environment</h2>
-<pre><code class="language-bash">venv\Scripts\activate
-</code></pre>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
+</code></pre></div>
 <p>If the virtual environment is not yet created, you can initialize it with:</p>
-<pre><code class="language-bash">python -m venv venv
-</code></pre>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">venv</span>
+</code></pre></div>
 <p>Then activate it as shown above.</p>
 <hr />
 <h2 id="step-3-install-dependencies">📦 Step 3: Install Dependencies</h2>
 <h3 id="one-time-setup-first-time-only">✅ One-Time Setup (First Time Only)</h3>
 <p>Create a <code>requirements.txt</code> file:</p>
-<pre><code class="language-bash">pip freeze &gt; requirements.txt
-</code></pre>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">pip</span> <span class="n">freeze</span> <span class="p">&gt;</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div>
 <h3 id="installing-dependencies">📥 Installing Dependencies</h3>
 <p>Install MkDocs Material:</p>
-<pre><code class="language-bash">pip install mkdocs-material
-</code></pre>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs-material</span>
+</code></pre></div>
 <p>Install additional requirements:</p>
-<pre><code class="language-bash">pip install -r requirements.txt
-</code></pre>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div>
 <hr />
 <h2 id="step-4-customize-your-documentation">📝 Step 4: Customize Your Documentation</h2>
 <p>Make necessary content changes inside the <code>docs/</code> directory based on your requirements.</p>
 <hr />
 <h2 id="step-5-build-the-documentation-site">🛠️ Step 5: Build the Documentation Site</h2>
-<pre><code class="language-bash">mkdocs build
-</code></pre>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">mkdocs</span> <span class="n">build</span>
+</code></pre></div>
 <ul>
 <li>This command generates a static site inside the <code>site/</code> directory.</li>
 </ul>
-<pre><code class="language-bash">mkdocs serve
-</code></pre>
-<h2 id="-this-command-serves-the-static-site-from-the-md-files">- This command serves the static site from the md files.</h2>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">mkdocs</span> <span class="n">serve</span>
+</code></pre></div>
 <h2 id="step-6-deploy-to-github-pages">☁️ Step 6: Deploy to GitHub Pages</h2>
 <ol>
 <li>
 <p><strong>Create a new GitHub repository</strong> with the format:</p>
-<p><code>&lt;your-username&gt;.github.io</code></p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>&lt;your-username&gt;.github.io
+</code></pre></div>
 </li>
 <li>
 <p>Make the repository <strong>public</strong>.</p>
@@ -1040,14 +1012,14 @@
 <hr />
 <h2 id="step-7-configure-gitignore">📄 Step 7: Configure <code>.gitignore</code></h2>
 <p>To avoid pushing unnecessary files, create a <code>.gitignore</code> file in your documentation root with the following content:</p>
-<pre><code>venv/
+<div class="highlight"><span class="filename">.gitignore</span><pre><span></span><code>venv/
 site/
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="step-8-access-your-website">🌐 Step 8: Access Your Website</h2>
 <p>Once the files are pushed, your documentation will be live at:</p>
-<pre><code>https://&lt;your-username&gt;.github.io
-</code></pre>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>https://&lt;your-username&gt;.github.io
+</code></pre></div>
 <hr />
 
 
