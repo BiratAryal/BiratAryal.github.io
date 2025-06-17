@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mssql-replication-debugging-guide" class="md-skip">
+        <a href="#replicationtroubleshoot" class="md-skip">
           Skip to content
         </a>
       
@@ -722,19 +722,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Replication Troubleshoot
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -746,166 +733,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-check-what-kind-of-replication-is-configured" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 1. Check What Kind of Replication Is Configured
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-check-replication-job-schedules" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⏰ 2. Check Replication Job Schedules
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-identify-active-replication-agent-queries-and-high-cpu-consumers" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 3. Identify Active Replication Agent Queries and High CPU Consumers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔍 3. Identify Active Replication Agent Queries and High CPU Consumers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-monitor-live-high-cpu-queries-at-the-peak-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      a) Monitor live high CPU queries at the peak time
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-filter-for-replication-agent-queries" class="md-nav__link">
-    <span class="md-ellipsis">
-      b) Filter for replication agent queries
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-discover-replication-publications-and-subscriptions-for-db01-db02-cdb" class="md-nav__link">
-    <span class="md-ellipsis">
-      📋 4. Discover Replication Publications and Subscriptions for DB01, DB02 → CDB
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-monitor-pending-replication-commands-replication-latency" class="md-nav__link">
-    <span class="md-ellipsis">
-      📤 5. Monitor Pending Replication Commands (Replication Latency)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-automate-checking-all-replication-subscriptions-at-once" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠 6. Automate Checking All Replication Subscriptions at Once
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-analyze-replicated-tables-for-performance-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 7. Analyze Replicated Tables for Performance Issues
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-view-replication-agent-errors-and-history" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ 8. View Replication Agent Errors and History
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-check-replication-agent-sql-server-agent-jobs" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 9. Check Replication Agent SQL Server Agent Jobs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-read-sql-server-error-logs-including-replication-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      📑 10. Read SQL Server Error Logs (Including Replication Errors)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-recommendations-for-performance-optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧹 11. Recommendations for Performance Optimization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-links-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 Useful Links &amp; References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -947,155 +774,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-check-what-kind-of-replication-is-configured" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 1. Check What Kind of Replication Is Configured
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-check-replication-job-schedules" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⏰ 2. Check Replication Job Schedules
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-identify-active-replication-agent-queries-and-high-cpu-consumers" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 3. Identify Active Replication Agent Queries and High CPU Consumers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔍 3. Identify Active Replication Agent Queries and High CPU Consumers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-monitor-live-high-cpu-queries-at-the-peak-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      a) Monitor live high CPU queries at the peak time
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-filter-for-replication-agent-queries" class="md-nav__link">
-    <span class="md-ellipsis">
-      b) Filter for replication agent queries
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-discover-replication-publications-and-subscriptions-for-db01-db02-cdb" class="md-nav__link">
-    <span class="md-ellipsis">
-      📋 4. Discover Replication Publications and Subscriptions for DB01, DB02 → CDB
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-monitor-pending-replication-commands-replication-latency" class="md-nav__link">
-    <span class="md-ellipsis">
-      📤 5. Monitor Pending Replication Commands (Replication Latency)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-automate-checking-all-replication-subscriptions-at-once" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠 6. Automate Checking All Replication Subscriptions at Once
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-analyze-replicated-tables-for-performance-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 7. Analyze Replicated Tables for Performance Issues
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-view-replication-agent-errors-and-history" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ 8. View Replication Agent Errors and History
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-check-replication-agent-sql-server-agent-jobs" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 9. Check Replication Agent SQL Server Agent Jobs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-read-sql-server-error-logs-including-replication-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      📑 10. Read SQL Server Error Logs (Including Replication Errors)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-recommendations-for-performance-optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧹 11. Recommendations for Performance Optimization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-links-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 Useful Links &amp; References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1110,6 +788,11 @@
 
 
 
+<h1 id="replicationtroubleshoot">ReplicationTroubleshoot</h1>
+<div class="admonition tip">
+<p class="admonition-title"><em>Written by</em></p>
+<p><strong>Birat Aryal</strong> on <strong>2025-06-17</strong></p>
+</div>
 <p><strong>MSSQL Replication Debugging Guide</strong> 
 Including the queries for discovering parameters for <code>sp_replmonitorsubscriptionpendingcmds</code> and customized for your DB01, DB02 → CDB scenario:</p>
 <h1 id="mssql-replication-debugging-guide">📘 MSSQL Replication Debugging Guide</h1>
@@ -1148,8 +831,9 @@ Including the queries for discovering parameters for <code>sp_replmonitorsubscri
 
 <span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">JobName</span><span class="p">,</span>
-<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">next_run_date</span><span class="p">,</span>
-<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">next_run_time</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ScheduleName</span><span class="p">,</span>
+<span class="w">    </span><span class="n">js</span><span class="p">.</span><span class="n">next_run_date</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NextRunDate</span><span class="p">,</span>
+<span class="w">    </span><span class="n">js</span><span class="p">.</span><span class="n">next_run_time</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">NextRunTime</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">sysjobs</span><span class="w"> </span><span class="n">j</span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">sysjobschedules</span><span class="w"> </span><span class="n">js</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">job_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="n">job_id</span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">sysschedules</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">js</span><span class="p">.</span><span class="n">schedule_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">schedule_id</span>
@@ -1217,6 +901,9 @@ Including the queries for discovering parameters for <code>sp_replmonitorsubscri
 <hr />
 <h2 id="6-automate-checking-all-replication-subscriptions-at-once">🛠 6. Automate Checking All Replication Subscriptions at Once</h2>
 <p>Run this script in the <strong>distribution</strong> database to loop through all relevant subscriptions:</p>
+<div class="admonition tip">
+<p class="admonition-title">Not working Need to update</p>
+</div>
 <div class="highlight"><span class="filename">SQL</span><pre><span></span><code><span class="k">DECLARE</span><span class="w"> </span><span class="o">@</span><span class="n">publisher</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">publisher_db</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">publication</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">subscriber_db</span><span class="w"> </span><span class="n">sysname</span><span class="p">;</span>
 
 <span class="k">DECLARE</span><span class="w"> </span><span class="n">subscription_cursor</span><span class="w"> </span><span class="k">CURSOR</span><span class="w"> </span><span class="k">FOR</span>
@@ -1272,14 +959,20 @@ Including the queries for discovering parameters for <code>sp_replmonitorsubscri
 <span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">agent_id</span><span class="p">,</span>
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">agent_name</span><span class="p">,</span>
-<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">run_status</span><span class="p">,</span>
-<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">run_duration</span><span class="p">,</span>
-<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">run_date</span><span class="p">,</span>
-<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">run_time</span><span class="p">,</span>
-<span class="w">    </span><span class="n">h</span><span class="p">.[</span><span class="n">message</span><span class="p">]</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">runstatus</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">duration</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">start_time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="k">time</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">end_time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">comments</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">xact_seqno</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">delivery_latency</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">delivery_rate</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">delivered_commands</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">delivered_transactions</span><span class="p">,</span>
+<span class="w">    </span><span class="n">h</span><span class="p">.</span><span class="n">error_id</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">MSdistribution_history</span><span class="w"> </span><span class="n">h</span>
 <span class="k">JOIN</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">MSdistribution_agents</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">agent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">run_date</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">run_time</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="k">time</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </code></pre></div>
 <p>Run status codes:</p>
 <ul>

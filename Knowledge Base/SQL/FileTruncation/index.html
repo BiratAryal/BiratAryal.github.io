@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sql-server-transaction-log-ldf-truncation-guide" class="md-skip">
+        <a href="#filetruncation" class="md-skip">
           Skip to content
         </a>
       
@@ -701,19 +701,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Truncatation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -725,112 +712,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-identify-mdf-and-ldf-file-names" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 1. Identify MDF and LDF File Names
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-steps-to-truncate-and-shrink-the-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 2. Steps to Truncate and Shrink the Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧾 2. Steps to Truncate and Shrink the Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-issue-checkpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 1: Issue Checkpoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-switch-recovery-model-to-simple" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 Step 2: Switch Recovery Model to SIMPLE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-shrink-the-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      📉 Step 3: Shrink the Files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-revert-to-full-recovery-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      ♻️ Step 4: Revert to FULL Recovery Model
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-replace-with-your-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      📝 Example (Replace with Your Values)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Notes &amp; Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 Additional References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -895,101 +776,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-identify-mdf-and-ldf-file-names" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 1. Identify MDF and LDF File Names
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-steps-to-truncate-and-shrink-the-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 2. Steps to Truncate and Shrink the Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧾 2. Steps to Truncate and Shrink the Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-issue-checkpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Step 1: Issue Checkpoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-switch-recovery-model-to-simple" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 Step 2: Switch Recovery Model to SIMPLE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-shrink-the-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      📉 Step 3: Shrink the Files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-revert-to-full-recovery-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      ♻️ Step 4: Revert to FULL Recovery Model
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-replace-with-your-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      📝 Example (Replace with Your Values)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Notes &amp; Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      📚 Additional References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1004,6 +790,11 @@
 
 
 
+<h1 id="filetruncation">FileTruncation</h1>
+<div class="admonition tip">
+<p class="admonition-title"><em>Written by</em></p>
+<p><strong>Birat Aryal</strong> on <strong>2025-06-17</strong></p>
+</div>
 <h1 id="sql-server-transaction-log-ldf-truncation-guide">🗂 SQL Server Transaction Log (LDF) Truncation Guide</h1>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">LDF Truncate Guide</label><label for="__tabbed_1_2">MDF Truncate Guide</label></div>
 <div class="tabbed-content">
