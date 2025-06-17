@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Git/Git/">
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/SQL/FileTruncation/">
       
       
-        <link rel="prev" href="../../..">
+        <link rel="prev" href="../DB_Details/">
       
       
-        <link rel="next" href="../../Mkdocs/Mkdocs/">
+        <link rel="next" href="../ReplicationTroubleshoot/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Git Intro - Birat Aryal Technical Docs</title>
+        <title>Truncatation - Birat Aryal Technical Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-commands-cheat-sheet" class="md-skip">
+        <a href="#sql-server-transaction-log-ldf-truncation-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git Intro
+              Truncatation
             
           </span>
         </div>
@@ -445,33 +445,33 @@
                 
   
   
+  
+  
     
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
   
   
-    
-    
+    <a href="../../Git/Git/" class="md-nav__link">
       
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -480,242 +480,12 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            Git
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Git Intro
-    
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Git Intro
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#git-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Git Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-global-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Git Global Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initialize-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      📁 Initialize &amp; Clone
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-setup-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 Project Setup Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-status-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Check Status &amp; Logs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-commit-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      ➕ Add &amp; Commit Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#push-pull" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⬆️ Push &amp; ⬇️ Pull
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branching" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌿 Branching
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undo-reset-revert" class="md-nav__link">
-    <span class="md-ellipsis">
-      💥 Undo / Reset / Revert
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stash-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Stash Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tagging" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 Tagging
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collaborating-remote" class="md-nav__link">
-    <span class="md-ellipsis">
-      🤝 Collaborating (Remote)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Misc &amp; Utilities
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧭 Common Workflows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧭 Common Workflows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#feature-branch-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Feature Branch Workflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#release-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 Release Workflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hotfix-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🐞 Hotfix Workflow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -828,39 +598,39 @@
                 
   
   
-  
-  
     
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
   
   
   
-    <a href="../../SQL/Recovery_modes/" class="md-nav__link">
+    
+    
       
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -869,12 +639,221 @@
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            SQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Recovery_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recovery Modes
+    
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB_Details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DB Details
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Truncatation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Truncatation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-identify-mdf-and-ldf-file-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 1. Identify MDF and LDF File Names
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-steps-to-truncate-and-shrink-the-ldf-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 2. Steps to Truncate and Shrink the LDF File
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧾 2. Steps to Truncate and Shrink the LDF File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-issue-checkpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Step 1: Issue Checkpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-switch-recovery-model-to-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Step 2: Switch Recovery Model to SIMPLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-shrink-the-log-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      📉 Step 3: Shrink the Log File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-revert-to-full-recovery-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      ♻️ Step 4: Revert to FULL Recovery Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-replace-with-your-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Example (Replace with Your Values)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ReplicationTroubleshoot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Replication Troubleshoot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -915,154 +894,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-configuration" class="md-nav__link">
+  <a href="#1-identify-mdf-and-ldf-file-names" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Git Configuration
+      📌 1. Identify MDF and LDF File Names
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-global-configuration" class="md-nav__link">
+  <a href="#2-steps-to-truncate-and-shrink-the-ldf-file" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Git Global Configuration
+      🧾 2. Steps to Truncate and Shrink the LDF File
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initialize-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      📁 Initialize &amp; Clone
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-setup-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 Project Setup Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-status-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Check Status &amp; Logs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-commit-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      ➕ Add &amp; Commit Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#push-pull" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⬆️ Push &amp; ⬇️ Pull
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branching" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌿 Branching
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undo-reset-revert" class="md-nav__link">
-    <span class="md-ellipsis">
-      💥 Undo / Reset / Revert
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stash-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Stash Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tagging" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 Tagging
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collaborating-remote" class="md-nav__link">
-    <span class="md-ellipsis">
-      🤝 Collaborating (Remote)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Misc &amp; Utilities
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧭 Common Workflows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧭 Common Workflows">
+    <nav class="md-nav" aria-label="🧾 2. Steps to Truncate and Shrink the LDF File">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#feature-branch-workflow" class="md-nav__link">
+  <a href="#step-1-issue-checkpoints" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Feature Branch Workflow
+      ✅ Step 1: Issue Checkpoints
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#release-workflow" class="md-nav__link">
+  <a href="#step-2-switch-recovery-model-to-simple" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 Release Workflow
+      🔁 Step 2: Switch Recovery Model to SIMPLE
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hotfix-workflow" class="md-nav__link">
+  <a href="#step-3-shrink-the-log-file" class="md-nav__link">
     <span class="md-ellipsis">
-      🐞 Hotfix Workflow
+      📉 Step 3: Shrink the Log File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-revert-to-full-recovery-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      ♻️ Step 4: Revert to FULL Recovery Model
     </span>
   </a>
   
@@ -1070,6 +950,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-replace-with-your-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Example (Replace with Your Values)
+    </span>
+  </a>
   
 </li>
       
@@ -1089,403 +978,137 @@
 
 
 
-<h1 id="git-commands-cheat-sheet">🧠 Git Commands Cheat Sheet</h1>
 <hr />
-<h2 id="git-configuration">📌 Git Configuration</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git config --global user.name "Birat Aryal"</code></td>
-<td>Set your name (used in commits)</td>
-</tr>
-<tr>
-<td><code>git config --global user.email "Email address"</code></td>
-<td>Set your email</td>
-</tr>
-<tr>
-<td><code>git config --list</code></td>
-<td>List all Git config values</td>
-</tr>
-<tr>
-<td><code>git config --global core.editor code</code></td>
-<td>Set default editor (e.g., VS Code)</td>
-</tr>
-</tbody>
-</table>
+<h1 id="sql-server-transaction-log-ldf-truncation-guide">🗂 SQL Server Transaction Log (LDF) Truncation Guide</h1>
+<p>This guide demonstrates how to <strong>safely truncate and shrink the transaction log file (LDF)</strong> of a SQL Server database using T-SQL. It's useful when the log file grows too large due to long-running transactions, replication issues, or a missing backup chain.</p>
+<blockquote>
+<p>⚠️ <strong>Caution</strong>: Always back up your database before performing these actions, especially when changing recovery models.</p>
+</blockquote>
 <hr />
-<h2 id="git-global-configuration">📌 Git Global Configuration</h2>
-<hr />
-<h2 id="initialize-clone">📁 Initialize &amp; Clone</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git init</code></td>
-<td>Initialize a new Git repository</td>
-</tr>
-<tr>
-<td><code>git clone &lt;url&gt;</code></td>
-<td>Clone an existing repo</td>
-</tr>
-<tr>
-<td><code>git clone &lt;url&gt; &lt;folder&gt;</code></td>
-<td>Clone into a specific folder</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="project-setup-steps">📂 Project Setup Steps</h2>
-<table>
-<thead>
-<tr>
-<th>Step</th>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1️⃣</td>
-<td><code>echo "# Automation" &gt;&gt; README.md</code></td>
-<td>Creates a <code>README.md</code> file with the title "Automation".</td>
-</tr>
-<tr>
-<td>2️⃣</td>
-<td><code>git init</code></td>
-<td>Initializes a new Git repository in the current directory.</td>
-</tr>
-<tr>
-<td>3️⃣</td>
-<td><code>git add README.md</code></td>
-<td>Stages the <code>README.md</code> file for the first commit.</td>
-</tr>
-<tr>
-<td>4️⃣</td>
-<td><code>git commit -m "first commit"</code></td>
-<td>Commits the staged file with a message.</td>
-</tr>
-<tr>
-<td>5️⃣</td>
-<td><code>git branch -M master</code></td>
-<td>Renames the default branch to <code>master</code>.</td>
-</tr>
-<tr>
-<td>6️⃣</td>
-<td><code>git remote add origin git@github.com:BiratAryal/Automation.git</code></td>
-<td>Sets the remote repository URL.</td>
-</tr>
-<tr>
-<td>7️⃣</td>
-<td><code>git push -u origin master</code></td>
-<td>Pushes the code to GitHub and sets upstream tracking.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="check-status-logs">🔍 Check Status &amp; Logs</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git status</code></td>
-<td>Show changed files &amp; staging status</td>
-</tr>
-<tr>
-<td><code>git log</code></td>
-<td>View commit history</td>
-</tr>
-<tr>
-<td><code>git log --oneline</code></td>
-<td>View compact commit history</td>
-</tr>
-<tr>
-<td><code>git diff</code></td>
-<td>Show unstaged changes</td>
-</tr>
-<tr>
-<td><code>git diff --staged</code></td>
-<td>Show staged changes</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="add-commit-changes">➕ Add &amp; Commit Changes</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git add &lt;file&gt;</code></td>
-<td>Stage a specific file</td>
-</tr>
-<tr>
-<td><code>git add .</code></td>
-<td>Stage all modified files</td>
-</tr>
-<tr>
-<td><code>git commit -m "message"</code></td>
-<td>Commit with a message</td>
-</tr>
-<tr>
-<td><code>git commit -am "message"</code></td>
-<td>Add &amp; commit tracked files only</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="push-pull">⬆️ Push &amp; ⬇️ Pull</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git push</code></td>
-<td>Push changes to remote</td>
-</tr>
-<tr>
-<td><code>git push -u origin &lt;branch&gt;</code></td>
-<td>Push and set upstream</td>
-</tr>
-<tr>
-<td><code>git pull</code></td>
-<td>Fetch and merge from remote</td>
-</tr>
-<tr>
-<td><code>git fetch</code></td>
-<td>Only fetch, don’t merge</td>
-</tr>
-<tr>
-<td><code>git remote -v</code></td>
-<td>Show remote URLs</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="branching">🌿 Branching</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git branch</code></td>
-<td>List local branches</td>
-</tr>
-<tr>
-<td><code>git branch &lt;name&gt;</code></td>
-<td>Create a new branch</td>
-</tr>
-<tr>
-<td><code>git checkout &lt;branch&gt;</code></td>
-<td>Switch to a branch</td>
-</tr>
-<tr>
-<td><code>git checkout -b &lt;branch&gt;</code></td>
-<td>Create &amp; switch branch</td>
-</tr>
-<tr>
-<td><code>git branch -d &lt;branch&gt;</code></td>
-<td>Delete a branch</td>
-</tr>
-<tr>
-<td><code>git merge &lt;branch&gt;</code></td>
-<td>Merge another branch into current</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="undo-reset-revert">💥 Undo / Reset / Revert</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git restore &lt;file&gt;</code></td>
-<td>Discard changes in a file</td>
-</tr>
-<tr>
-<td><code>git restore --staged &lt;file&gt;</code></td>
-<td>Unstage a file</td>
-</tr>
-<tr>
-<td><code>git reset HEAD~1</code></td>
-<td>Undo last commit, keep changes</td>
-</tr>
-<tr>
-<td><code>git revert &lt;commit&gt;</code></td>
-<td>Create a new commit that undoes an old one</td>
-</tr>
-<tr>
-<td><code>git reset --hard</code></td>
-<td>Remove all local changes (⚠️ irreversible)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="stash-changes">🔍 Stash Changes</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git stash</code></td>
-<td>Save changes temporarily</td>
-</tr>
-<tr>
-<td><code>git stash list</code></td>
-<td>List stashed changes</td>
-</tr>
-<tr>
-<td><code>git stash apply</code></td>
-<td>Reapply last stash</td>
-</tr>
-<tr>
-<td><code>git stash drop</code></td>
-<td>Delete the latest stash</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="tagging">🔗 Tagging</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git tag</code></td>
-<td>List all tags</td>
-</tr>
-<tr>
-<td><code>git tag &lt;name&gt;</code></td>
-<td>Create a lightweight tag</td>
-</tr>
-<tr>
-<td><code>git tag -a &lt;name&gt; -m "msg"</code></td>
-<td>Annotated tag</td>
-</tr>
-<tr>
-<td><code>git push origin &lt;tag&gt;</code></td>
-<td>Push tag to remote</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="collaborating-remote">🤝 Collaborating (Remote)</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git remote add origin &lt;url&gt;</code></td>
-<td>Add a new remote</td>
-</tr>
-<tr>
-<td><code>git push origin --tags</code></td>
-<td>Push all tags to remote</td>
-</tr>
-<tr>
-<td><code>git remote remove origin</code></td>
-<td>Remove remote</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="misc-utilities">🧪 Misc &amp; Utilities</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git show &lt;commit&gt;</code></td>
-<td>Show details of a commit</td>
-</tr>
-<tr>
-<td><code>git blame &lt;file&gt;</code></td>
-<td>Show who modified each line</td>
-</tr>
-<tr>
-<td><code>git clean -fd</code></td>
-<td>Remove untracked files &amp; folders</td>
-</tr>
-<tr>
-<td><code>git reflog</code></td>
-<td>Log of all HEAD movements (recover lost commits)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="common-workflows">🧭 Common Workflows</h2>
-<h3 id="feature-branch-workflow">✅ Feature Branch Workflow</h3>
-<pre><code class="language-bash">git checkout -b feature/xyz
-# work &amp; commit
-git push origin feature/xyz
+<h2 id="1-identify-mdf-and-ldf-file-names">📌 1. Identify MDF and LDF File Names</h2>
+<p>Run this query to get the logical names of the <code>.mdf</code> and <code>.ldf</code> files for your target database:</p>
+<pre><code class="language-sql">USE &lt;YourDatabaseName&gt;;
+GO
+
+SELECT 
+    name AS LogicalFileName,
+    physical_name AS PhysicalFilePath,
+    type_desc AS FileType
+FROM 
+    sys.database_files;
 </code></pre>
-<h3 id="release-workflow">🚀 Release Workflow</h3>
-<pre><code class="language-bash">git checkout -b release/v1.0
-git merge develop
-</code></pre>
-<h3 id="hotfix-workflow">🐞 Hotfix Workflow</h3>
-<pre><code class="language-bash">git checkout -b hotfix/bug-123 main
-# fix &amp; commit
-git push origin hotfix/bug-123
+<blockquote>
+<p>Replace <code>&lt;YourDatabaseName&gt;</code> with the actual database name you're working on.</p>
+</blockquote>
+<hr />
+<h2 id="2-steps-to-truncate-and-shrink-the-ldf-file">🧾 2. Steps to Truncate and Shrink the LDF File</h2>
+<p>Follow these steps <strong>after identifying</strong> the LDF file name.</p>
+<h3 id="step-1-issue-checkpoints">✅ Step 1: Issue Checkpoints</h3>
+<p>Flush dirty pages to disk before shrinking:</p>
+<pre><code class="language-sql">USE &lt;YourDatabaseName&gt;;
+GO
+
+CHECKPOINT;
+CHECKPOINT;
 </code></pre>
 <hr />
+<h3 id="step-2-switch-recovery-model-to-simple">🔁 Step 2: Switch Recovery Model to SIMPLE</h3>
+<p>Temporarily switch to <code>SIMPLE</code> to allow automatic log truncation:</p>
+<pre><code class="language-sql">ALTER DATABASE &lt;YourDatabaseName&gt;
+SET RECOVERY SIMPLE;
+</code></pre>
+<hr />
+<h3 id="step-3-shrink-the-log-file">📉 Step 3: Shrink the Log File</h3>
+<p>Shrink the transaction log file to a target size (e.g., 1,000 MB = 1 GB):</p>
+<pre><code class="language-sql">DBCC SHRINKFILE (&lt;YourLDFLogicalName&gt;, 1000);  -- Size in MB
+</code></pre>
+<ul>
+<li><code>&lt;YourLDFLogicalName&gt;</code> is the logical name of the log file (from Step 1).</li>
+</ul>
+<hr />
+<h3 id="step-4-revert-to-full-recovery-model">♻️ Step 4: Revert to FULL Recovery Model</h3>
+<p>Switch back to <code>FULL</code> recovery model:</p>
+<pre><code class="language-sql">ALTER DATABASE &lt;YourDatabaseName&gt;
+SET RECOVERY FULL;
+</code></pre>
+<hr />
+<h2 id="example-replace-with-your-values">📝 Example (Replace with Your Values)</h2>
+<pre><code class="language-sql">USE MyDatabase;
+CHECKPOINT;
+CHECKPOINT;
+
+ALTER DATABASE MyDatabase SET RECOVERY SIMPLE;
+DBCC SHRINKFILE (MyDatabase_Log, 1000);
+ALTER DATABASE MyDatabase SET RECOVERY FULL;
+</code></pre>
+<hr />
+<h1 id="sql-server-data-file-mdf-truncation-guide">🗂 SQL Server Data File (MDF) Truncation Guide</h1>
+<p>This guide demonstrates how to <strong>safely truncate and shrink the transaction log file (LDF)</strong> of a SQL Server database using T-SQL. It's useful when the log file grows too large due to long-running transactions, replication issues, or a missing backup chain.</p>
+<blockquote>
+<p>⚠️ <strong>Caution</strong>: Always back up your database before performing these actions, especially when changing recovery models.</p>
+</blockquote>
+<hr />
+<h2 id="2-steps-to-truncate-and-shrink-the-mdf-file">🧾 2. Steps to Truncate and Shrink the MDF File</h2>
+<p>Follow these steps <strong>after identifying</strong> the MDF file name.</p>
+<h3 id="step-1-issue-checkpoints_1">✅ Step 1: Issue Checkpoints</h3>
+<p>Flush dirty pages to disk before shrinking:</p>
+<pre><code class="language-sql">USE &lt;YourDatabaseName&gt;;
+GO
+
+CHECKPOINT;
+CHECKPOINT;
+</code></pre>
+<hr />
+<h3 id="step-2-switch-recovery-model-to-simple_1">🔁 Step 2: Switch Recovery Model to SIMPLE</h3>
+<p>Temporarily switch to <code>SIMPLE</code> to allow truncation:</p>
+<pre><code class="language-sql">ALTER DATABASE &lt;YourDatabaseName&gt;
+SET RECOVERY SIMPLE;
+</code></pre>
+<hr />
+<h3 id="step-3-shrink-the-mdf-file">📉 Step 3: Shrink the MDF File</h3>
+<p>Shrink the transaction log file to a target size (e.g., 1,000 MB = 1 GB):</p>
+<pre><code class="language-sql">DBCC SHRINKFILE (&lt;YourLDFLogicalName&gt;, 1000);  -- Size in MB
+</code></pre>
+<ul>
+<li><code>&lt;YourLDFLogicalName&gt;</code> is the logical name of the data file (from Step 1).</li>
+</ul>
+<hr />
+<h3 id="step-4-revert-to-full-recovery-model_1">♻️ Step 4: Revert to FULL Recovery Model</h3>
+<p>Switch back to <code>FULL</code> recovery model:</p>
+<pre><code class="language-sql">ALTER DATABASE &lt;YourDatabaseName&gt;
+SET RECOVERY FULL;
+</code></pre>
+<h2 id="example-replace-with-your-values_1">📝 Example (Replace with Your Values)</h2>
+<pre><code class="language-sql">USE MyDatabase;
+CHECKPOINT;
+CHECKPOINT;
+
+ALTER DATABASE MyDatabase SET RECOVERY SIMPLE;
+DBCC SHRINKFILE (MyDatabase, 1000);
+ALTER DATABASE MyDatabase SET RECOVERY FULL;
+</code></pre>
+<hr />
+<h2 id="notes-and-best-practices">🔐 Notes and Best Practices</h2>
+<ul>
+<li><strong>Always take a full backup</strong> after switching back to <code>FULL</code> to reinitialize the log backup chain.</li>
+<li>Avoid shrinking logs frequently—it can lead to fragmentation.</li>
+<li>Consider analyzing <strong>why the log grew</strong> (e.g., long-running transactions, missing backups, replication backlog).</li>
+</ul>
+<hr />
+<h2 id="recommended-use-cases">🛠 Recommended Use Cases</h2>
+<h2 id="-before-configuring-replication-or-migrating-tables">- Before configuring replication or migrating tables.</h2>
+<h2 id="additional-reading">📚 Additional Reading</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-set-options">ALTER DATABASE – SET RECOVERY</a></li>
+<li><a href="https://learn.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql">DBCC SHRINKFILE</a></li>
+<li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-database-files-transact-sql">sys.database_files</a></li>
+</ul>
 
 
 
 
 
 
-
-  
-  
 
 
 

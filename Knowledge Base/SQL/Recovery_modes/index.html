@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Git/Git/">
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/SQL/Recovery_modes/">
       
       
-        <link rel="prev" href="../../..">
+        <link rel="prev" href="../../Nginx/Nginx/">
       
       
-        <link rel="next" href="../../Mkdocs/Mkdocs/">
+        <link rel="next" href="../DB_Details/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Git Intro - Birat Aryal Technical Docs</title>
+        <title>Recovery Modes - Birat Aryal Technical Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-commands-cheat-sheet" class="md-skip">
+        <a href="#sql-server-recovery-models-overview-and-use-cases" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git Intro
+              Recovery Modes
             
           </span>
         </div>
@@ -445,33 +445,33 @@
                 
   
   
+  
+  
     
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
   
   
-    
-    
+    <a href="../../Git/Git/" class="md-nav__link">
       
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
@@ -480,242 +480,12 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            Git
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Git Intro
-    
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Git Intro
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#git-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Git Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-global-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Git Global Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initialize-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      📁 Initialize &amp; Clone
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-setup-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 Project Setup Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-status-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Check Status &amp; Logs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-commit-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      ➕ Add &amp; Commit Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#push-pull" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⬆️ Push &amp; ⬇️ Pull
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branching" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌿 Branching
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undo-reset-revert" class="md-nav__link">
-    <span class="md-ellipsis">
-      💥 Undo / Reset / Revert
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stash-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Stash Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tagging" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 Tagging
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collaborating-remote" class="md-nav__link">
-    <span class="md-ellipsis">
-      🤝 Collaborating (Remote)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Misc &amp; Utilities
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧭 Common Workflows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧭 Common Workflows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#feature-branch-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Feature Branch Workflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#release-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 Release Workflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hotfix-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      🐞 Hotfix Workflow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -828,39 +598,39 @@
                 
   
   
-  
-  
     
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
   
   
   
-    <a href="../../SQL/Recovery_modes/" class="md-nav__link">
+    
+    
       
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -869,12 +639,203 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            SQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-        <span class="md-nav__icon md-icon"></span>
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-    </a>
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Recovery Modes
+    
+  </span>
   
 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recovery Modes
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-recovery-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      📑 Types of Recovery Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📑 Types of Recovery Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-full-recovery-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 🔁 FULL Recovery Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-simple-recovery-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 🧹 SIMPLE Recovery Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bulk-logged-recovery-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. ⚖️ BULK-LOGGED Recovery Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-between-recovery-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Switching Between Recovery Models
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DB_Details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DB Details
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FileTruncation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Truncatation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ReplicationTroubleshoot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Replication Troubleshoot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -915,154 +876,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-configuration" class="md-nav__link">
+  <a href="#types-of-recovery-models" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Git Configuration
+      📑 Types of Recovery Models
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-global-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Git Global Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initialize-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      📁 Initialize &amp; Clone
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-setup-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 Project Setup Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-status-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Check Status &amp; Logs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-commit-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      ➕ Add &amp; Commit Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#push-pull" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⬆️ Push &amp; ⬇️ Pull
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branching" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌿 Branching
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#undo-reset-revert" class="md-nav__link">
-    <span class="md-ellipsis">
-      💥 Undo / Reset / Revert
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stash-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔍 Stash Changes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tagging" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 Tagging
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collaborating-remote" class="md-nav__link">
-    <span class="md-ellipsis">
-      🤝 Collaborating (Remote)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Misc &amp; Utilities
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧭 Common Workflows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧭 Common Workflows">
+    <nav class="md-nav" aria-label="📑 Types of Recovery Models">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#feature-branch-workflow" class="md-nav__link">
+  <a href="#1-full-recovery-model" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Feature Branch Workflow
+      1. 🔁 FULL Recovery Model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#release-workflow" class="md-nav__link">
+  <a href="#2-simple-recovery-model" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 Release Workflow
+      2. 🧹 SIMPLE Recovery Model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hotfix-workflow" class="md-nav__link">
+  <a href="#3-bulk-logged-recovery-model" class="md-nav__link">
     <span class="md-ellipsis">
-      🐞 Hotfix Workflow
+      3. ⚖️ BULK-LOGGED Recovery Model
     </span>
   </a>
   
@@ -1070,6 +914,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-between-recovery-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Switching Between Recovery Models
+    </span>
+  </a>
   
 </li>
       
@@ -1089,403 +942,63 @@
 
 
 
-<h1 id="git-commands-cheat-sheet">🧠 Git Commands Cheat Sheet</h1>
+<h1 id="sql-server-recovery-models-overview-and-use-cases">🧭 SQL Server Recovery Models – Overview and Use Cases</h1>
+<p>In SQL Server, <strong>Recovery Models</strong> determine how transaction logs are maintained and how data recovery works. Choosing the right recovery model is essential for balancing <strong>data safety</strong>, <strong>performance</strong>, and <strong>storage</strong>.</p>
 <hr />
-<h2 id="git-configuration">📌 Git Configuration</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git config --global user.name "Birat Aryal"</code></td>
-<td>Set your name (used in commits)</td>
-</tr>
-<tr>
-<td><code>git config --global user.email "Email address"</code></td>
-<td>Set your email</td>
-</tr>
-<tr>
-<td><code>git config --list</code></td>
-<td>List all Git config values</td>
-</tr>
-<tr>
-<td><code>git config --global core.editor code</code></td>
-<td>Set default editor (e.g., VS Code)</td>
-</tr>
-</tbody>
-</table>
+<h2 id="types-of-recovery-models">📑 Types of Recovery Models</h2>
+<h3 id="1-full-recovery-model">1. 🔁 FULL Recovery Model</h3>
+<p><strong>Description</strong>:<br />
+All transactions are fully logged. Requires regular transaction log backups.</p>
+<p><strong>Use Cases</strong>:
+- Production environments where <strong>no data loss</strong> is acceptable.
+- Systems requiring <strong>point-in-time recovery</strong> (e.g., critical financial or e-commerce databases).
+- Supports <strong>log shipping</strong>, <strong>database mirroring</strong>, <strong>replication</strong>, and <strong>Always On</strong>.</p>
+<p><strong>Pros</strong>:
+- Complete data recovery possible.
+- Suitable for high availability and disaster recovery.</p>
+<p><strong>Cons</strong>:
+- Log file grows unless regular backups are taken.
+- Requires more storage for log files.</p>
 <hr />
-<h2 id="git-global-configuration">📌 Git Global Configuration</h2>
+<h3 id="2-simple-recovery-model">2. 🧹 SIMPLE Recovery Model</h3>
+<p><strong>Description</strong>:<br />
+Minimal logging; transaction logs are auto-truncated on checkpoint.</p>
+<p><strong>Use Cases</strong>:
+- Dev/test environments where <strong>data loss is acceptable</strong>.
+- Data warehouses where <strong>point-in-time recovery is not needed</strong>.
+- Short-term temporary databases.</p>
+<p><strong>Pros</strong>:
+- Less log maintenance.
+- Smaller log files.</p>
+<p><strong>Cons</strong>:
+- No point-in-time recovery.
+- Not compatible with log backups, replication, or Always On.</p>
 <hr />
-<h2 id="initialize-clone">📁 Initialize &amp; Clone</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git init</code></td>
-<td>Initialize a new Git repository</td>
-</tr>
-<tr>
-<td><code>git clone &lt;url&gt;</code></td>
-<td>Clone an existing repo</td>
-</tr>
-<tr>
-<td><code>git clone &lt;url&gt; &lt;folder&gt;</code></td>
-<td>Clone into a specific folder</td>
-</tr>
-</tbody>
-</table>
+<h3 id="3-bulk-logged-recovery-model">3. ⚖️ BULK-LOGGED Recovery Model</h3>
+<p><strong>Description</strong>:<br />
+Like FULL model, but allows minimal logging for certain <strong>bulk operations</strong>.</p>
+<p><strong>Use Cases</strong>:
+- Large data loads or index rebuilds <strong>where performance is critical</strong>.
+- Temporary switch during ETL or staging jobs.</p>
+<p><strong>Pros</strong>:
+- Better performance during bulk inserts, BCP, <code>SELECT INTO</code>, etc.
+- Still allows recovery to the end of the last log backup (not point-in-time).</p>
+<p><strong>Cons</strong>:
+- Point-in-time recovery is not possible during bulk operations.
+- Not suitable for regular usage unless needed during specific tasks.</p>
 <hr />
-<h2 id="project-setup-steps">📂 Project Setup Steps</h2>
-<table>
-<thead>
-<tr>
-<th>Step</th>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1️⃣</td>
-<td><code>echo "# Automation" &gt;&gt; README.md</code></td>
-<td>Creates a <code>README.md</code> file with the title "Automation".</td>
-</tr>
-<tr>
-<td>2️⃣</td>
-<td><code>git init</code></td>
-<td>Initializes a new Git repository in the current directory.</td>
-</tr>
-<tr>
-<td>3️⃣</td>
-<td><code>git add README.md</code></td>
-<td>Stages the <code>README.md</code> file for the first commit.</td>
-</tr>
-<tr>
-<td>4️⃣</td>
-<td><code>git commit -m "first commit"</code></td>
-<td>Commits the staged file with a message.</td>
-</tr>
-<tr>
-<td>5️⃣</td>
-<td><code>git branch -M master</code></td>
-<td>Renames the default branch to <code>master</code>.</td>
-</tr>
-<tr>
-<td>6️⃣</td>
-<td><code>git remote add origin git@github.com:BiratAryal/Automation.git</code></td>
-<td>Sets the remote repository URL.</td>
-</tr>
-<tr>
-<td>7️⃣</td>
-<td><code>git push -u origin master</code></td>
-<td>Pushes the code to GitHub and sets upstream tracking.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="check-status-logs">🔍 Check Status &amp; Logs</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git status</code></td>
-<td>Show changed files &amp; staging status</td>
-</tr>
-<tr>
-<td><code>git log</code></td>
-<td>View commit history</td>
-</tr>
-<tr>
-<td><code>git log --oneline</code></td>
-<td>View compact commit history</td>
-</tr>
-<tr>
-<td><code>git diff</code></td>
-<td>Show unstaged changes</td>
-</tr>
-<tr>
-<td><code>git diff --staged</code></td>
-<td>Show staged changes</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="add-commit-changes">➕ Add &amp; Commit Changes</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git add &lt;file&gt;</code></td>
-<td>Stage a specific file</td>
-</tr>
-<tr>
-<td><code>git add .</code></td>
-<td>Stage all modified files</td>
-</tr>
-<tr>
-<td><code>git commit -m "message"</code></td>
-<td>Commit with a message</td>
-</tr>
-<tr>
-<td><code>git commit -am "message"</code></td>
-<td>Add &amp; commit tracked files only</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="push-pull">⬆️ Push &amp; ⬇️ Pull</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git push</code></td>
-<td>Push changes to remote</td>
-</tr>
-<tr>
-<td><code>git push -u origin &lt;branch&gt;</code></td>
-<td>Push and set upstream</td>
-</tr>
-<tr>
-<td><code>git pull</code></td>
-<td>Fetch and merge from remote</td>
-</tr>
-<tr>
-<td><code>git fetch</code></td>
-<td>Only fetch, don’t merge</td>
-</tr>
-<tr>
-<td><code>git remote -v</code></td>
-<td>Show remote URLs</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="branching">🌿 Branching</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git branch</code></td>
-<td>List local branches</td>
-</tr>
-<tr>
-<td><code>git branch &lt;name&gt;</code></td>
-<td>Create a new branch</td>
-</tr>
-<tr>
-<td><code>git checkout &lt;branch&gt;</code></td>
-<td>Switch to a branch</td>
-</tr>
-<tr>
-<td><code>git checkout -b &lt;branch&gt;</code></td>
-<td>Create &amp; switch branch</td>
-</tr>
-<tr>
-<td><code>git branch -d &lt;branch&gt;</code></td>
-<td>Delete a branch</td>
-</tr>
-<tr>
-<td><code>git merge &lt;branch&gt;</code></td>
-<td>Merge another branch into current</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="undo-reset-revert">💥 Undo / Reset / Revert</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git restore &lt;file&gt;</code></td>
-<td>Discard changes in a file</td>
-</tr>
-<tr>
-<td><code>git restore --staged &lt;file&gt;</code></td>
-<td>Unstage a file</td>
-</tr>
-<tr>
-<td><code>git reset HEAD~1</code></td>
-<td>Undo last commit, keep changes</td>
-</tr>
-<tr>
-<td><code>git revert &lt;commit&gt;</code></td>
-<td>Create a new commit that undoes an old one</td>
-</tr>
-<tr>
-<td><code>git reset --hard</code></td>
-<td>Remove all local changes (⚠️ irreversible)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="stash-changes">🔍 Stash Changes</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git stash</code></td>
-<td>Save changes temporarily</td>
-</tr>
-<tr>
-<td><code>git stash list</code></td>
-<td>List stashed changes</td>
-</tr>
-<tr>
-<td><code>git stash apply</code></td>
-<td>Reapply last stash</td>
-</tr>
-<tr>
-<td><code>git stash drop</code></td>
-<td>Delete the latest stash</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="tagging">🔗 Tagging</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git tag</code></td>
-<td>List all tags</td>
-</tr>
-<tr>
-<td><code>git tag &lt;name&gt;</code></td>
-<td>Create a lightweight tag</td>
-</tr>
-<tr>
-<td><code>git tag -a &lt;name&gt; -m "msg"</code></td>
-<td>Annotated tag</td>
-</tr>
-<tr>
-<td><code>git push origin &lt;tag&gt;</code></td>
-<td>Push tag to remote</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="collaborating-remote">🤝 Collaborating (Remote)</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git remote add origin &lt;url&gt;</code></td>
-<td>Add a new remote</td>
-</tr>
-<tr>
-<td><code>git push origin --tags</code></td>
-<td>Push all tags to remote</td>
-</tr>
-<tr>
-<td><code>git remote remove origin</code></td>
-<td>Remove remote</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="misc-utilities">🧪 Misc &amp; Utilities</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git show &lt;commit&gt;</code></td>
-<td>Show details of a commit</td>
-</tr>
-<tr>
-<td><code>git blame &lt;file&gt;</code></td>
-<td>Show who modified each line</td>
-</tr>
-<tr>
-<td><code>git clean -fd</code></td>
-<td>Remove untracked files &amp; folders</td>
-</tr>
-<tr>
-<td><code>git reflog</code></td>
-<td>Log of all HEAD movements (recover lost commits)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="common-workflows">🧭 Common Workflows</h2>
-<h3 id="feature-branch-workflow">✅ Feature Branch Workflow</h3>
-<pre><code class="language-bash">git checkout -b feature/xyz
-# work &amp; commit
-git push origin feature/xyz
-</code></pre>
-<h3 id="release-workflow">🚀 Release Workflow</h3>
-<pre><code class="language-bash">git checkout -b release/v1.0
-git merge develop
-</code></pre>
-<h3 id="hotfix-workflow">🐞 Hotfix Workflow</h3>
-<pre><code class="language-bash">git checkout -b hotfix/bug-123 main
-# fix &amp; commit
-git push origin hotfix/bug-123
-</code></pre>
-<hr />
+<h2 id="switching-between-recovery-models">🔄 Switching Between Recovery Models</h2>
+<p>You can change recovery models using:</p>
+<p>```sql
+ALTER DATABASE <YourDatabaseName> SET RECOVERY SIMPLE;
+ALTER DATABASE <YourDatabaseName> SET RECOVERY FULL;
+ALTER DATABASE <YourDatabaseName> SET RECOVERY BULK_LOGGED;</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
