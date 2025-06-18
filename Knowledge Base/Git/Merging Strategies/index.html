@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Mkdocs/Mkdocs/">
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Git/Merging%20Strategies/">
       
       
-        <link rel="prev" href="../../Git/Merging%20Strategies/">
+        <link rel="prev" href="../Git/">
       
       
-        <link rel="next" href="../../Nginx/Introduction/">
+        <link rel="next" href="../../Mkdocs/Mkdocs/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Getting Started - Birat Aryal Technical Docs</title>
+        <title>Merge Strategy - Birat Aryal Technical Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setting-up-and-deploying-mkdocs-documentation" class="md-skip">
+        <a href="#git-merging-strategies-detailed-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Merge Strategy
             
           </span>
         </div>
@@ -439,65 +439,14 @@
                 
   
   
+    
+  
   
   
     
     
       
         
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Git/Git/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    Git
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
       
         
       
@@ -514,15 +463,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Mkdocs
+    Git
     
   </span>
   
@@ -530,12 +479,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            Mkdocs
+            Git
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -558,7 +530,7 @@
   
   
   <span class="md-ellipsis">
-    Getting Started
+    Merge Strategy
     
   </span>
   
@@ -571,7 +543,7 @@
   
   
   <span class="md-ellipsis">
-    Getting Started
+    Merge Strategy
     
   </span>
   
@@ -594,46 +566,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-navigate-to-the-documentation-directory" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 Step 1: Navigate to the Documentation Directory
+      🧭 Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-activate-python-virtual-environment" class="md-nav__link">
+  <a href="#why-merging-strategies-matter" class="md-nav__link">
     <span class="md-ellipsis">
-      🐍 Step 2: Activate Python Virtual Environment
+      ❓ Why Merging Strategies Matter
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-install-dependencies" class="md-nav__link">
+  <a href="#common-git-merging-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Step 3: Install Dependencies
+      🔀 Common Git Merging Strategies
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 Step 3: Install Dependencies">
+    <nav class="md-nav" aria-label="🔀 Common Git Merging Strategies">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#one-time-setup-first-time-only" class="md-nav__link">
+  <a href="#1-recursive-default" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ One-Time Setup (First Time Only)
+      1. Recursive (Default)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing-dependencies" class="md-nav__link">
+  <a href="#2-resolve" class="md-nav__link">
     <span class="md-ellipsis">
-      📥 Installing Dependencies
+      2. Resolve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-octopus" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Octopus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ours" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ours
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-subtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Subtree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-squash" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Squash ✅
     </span>
   </a>
   
@@ -645,45 +653,102 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-customize-your-documentation" class="md-nav__link">
+  <a href="#fast-forward-vs-no-fast-forward" class="md-nav__link">
     <span class="md-ellipsis">
-      📝 Step 4: Customize Your Documentation
+      ⏩ Fast-forward vs. No Fast-forward
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏩ Fast-forward vs. No Fast-forward">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-forward-ff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast-forward (--ff)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-fast-forward-no-ff" class="md-nav__link">
+    <span class="md-ellipsis">
+      No Fast-forward (--no-ff)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 Real-world Use Cases
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-build-the-documentation-site" class="md-nav__link">
+  <a href="#merge-vs-squash-vs-rebase-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ Step 5: Build the Documentation Site
+      📊 Merge vs Squash vs Rebase – Comparison
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-deploy-to-github-pages" class="md-nav__link">
+  <a href="#workflow-recommendations" class="md-nav__link">
     <span class="md-ellipsis">
-      ☁️ Step 6: Deploy to GitHub Pages
+      ⚙️ Workflow Recommendations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Workflow Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-gitlab-merge-requests-pr-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub / GitLab Merge Requests (PR Model)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-rebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚧 Interactive Rebase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Best Practices
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-configure-gitignore" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      📄 Step 7: Configure .gitignore
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-access-your-website" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌐 Step 8: Access Your Website
+      📚 References
     </span>
   </a>
   
@@ -700,6 +765,57 @@
             
           </ul>
         </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Mkdocs/Mkdocs/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Mkdocs
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -962,46 +1078,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-navigate-to-the-documentation-directory" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 Step 1: Navigate to the Documentation Directory
+      🧭 Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-activate-python-virtual-environment" class="md-nav__link">
+  <a href="#why-merging-strategies-matter" class="md-nav__link">
     <span class="md-ellipsis">
-      🐍 Step 2: Activate Python Virtual Environment
+      ❓ Why Merging Strategies Matter
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-install-dependencies" class="md-nav__link">
+  <a href="#common-git-merging-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Step 3: Install Dependencies
+      🔀 Common Git Merging Strategies
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 Step 3: Install Dependencies">
+    <nav class="md-nav" aria-label="🔀 Common Git Merging Strategies">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#one-time-setup-first-time-only" class="md-nav__link">
+  <a href="#1-recursive-default" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ One-Time Setup (First Time Only)
+      1. Recursive (Default)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing-dependencies" class="md-nav__link">
+  <a href="#2-resolve" class="md-nav__link">
     <span class="md-ellipsis">
-      📥 Installing Dependencies
+      2. Resolve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-octopus" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Octopus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ours" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ours
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-subtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Subtree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-squash" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Squash ✅
     </span>
   </a>
   
@@ -1013,45 +1165,102 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-customize-your-documentation" class="md-nav__link">
+  <a href="#fast-forward-vs-no-fast-forward" class="md-nav__link">
     <span class="md-ellipsis">
-      📝 Step 4: Customize Your Documentation
+      ⏩ Fast-forward vs. No Fast-forward
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏩ Fast-forward vs. No Fast-forward">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-forward-ff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast-forward (--ff)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-fast-forward-no-ff" class="md-nav__link">
+    <span class="md-ellipsis">
+      No Fast-forward (--no-ff)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 Real-world Use Cases
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-build-the-documentation-site" class="md-nav__link">
+  <a href="#merge-vs-squash-vs-rebase-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ Step 5: Build the Documentation Site
+      📊 Merge vs Squash vs Rebase – Comparison
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-deploy-to-github-pages" class="md-nav__link">
+  <a href="#workflow-recommendations" class="md-nav__link">
     <span class="md-ellipsis">
-      ☁️ Step 6: Deploy to GitHub Pages
+      ⚙️ Workflow Recommendations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Workflow Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-gitlab-merge-requests-pr-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub / GitLab Merge Requests (PR Model)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-rebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚧 Interactive Rebase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Best Practices
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-configure-gitignore" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      📄 Step 7: Configure .gitignore
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-access-your-website" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌐 Step 8: Access Your Website
+      📚 References
     </span>
   </a>
   
@@ -1077,76 +1286,314 @@
 <p class="admonition-title">## 📝 Author</p>
 <p><strong>Birat Aryal</strong> — <a href="https://birataryal.github.io">birataryal.github.io</a><br />
  Created Date: <strong>2025-06-18</strong> <br>
- Updated Date: Wednesday 18th June 2025 10:52:52<br />
+ Updated Date: Wednesday 18th June 2025 10:52:13<br />
  DevSecOps Engineer | System Engineer | Cyber Security Analyst | Network Engineer</p>
 </div>
-<h1 id="setting-up-and-deploying-mkdocs-documentation">📘 Setting Up and Deploying MkDocs Documentation</h1>
-<p>Follow the steps below to set up your MkDocs documentation environment, customize your content, and deploy it to GitHub Pages.</p>
+<h1 id="git-merging-strategies-detailed-documentation">🧠 Git Merging Strategies - Detailed Documentation</h1>
+<p>Comprehensive guide to Git merge strategies, including definitions, command examples, editor behavior, commit history implications, and practical workflows.</p>
 <hr />
-<h2 id="step-1-navigate-to-the-documentation-directory">🚀 Step 1: Navigate to the Documentation Directory</h2>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="nb">cd </span><span class="n">D</span><span class="p">:\</span><span class="n">ObsidianDocumentation</span><span class="p">\</span><span class="n">ObsidianDocumentation</span><span class="p">\</span><span class="n">documentations</span>
-</code></pre></div>
+<h2 id="introduction">🧭 Introduction</h2>
+<p>Git merge strategies determine <strong>how changes from one branch are integrated</strong> into another. The right strategy depends on whether you want to <strong>retain detailed history</strong>, <strong>squash it</strong>, or <strong>ignore it</strong> entirely.</p>
 <hr />
-<h2 id="step-2-activate-python-virtual-environment">🐍 Step 2: Activate Python Virtual Environment</h2>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
-</code></pre></div>
-<p>If the virtual environment is not yet created, you can initialize it with:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">venv</span>
-</code></pre></div>
-<p>Then activate it as shown above.</p>
-<hr />
-<h2 id="step-3-install-dependencies">📦 Step 3: Install Dependencies</h2>
-<h3 id="one-time-setup-first-time-only">✅ One-Time Setup (First Time Only)</h3>
-<p>Create a <code>requirements.txt</code> file:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">pip</span> <span class="n">freeze</span> <span class="p">&gt;</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
-</code></pre></div>
-<h3 id="installing-dependencies">📥 Installing Dependencies</h3>
-<p>Install MkDocs Material:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs-material</span>
-</code></pre></div>
-<p>Install additional requirements:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
-</code></pre></div>
-<hr />
-<h2 id="step-4-customize-your-documentation">📝 Step 4: Customize Your Documentation</h2>
-<p>Make necessary content changes inside the <code>docs/</code> directory based on your requirements.</p>
-<hr />
-<h2 id="step-5-build-the-documentation-site">🛠️ Step 5: Build the Documentation Site</h2>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">mkdocs</span> <span class="n">build</span>
-</code></pre></div>
+<h2 id="why-merging-strategies-matter">❓ Why Merging Strategies Matter</h2>
 <ul>
-<li>This command generates a static site inside the <code>site/</code> directory.</li>
+<li>
+<p>🔍 Traceable project history</p>
+</li>
+<li>
+<p>🧘‍♀️ Clean, readable logs</p>
+</li>
+<li>
+<p>🛠️ Efficient conflict resolution</p>
+</li>
+<li>
+<p>🤝 Better team collaboration</p>
+</li>
 </ul>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><span class="n">mkdocs</span> <span class="n">serve</span>
-</code></pre></div>
-<h2 id="step-6-deploy-to-github-pages">☁️ Step 6: Deploy to GitHub Pages</h2>
-<ol>
-<li>
-<p><strong>Create a new GitHub repository</strong> with the format:</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>&lt;your-username&gt;.github.io
-</code></pre></div>
-</li>
-<li>
-<p>Make the repository <strong>public</strong>.</p>
-</li>
-<li>
-<p>Copy the <strong>contents of the <code>site/</code> folder</strong> into the root of your new GitHub repository.</p>
-</li>
-<li>
-<p>Push the files to GitHub.</p>
-</li>
-</ol>
 <hr />
-<h2 id="step-7-configure-gitignore">📄 Step 7: Configure <code>.gitignore</code></h2>
-<p>To avoid pushing unnecessary files, create a <code>.gitignore</code> file in your documentation root with the following content:</p>
-<div class="highlight"><span class="filename">.gitignore</span><pre><span></span><code>venv/
-site/
+<h2 id="common-git-merging-strategies">🔀 Common Git Merging Strategies</h2>
+<hr />
+<h3 id="1-recursive-default">1. Recursive (Default)</h3>
+<p><strong>Usage:</strong> Most common; works with two branches that have diverged.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>feature/login
 </code></pre></div>
 <hr />
-<h2 id="step-8-access-your-website">🌐 Step 8: Access Your Website</h2>
-<p>Once the files are pushed, your documentation will be live at:</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>https://&lt;your-username&gt;.github.io
+<h3 id="2-resolve">2. Resolve</h3>
+<p><strong>Usage:</strong> Simple, two-parent merge; mostly deprecated in favor of <code>recursive</code>.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>resolve<span class="w"> </span>feature/login
 </code></pre></div>
+<hr />
+<h3 id="3-octopus">3. Octopus</h3>
+<p><strong>Usage:</strong> Merge multiple branches (no conflicts allowed).</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>octopus<span class="w"> </span>feature1<span class="w"> </span>feature2<span class="w"> </span>feature3
+</code></pre></div>
+<hr />
+<h3 id="4-ours">4. Ours</h3>
+<p><strong>Usage:</strong> Use current branch's changes and discard the other.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>ours<span class="w"> </span>experiment-branch
+</code></pre></div>
+<hr />
+<h3 id="5-subtree">5. Subtree</h3>
+<p><strong>Usage:</strong> Merging unrelated projects while keeping their directory structures.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>-s<span class="w"> </span>subtree<span class="w"> </span>project-b
+</code></pre></div>
+<hr />
+<h3 id="6-squash">6. Squash ✅</h3>
+<p><strong>Usage:</strong> Flatten all commits from a feature branch into one commit.<br />
+Great for <strong>clean history</strong> and <strong>PR-based workflows</strong>.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>--squash<span class="w"> </span>feature/checkout-page
+</code></pre></div>
+<p>🛠 <strong>What happens:</strong></p>
+<ul>
+<li>
+<p>Git collects all commits from the feature branch.</p>
+</li>
+<li>
+<p>The code from all those commits is merged into your working directory.</p>
+</li>
+<li>
+<p>A <strong>single commit</strong> is created (but not yet committed).</p>
+</li>
+</ul>
+<p>You’ll see a <strong>text editor</strong> (usually Vim or VSCode) open with something like:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code># This is a combination of 5 commits.
+# The first commit&#39;s message is:
+Add checkout page UI
+
+# The 2nd commit message is:
+Implement discount logic
+
+# The 3rd commit message is:
+Refactor checkout controller
+
+# Please enter the commit message for your changes.
+</code></pre></div>
+<p>📝 You can <strong>edit this message</strong>, summarizing all changes in a single commit:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>Add complete checkout functionality
+
+- Added UI for checkout
+- Implemented coupon/discount logic
+- Refactored controller logic
+</code></pre></div>
+<p>Then commit it manually:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>commit
+</code></pre></div>
+<p>🔁 <strong>Final result:</strong> One new commit is added to the main branch — a <strong>flattened, clean</strong> version of the entire feature.</p>
+<p>🧩 <strong>Pro Tip:</strong></p>
+<ul>
+<li>
+<p>Combine with <code>git rebase -i</code> to refine history before squashing.</p>
+</li>
+<li>
+<p>Use in <strong>PR-based workflows</strong> for atomic merges.</p>
+</li>
+</ul>
+<hr />
+<h2 id="fast-forward-vs-no-fast-forward">⏩ Fast-forward vs. No Fast-forward</h2>
+<h3 id="fast-forward-ff">Fast-forward (<code>--ff</code>)</h3>
+<ul>
+<li>Pointer just moves forward (no merge commit).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--ff</code></td>
+<td>Moves the branch pointer ahead—no merge commit</td>
+</tr>
+<tr>
+<td><code>--no-ff</code></td>
+<td>Forces a merge commit—keeps merge info</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>--ff<span class="w"> </span>feature
+</code></pre></div>
+<h3 id="no-fast-forward-no-ff">No Fast-forward (<code>--no-ff</code>)</h3>
+<ul>
+<li>Always creates a merge commit.</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>--no-ff<span class="w"> </span>feature
+</code></pre></div>
+<hr />
+<h2 id="real-world-use-cases">🌍 Real-world Use Cases</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Strategy</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feature branch merge</td>
+<td><code>--no-ff</code></td>
+<td>Keeps history of the feature</td>
+</tr>
+<tr>
+<td>Hotfix multiple branches</td>
+<td><code>octopus</code></td>
+<td>Merge all hotfixes at once</td>
+</tr>
+<tr>
+<td>Discard experimental code</td>
+<td><code>ours</code></td>
+<td>Keep current state, mark merge complete</td>
+</tr>
+<tr>
+<td>Vendor code or repo fusion</td>
+<td><code>subtree</code></td>
+<td>Preserve separate history in a sub-dir</td>
+</tr>
+<tr>
+<td>Simplify history for PR</td>
+<td><code>--squash</code></td>
+<td>Single meaningful commit on main branch</td>
+</tr>
+<tr>
+<td>Rewriting messy local commits</td>
+<td><code>rebase -i</code></td>
+<td>Makes feature history clean</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="merge-vs-squash-vs-rebase-comparison">📊 Merge vs Squash vs Rebase – Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Feature / Goal</th>
+<th><code>merge</code></th>
+<th><code>--squash</code></th>
+<th><code>rebase</code></th>
+<th><code>octopus</code></th>
+<th><code>ours</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Preserve commit history</strong></td>
+<td>✅ Yes</td>
+<td>❌ No (one commit)</td>
+<td>✅ Yes (rewritten)</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><strong>Creates merge commit</strong></td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+<td>✅ Yes (but fake)</td>
+</tr>
+<tr>
+<td><strong>Used in PR workflows</strong></td>
+<td>✅ Common</td>
+<td>✅ Very common</td>
+<td>⚠️ Sometimes</td>
+<td>⚠️ Rarely</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><strong>Conflict resolution</strong></td>
+<td>✅ Supported</td>
+<td>✅ At squash time</td>
+<td>✅ During rebase</td>
+<td>❌ Not supported</td>
+<td>❌ Discards changes</td>
+</tr>
+<tr>
+<td><strong>Interactive history cleanup</strong></td>
+<td>❌ No</td>
+<td>⚠️ Limited</td>
+<td>✅ Yes (with <code>-i</code>)</td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><strong>Automated multi-branch</strong></td>
+<td>❌ No</td>
+<td>❌ No</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><strong>Final commit behavior</strong></td>
+<td>Merge + all commits</td>
+<td>One single commit</td>
+<td>Rewritten commits</td>
+<td>Merge of many</td>
+<td>“Keep ours” only</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Team collaboration</td>
+<td>Clean history</td>
+<td>Linear development</td>
+<td>Release branches</td>
+<td>Ignoring other branch</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="workflow-recommendations">⚙️ Workflow Recommendations</h2>
+<h3 id="github-gitlab-merge-requests-pr-model">GitHub / GitLab Merge Requests (PR Model)</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># Checkout main</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main
+
+<span class="c1"># Merge feature cleanly</span>
+git<span class="w"> </span>merge<span class="w"> </span>--squash<span class="w"> </span>feature/login
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add user login functionality&quot;</span>
+</code></pre></div>
+<p>Use <code>--squash</code> in conjunction with CI pipelines and PR reviews to reduce commit noise and keep history readable.</p>
+<hr />
+<h3 id="interactive-rebase">🚧 Interactive Rebase</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>HEAD~5
+<span class="c1"># Reorder, squash, or fixup commits before merging</span>
+</code></pre></div>
+<hr />
+<h2 id="best-practices">✅ Best Practices</h2>
+<ul>
+<li>
+<p>📌 Use <code>--no-ff</code> when you want to preserve merge context.</p>
+</li>
+<li>
+<p>🧹 Use <code>--squash</code> to clean messy commits before merging to <code>main</code>.</p>
+</li>
+<li>
+<p>🔀 Avoid <code>octopus</code> if there's any chance of a conflict.</p>
+</li>
+<li>
+<p>🚫 Use <code>ours</code> sparingly—you're discarding someone’s work.</p>
+</li>
+<li>
+<p>🧰 Document your team strategy in <code>CONTRIBUTING.md</code>.</p>
+</li>
+</ul>
+<hr />
+<h2 id="references">📚 References</h2>
+<ul>
+<li>
+<p><a href="https://git-scm.com/docs/git-merge">Git Merge Strategies - Git Docs</a></p>
+</li>
+<li>
+<p><a href="https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History">Git Squash Merge Explained</a></p>
+</li>
+<li>
+<p><a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Atlassian Merge Strategies</a></p>
+</li>
+<li>
+<p><a href="https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-vs-rebase/">Git Rebase vs Merge</a></p>
+</li>
+</ul>
 <hr />
 
 
