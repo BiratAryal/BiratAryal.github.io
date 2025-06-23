@@ -55,7 +55,16 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -763,6 +772,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basic-bashscripting-flowchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪Basic BashScripting FlowChart
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1373,6 +1391,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basic-bashscripting-flowchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪Basic BashScripting FlowChart
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1601,6 +1628,12 @@ cp<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;</spa
 <p>Else, prints a message.</p>
 </li>
 </ol>
+<h2 id="basic-bashscripting-flowchart">🧪Basic BashScripting FlowChart</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Based on the diagram below everything could be configured using the bash scripting.</p>
+</div>
+<p><a class="glightbox" href="../../../images/BashScriptingFlowChart.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="BashScriptingFlowChart" src="../../../images/BashScriptingFlowChart.png" /></a></p>
 
 
 
@@ -1658,5 +1691,7 @@ cp<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;</spa
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
