@@ -941,6 +941,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#json-policy-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 JSON Policy Definition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📜 JSON Policy Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filename-fullaccess-cmtprojectfilesjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filename: fullaccess-cmtProjectFiles.json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-apply-this-policy-using-mc" class="md-nav__link">
     <span class="md-ellipsis">
       🛠️ How to Apply This Policy Using mc
@@ -1060,6 +1084,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#json-policy-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 JSON Policy Definition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📜 JSON Policy Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filename-fullaccess-cmtprojectfilesjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filename: fullaccess-cmtProjectFiles.json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-apply-this-policy-using-mc" class="md-nav__link">
     <span class="md-ellipsis">
       🛠️ How to Apply This Policy Using mc
@@ -1143,37 +1191,32 @@
 <hr />
 <h2 id="target-bucket">📁 Target Bucket</h2>
 <div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>Bucket Name: cmtprojectfiles
-````
-
----
-
-## 📜 JSON Policy Definition
-
-### Filename: `fullaccess-cmtProjectFiles.json`
-
-```json
-{
-  &quot;Version&quot;: &quot;2012-10-17&quot;,
-  &quot;Statement&quot;: [
-    {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: [
-        &quot;s3:GetBucketLocation&quot;,
-        &quot;s3:ListBucket&quot;
-      ],
-      &quot;Resource&quot;: &quot;arn:aws:s3:::cmtprojectfiles&quot;
-    },
-    {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: [
-        &quot;s3:GetObject&quot;,
-        &quot;s3:PutObject&quot;,
-        &quot;s3:DeleteObject&quot;
-      ],
-      &quot;Resource&quot;: &quot;arn:aws:s3:::cmtprojectfiles/*&quot;
-    }
-  ]
-}
+</code></pre></div>
+<hr />
+<h2 id="json-policy-definition">📜 JSON Policy Definition</h2>
+<h3 id="filename-fullaccess-cmtprojectfilesjson">Filename: <code>fullaccess-cmtProjectFiles.json</code></h3>
+<div class="highlight"><span class="filename">JSON</span><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;s3:GetBucketLocation&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;s3:ListBucket&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:s3:::cmtprojectfiles&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;s3:PutObject&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;s3:DeleteObject&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:s3:::cmtprojectfiles/*&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="how-to-apply-this-policy-using-mc">🛠️ How to Apply This Policy Using <code>mc</code></h2>
