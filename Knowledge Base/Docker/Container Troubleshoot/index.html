@@ -1,0 +1,1765 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Docker/Container%20Troubleshoot/">
+      
+      
+        <link rel="prev" href="../Docker%20Compose/">
+      
+      
+        <link rel="next" href="../../Kubernetes/Introduction/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Troubleshoot - Birat Aryal Technical Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#building-and-debugging-docker-images" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-header__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Birat Aryal Technical Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshoot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-nav__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Birat Aryal Technical Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Knowledge Base
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Knowledge Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Start Here
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Linux/Kick%20Start%20Script/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Git/Git/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Mkdocs/Mkdocs/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Mkdocs
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Nginx/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Nginx
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../SQL/Recovery_modes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Best%20Practise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Best Practise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Container%20Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker%20Compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Compose
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗 Building Docker Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗 Building Docker Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-build-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Build Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specify-dockerfile-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specify Dockerfile Location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-build-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Build Arguments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-with-no-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build with No Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-only-specific-targets-multi-stage-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Only Specific Targets (Multi-stage Builds)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-image-size-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit Image Size (Best Practices)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-docker-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐞 Debugging Docker Builds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐞 Debugging Docker Builds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-build-output-verbosely" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Build Output Verbosely
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-access-during-build-interactive-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell Access During Build (Interactive Debugging)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-and-analyze-image-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export and Analyze Image Layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-intermediate-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect Intermediate Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-buildkit-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use BuildKit Debugging Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lint-and-validate-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lint and Validate Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-temporary-containers-to-test-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Temporary Containers to Test Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Testing Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-locally-and-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Locally and Verify
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-testing-with-docker-compose-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Testing with docker-compose + CI/CD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-and-share-built-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Export and Share Built Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Export and Share Built Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-and-load-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save and Load Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-to-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Push to Registry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Kubernetes/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Kubernetes
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../CAPI/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Cluster API VMWARE
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Minio/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Minio
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗 Building Docker Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗 Building Docker Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-build-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Build Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specify-dockerfile-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specify Dockerfile Location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-build-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Build Arguments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-with-no-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build with No Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-only-specific-targets-multi-stage-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Only Specific Targets (Multi-stage Builds)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-image-size-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit Image Size (Best Practices)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-docker-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐞 Debugging Docker Builds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐞 Debugging Docker Builds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-build-output-verbosely" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Build Output Verbosely
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-access-during-build-interactive-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell Access During Build (Interactive Debugging)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-and-analyze-image-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export and Analyze Image Layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-intermediate-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect Intermediate Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-buildkit-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use BuildKit Debugging Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lint-and-validate-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lint and Validate Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-temporary-containers-to-test-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Temporary Containers to Test Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Testing Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-locally-and-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Locally and Verify
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-testing-with-docker-compose-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Testing with docker-compose + CI/CD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-and-share-built-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Export and Share Built Images
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Export and Share Built Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-and-load-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save and Load Images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-to-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Push to Registry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="admonition tip">
+<p class="admonition-title">## 📝 Author</p>
+<p><strong>Birat Aryal</strong> — <a href="https://birataryal.github.io">birataryal.github.io</a><br />
+ Created Date: <strong>2025-06-18</strong> <br>
+ Updated Date: Wednesday 18th June 2025 10:54:31<br />
+<strong>Website</strong> - <a href="https://birataryal.com.np">birataryal.com.np</a> <br>
+ <strong>Repository</strong> - <a href="https://github.com/BiratAryal">Birat Aryal</a> <br>
+ <strong>LinkedIn</strong> - <a href="www.linkedin.com/in/birat-aryal">Birat Aryal</a> <br>
+ DevSecOps Engineer | System Engineer | Cyber Security Analyst | Network Engineer</p>
+</div>
+<h1 id="building-and-debugging-docker-images">🧪 Building and Debugging Docker Images</h1>
+<p>This guide covers best practices, useful options, and techniques for building and debugging Docker images efficiently and effectively.</p>
+<hr />
+<h2 id="building-docker-images">🏗 Building Docker Images</h2>
+<h3 id="basic-build-command">Basic Build Command</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>myapp:latest<span class="w"> </span>.
+</code></pre></div>
+<ul>
+<li>
+<p><code>-t</code>: Tags the image with a name and optionally a tag (default is <code>latest</code>)</p>
+</li>
+<li>
+<p><code>.</code>: Context path where the <code>Dockerfile</code> resides</p>
+</li>
+</ul>
+<h3 id="specify-dockerfile-location">Specify Dockerfile Location</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-f<span class="w"> </span>path/to/Dockerfile<span class="w"> </span>.
+</code></pre></div>
+<h3 id="add-build-arguments">Add Build Arguments</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">VERSION</span><span class="o">=</span><span class="m">1</span>.2.3<span class="w"> </span>-t<span class="w"> </span>app:1.2.3<span class="w"> </span>.
+</code></pre></div>
+<ul>
+<li>Use <code>ARG</code> in Dockerfile to access this value</li>
+</ul>
+<h3 id="build-with-no-cache">Build with No Cache</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>-t<span class="w"> </span>fresh-build<span class="w"> </span>.
+</code></pre></div>
+<ul>
+<li>Avoids using intermediate image cache layers</li>
+</ul>
+<h3 id="build-only-specific-targets-multi-stage-builds">Build Only Specific Targets (Multi-stage Builds)</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>--target<span class="w"> </span>builder<span class="w"> </span>-t<span class="w"> </span>intermediate<span class="w"> </span>.
+</code></pre></div>
+<h3 id="limit-image-size-best-practices">Limit Image Size (Best Practices)</h3>
+<ul>
+<li>
+<p>Use minimal base images like <code>alpine</code></p>
+</li>
+<li>
+<p>Remove build dependencies after install</p>
+</li>
+<li>
+<p>Use <code>.dockerignore</code> to reduce context</p>
+</li>
+</ul>
+<hr />
+<h2 id="debugging-docker-builds">🐞 Debugging Docker Builds</h2>
+<h3 id="view-build-output-verbosely">View Build Output Verbosely</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>--progress<span class="o">=</span>plain<span class="w"> </span>.
+</code></pre></div>
+<ul>
+<li>Prints step-by-step output and environment details</li>
+</ul>
+<h3 id="shell-access-during-build-interactive-debugging">Shell Access During Build (Interactive Debugging)</h3>
+<p>Use temporary steps in Dockerfile:</p>
+<div class="highlight"><span class="filename">Docker</span><pre><span></span><code><span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Debug here&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">3600</span>
+</code></pre></div>
+<p>Then <code>docker exec</code> into the container in another shell (use another build process or dev container).</p>
+<h3 id="export-and-analyze-image-layers">Export and Analyze Image Layers</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span><span class="nb">history</span><span class="w"> </span>myapp:latest
+</code></pre></div>
+<ul>
+<li>See size and command of each layer</li>
+</ul>
+<h3 id="inspect-intermediate-images">Inspect Intermediate Images</h3>
+<ol>
+<li>Enable buildkit:</li>
+</ol>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">DOCKER_BUILDKIT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>.
+</code></pre></div>
+<ol>
+<li>
+<p>Add debug lines in Dockerfile with <code>RUN sleep</code> or <code>RUN echo</code> commands</p>
+</li>
+<li>
+<p>Use <code>--target</code> to stop at a specific build stage</p>
+</li>
+</ol>
+<h3 id="use-buildkit-debugging-tools">Use BuildKit Debugging Tools</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">DOCKER_BUILDKIT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>--progress<span class="o">=</span>plain<span class="w"> </span>.
+</code></pre></div>
+<ul>
+<li>Enables more detailed output and progress bars</li>
+</ul>
+<h3 id="lint-and-validate-dockerfile">Lint and Validate Dockerfile</h3>
+<p>Use external tools like:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-i<span class="w"> </span>hadolint/hadolint<span class="w"> </span>&lt;<span class="w"> </span>Dockerfile
+</code></pre></div>
+<ul>
+<li><a href="https://github.com/hadolint/hadolint">Hadolint</a> is a linter for Dockerfiles</li>
+</ul>
+<h3 id="use-temporary-containers-to-test-commands">Use Temporary Containers to Test Commands</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>myimage<span class="w"> </span>/bin/sh
+</code></pre></div>
+<hr />
+<h2 id="testing-images">🧪 Testing Images</h2>
+<h3 id="run-locally-and-verify">Run Locally and Verify</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>myapp:latest<span class="w"> </span>/bin/sh
+</code></pre></div>
+<h3 id="automated-testing-with-docker-compose-cicd">Automated Testing with <code>docker-compose</code> + CI/CD</h3>
+<ul>
+<li>
+<p>Define test services with health checks</p>
+</li>
+<li>
+<p>Use <code>docker-compose run</code> or <code>docker-compose exec</code> to validate</p>
+</li>
+</ul>
+<hr />
+<h2 id="export-and-share-built-images">📦 Export and Share Built Images</h2>
+<h3 id="save-and-load-images">Save and Load Images</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>save<span class="w"> </span>myapp:latest<span class="w"> </span>-o<span class="w"> </span>myapp.tar
+docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>myapp.tar
+</code></pre></div>
+<h3 id="push-to-registry">Push to Registry</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>docker<span class="w"> </span>tag<span class="w"> </span>myapp:latest<span class="w"> </span>myregistry.com/myapp:latest
+docker<span class="w"> </span>push<span class="w"> </span>myregistry.com/myapp:latest
+</code></pre></div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.preview", "navigation.tabs", "navigation.tracking", "navigation.expand", "navigation.path", "navigation.top", "navigation.indexes", "navigation.prune", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

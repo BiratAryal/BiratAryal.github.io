@@ -1,0 +1,2004 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/Linux/CheetSheet/">
+      
+      
+        <link rel="prev" href="../Kick%20Start%20Script/">
+      
+      
+        <link rel="next" href="../LogRotation/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Basics - Birat Aryal Technical Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux-cheat-sheet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-header__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Birat Aryal Technical Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-nav__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Birat Aryal Technical Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Knowledge Base
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Knowledge Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Start Here
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kick%20Start%20Script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Basics
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basics
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-directory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 File &amp; Directory Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-viewing-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 File Viewing &amp; Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗃️ File Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Package Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      👤 User Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-info-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 System Info &amp; Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Process Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Permissions &amp; Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archiving-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Archiving &amp; Compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Services &amp; Startup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-scripting-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐚 Bash &amp; Scripting Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Useful Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-job-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏰ Cron Job Format
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogRotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Log Rotation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BashScripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bash Scripting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IfCondition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    If Condition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WhileCondition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    While Condition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ForCondition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    For Condition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Git/Git/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Mkdocs/Mkdocs/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Mkdocs
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Nginx/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Nginx
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../SQL/Recovery_modes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Docker/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Kubernetes/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Kubernetes
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../CAPI/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Cluster API VMWARE
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Minio/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Minio
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-directory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 File &amp; Directory Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-viewing-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 File Viewing &amp; Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗃️ File Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Package Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      👤 User Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-info-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 System Info &amp; Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Process Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Permissions &amp; Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archiving-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Archiving &amp; Compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Services &amp; Startup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-scripting-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐚 Bash &amp; Scripting Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Useful Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-job-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏰ Cron Job Format
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div class="admonition tip">
+<p class="admonition-title">## 📝 Author</p>
+<p><strong>Birat Aryal</strong> — <a href="https://birataryal.github.io">birataryal.github.io</a><br />
+ Created Date: <strong>2025-06-23</strong> <br>
+ Updated Date: Monday 23rd June 2025 07:52:15<br />
+<strong>Website</strong> - <a href="https://birataryal.com.np">birataryal.com.np</a> <br>
+ <strong>Repository</strong> - <a href="https://github.com/BiratAryal">Birat Aryal</a> <br>
+ <strong>LinkedIn</strong> - <a href="www.linkedin.com/in/birat-aryal">Birat Aryal</a> <br>
+ DevSecOps Engineer | System Engineer | Cyber Security Analyst | Network Engineer</p>
+</div>
+<hr />
+<h1 id="linux-cheat-sheet">🐧 Linux Cheat Sheet</h1>
+<h2 id="file-directory-management">📁 File &amp; Directory Management</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls -l</code></td>
+<td>List with long format</td>
+</tr>
+<tr>
+<td><code>ls -a</code></td>
+<td>Show hidden files</td>
+</tr>
+<tr>
+<td><code>cd /path</code></td>
+<td>Change directory</td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>Show current directory</td>
+</tr>
+<tr>
+<td><code>mkdir dir</code></td>
+<td>Create directory</td>
+</tr>
+<tr>
+<td><code>rmdir dir</code></td>
+<td>Remove empty directory</td>
+</tr>
+<tr>
+<td><code>rm -r dir</code></td>
+<td>Remove directory and contents</td>
+</tr>
+<tr>
+<td><code>cp file1 file2</code></td>
+<td>Copy file</td>
+</tr>
+<tr>
+<td><code>mv file1 file2</code></td>
+<td>Move/rename file</td>
+</tr>
+<tr>
+<td><code>touch file</code></td>
+<td>Create empty file</td>
+</tr>
+<tr>
+<td><code>find /path -name "*.txt"</code></td>
+<td>Find files</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="file-viewing-manipulation">📝 File Viewing &amp; Manipulation</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cat file</code></td>
+<td>View file</td>
+</tr>
+<tr>
+<td><code>tac file</code></td>
+<td>View file in reverse</td>
+</tr>
+<tr>
+<td><code>more file</code> / <code>less file</code></td>
+<td>Paginated view</td>
+</tr>
+<tr>
+<td><code>head -n 10 file</code></td>
+<td>First 10 lines</td>
+</tr>
+<tr>
+<td><code>tail -n 10 file</code></td>
+<td>Last 10 lines</td>
+</tr>
+<tr>
+<td><code>tail -f file</code></td>
+<td>Live log view</td>
+</tr>
+<tr>
+<td><code>cut -d':' -f1 /etc/passwd</code></td>
+<td>Column cut</td>
+</tr>
+<tr>
+<td><code>awk '{print $1}' file</code></td>
+<td>Print first field</td>
+</tr>
+<tr>
+<td><code>sed 's/foo/bar/g' file</code></td>
+<td>Replace in file</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="file-permissions">🗃️ File Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chmod 755 file</code></td>
+<td>Set permission (u=rwx, g=rx, o=rx)</td>
+</tr>
+<tr>
+<td><code>chown user file</code></td>
+<td>Change owner</td>
+</tr>
+<tr>
+<td><code>chown user:group file</code></td>
+<td>Change owner and group</td>
+</tr>
+<tr>
+<td><code>umask</code></td>
+<td>Show default permission mask</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="package-management">📦 Package Management</h2>
+<p><strong>Debian/Ubuntu (apt)</strong></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>upgrade
+apt<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;
+apt<span class="w"> </span>remove<span class="w"> </span>&lt;package&gt;
+</code></pre></div>
+<p><strong>Red Hat/CentOS/Alma (dnf/yum)</strong></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>dnf<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;
+dnf<span class="w"> </span>remove<span class="w"> </span>&lt;package&gt;
+dnf<span class="w"> </span>update
+</code></pre></div>
+<p><strong>Arch (pacman)</strong></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>pacman<span class="w"> </span>-Syu
+pacman<span class="w"> </span>-S<span class="w"> </span>&lt;package&gt;
+pacman<span class="w"> </span>-R<span class="w"> </span>&lt;package&gt;
+</code></pre></div>
+<hr />
+<h2 id="user-management">👤 User Management</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>adduser username</code></td>
+<td>Add user</td>
+</tr>
+<tr>
+<td><code>passwd username</code></td>
+<td>Set user password</td>
+</tr>
+<tr>
+<td><code>deluser username</code></td>
+<td>Remove user</td>
+</tr>
+<tr>
+<td><code>usermod -aG sudo user</code></td>
+<td>Add to group</td>
+</tr>
+<tr>
+<td><code>id user</code></td>
+<td>Show user info</td>
+</tr>
+<tr>
+<td><code>who</code> / <code>w</code> / <code>users</code></td>
+<td>Logged-in users</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="system-info-resources">🧠 System Info &amp; Resources</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uname -a</code></td>
+<td>Kernel and system info</td>
+</tr>
+<tr>
+<td><code>uptime</code></td>
+<td>System uptime</td>
+</tr>
+<tr>
+<td><code>top</code> / <code>htop</code></td>
+<td>Running processes</td>
+</tr>
+<tr>
+<td><code>free -h</code></td>
+<td>RAM usage</td>
+</tr>
+<tr>
+<td><code>df -h</code></td>
+<td>Disk usage</td>
+</tr>
+<tr>
+<td><code>du -sh *</code></td>
+<td>Folder sizes</td>
+</tr>
+<tr>
+<td><code>lscpu</code> / <code>lsblk</code> / <code>lsusb</code> / <code>lspci</code></td>
+<td>Hardware info</td>
+</tr>
+<tr>
+<td><code>dmesg</code></td>
+<td>Kernel logs</td>
+</tr>
+<tr>
+<td><code>vmstat</code></td>
+<td>Performance stats</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="process-management">⚙️ Process Management</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ps aux</code></td>
+<td>All processes</td>
+</tr>
+<tr>
+<td><code>kill PID</code></td>
+<td>Kill process</td>
+</tr>
+<tr>
+<td><code>killall process_name</code></td>
+<td>Kill by name</td>
+</tr>
+<tr>
+<td><code>nice -n 10 command</code></td>
+<td>Set priority</td>
+</tr>
+<tr>
+<td><code>renice -n 5 PID</code></td>
+<td>Change priority</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="permissions-security">🔐 Permissions &amp; Security</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chmod</code>, <code>chown</code>, <code>setfacl</code></td>
+<td>File permissions</td>
+</tr>
+<tr>
+<td><code>sudo</code></td>
+<td>Run as root</td>
+</tr>
+<tr>
+<td><code>visudo</code></td>
+<td>Edit sudoers safely</td>
+</tr>
+<tr>
+<td><code>firewall-cmd</code></td>
+<td>Firewalld (RHEL)</td>
+</tr>
+<tr>
+<td><code>ufw</code></td>
+<td>Firewall (Ubuntu)</td>
+</tr>
+<tr>
+<td><code>sshd</code>, <code>ss</code>, <code>iptables</code></td>
+<td>SSH &amp; networking</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="networking">🌐 Networking</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ip a</code> / <code>ifconfig</code></td>
+<td>Show IP address</td>
+</tr>
+<tr>
+<td><code>ip r</code> / <code>route</code></td>
+<td>Show routing</td>
+</tr>
+<tr>
+<td><code>ping 8.8.8.8</code></td>
+<td>Test connection</td>
+</tr>
+<tr>
+<td><code>traceroute google.com</code></td>
+<td>Trace route</td>
+</tr>
+<tr>
+<td><code>netstat -tuln</code> / <code>ss -tuln</code></td>
+<td>Open ports</td>
+</tr>
+<tr>
+<td><code>dig domain.com</code> / <code>nslookup</code></td>
+<td>DNS lookup</td>
+</tr>
+<tr>
+<td><code>curl -I url</code></td>
+<td>HTTP headers</td>
+</tr>
+<tr>
+<td><code>wget url</code></td>
+<td>Download file</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="archiving-compression">🔁 Archiving &amp; Compression</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tar -czvf archive.tar.gz folder/</code></td>
+<td>Compress folder</td>
+</tr>
+<tr>
+<td><code>tar -xzvf archive.tar.gz</code></td>
+<td>Extract archive</td>
+</tr>
+<tr>
+<td><code>zip -r file.zip folder/</code></td>
+<td>Create ZIP</td>
+</tr>
+<tr>
+<td><code>unzip file.zip</code></td>
+<td>Extract ZIP</td>
+</tr>
+<tr>
+<td><code>gzip file</code> / <code>gunzip file.gz</code></td>
+<td>Compress/Extract GZ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="services-startup">🛠️ Services &amp; Startup</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>systemctl start service</code></td>
+<td>Start service</td>
+</tr>
+<tr>
+<td><code>systemctl stop service</code></td>
+<td>Stop service</td>
+</tr>
+<tr>
+<td><code>systemctl status service</code></td>
+<td>Service status</td>
+</tr>
+<tr>
+<td><code>systemctl enable service</code></td>
+<td>Auto-start</td>
+</tr>
+<tr>
+<td><code>systemctl disable service</code></td>
+<td>Remove auto-start</td>
+</tr>
+<tr>
+<td><code>journalctl -xeu servicename</code></td>
+<td>Logs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="bash-scripting-basics">🐚 Bash &amp; Scripting Basics</h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#!/bin/bash</code></td>
+<td>Shebang line</td>
+</tr>
+<tr>
+<td><code>var=value</code></td>
+<td>Declare variable</td>
+</tr>
+<tr>
+<td><code>echo $var</code></td>
+<td>Print variable</td>
+</tr>
+<tr>
+<td><code>read var</code></td>
+<td>Get user input</td>
+</tr>
+<tr>
+<td><code>if</code>, <code>elif</code>, <code>else</code>, <code>fi</code></td>
+<td>Conditional</td>
+</tr>
+<tr>
+<td><code>for</code>, <code>while</code>, <code>do</code>, <code>done</code></td>
+<td>Loops</td>
+</tr>
+<tr>
+<td><code>function fname {}</code></td>
+<td>Define function</td>
+</tr>
+<tr>
+<td><code>$(command)</code></td>
+<td>Command substitution</td>
+</tr>
+<tr>
+<td><code>"$@"</code>, <code>$#</code>, <code>$?</code>, <code>$$</code></td>
+<td>Script args, status, PID</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="useful-utilities">🧪 Useful Utilities</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cron</code>, <code>crontab -e</code></td>
+<td>Scheduled tasks</td>
+</tr>
+<tr>
+<td><code>logrotate</code></td>
+<td>Log file management</td>
+</tr>
+<tr>
+<td><code>env</code>, <code>export</code></td>
+<td>Environment variables</td>
+</tr>
+<tr>
+<td><code>alias</code>, <code>unalias</code></td>
+<td>Command shortcuts</td>
+</tr>
+<tr>
+<td><code>xargs</code>, <code>tee</code>, <code>watch</code></td>
+<td>Command chaining</td>
+</tr>
+<tr>
+<td><code>ncdu</code>, <code>iotop</code>, <code>glances</code></td>
+<td>Monitoring tools</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cron-job-format">⏰ Cron Job Format</h2>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>* * * * * /path/to/script.sh
+│ │ │ │ │
+│ │ │ │ └─── Day of the week (0 - 7) (Sunday = 0 or 7)
+│ │ │ └───── Month (1 - 12)
+│ │ └─────── Day of month (1 - 31)
+│ └───────── Hour (0 - 23)
+└─────────── Minute (0 - 59)
+</code></pre></div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.preview", "navigation.tabs", "navigation.tracking", "navigation.expand", "navigation.path", "navigation.top", "navigation.indexes", "navigation.prune", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
