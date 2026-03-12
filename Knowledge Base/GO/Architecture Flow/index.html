@@ -1,0 +1,776 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/GO/Architecture%20Flow/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Architecture Flow - Birat Aryal Technical Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#big-picture-how-bubble-tea-works" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-header__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Birat Aryal Technical Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture Flow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-nav__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Birat Aryal Technical Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Knowledge Base
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#big-picture-how-bubble-tea-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Big Picture: How Bubble Tea Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-event-loop-in-bubble-tea" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 The Event Loop in Bubble Tea
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔁 The Event Loop in Bubble Tea">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-user-input-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 1. User Input / Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-msg-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 2. Msg (Message)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-updatemodel-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 3. Update(model, msg)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-new-model-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 4. New Model + Cmd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 5. View(model)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Loop Back
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-flow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Visual Flow Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Real Example Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Real Example Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-step:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-architecture-is-powerful" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Why This Architecture is Powerful:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Architecture Flow</h1>
+
+<div class="admonition tip">
+<p class="admonition-title">## 📝 Author</p>
+<p><strong>Birat Aryal</strong> — <a href="https://birataryal.github.io">birataryal.github.io</a><br />
+ Created Date: <strong>2025-07-07</strong> <br>
+ Updated Date: Monday 7th July 2025 19:01:50<br />
+<strong>Website</strong> - <a href="https://birataryal.com.np">birataryal.com.np</a> <br>
+ <strong>Repository</strong> - <a href="https://github.com/BiratAryal">Birat Aryal</a> <br>
+ <strong>LinkedIn</strong> - <a href="www.linkedin.com/in/birat-aryal">Birat Aryal</a> <br>
+ DevSecOps Engineer | System Engineer | Cyber Security Analyst | Network Engineer</p>
+</div>
+<hr />
+<h2 id="big-picture-how-bubble-tea-works">🧭 Big Picture: How Bubble Tea Works</h2>
+<p>Bubble Tea uses a <strong>Model-Update-View (MUV)</strong> architecture — a variant of <strong>The Elm Architecture</strong>. This helps you write clean, reactive terminal apps.</p>
+<hr />
+<h2 id="the-event-loop-in-bubble-tea">🔁 The Event Loop in Bubble Tea</h2>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>User Input / Event
+       ↓
+      Msg
+       ↓
+  Update(model, msg)
+       ↓
+ New Model + Cmd
+       ↓
+   View(model)
+       ↓
+Render (Terminal Output)
+</code></pre></div>
+<p>Now let’s go through each of these in depth:</p>
+<hr />
+<h3 id="1-user-input-events">🔹 1. <strong>User Input / Events</strong></h3>
+<blockquote>
+<p>❓ What is this?<br />
+This includes:</p>
+</blockquote>
+<ul>
+<li>
+<p>Keyboard input (like pressing ↑ or ↓)</p>
+</li>
+<li>
+<p>Mouse events</p>
+</li>
+<li>
+<p>Timers (like a clock tick every second)</p>
+</li>
+<li>
+<p>Network responses (if you're fetching data)</p>
+</li>
+</ul>
+<blockquote>
+<p>🎯 Goal: Detect that <strong>something happened</strong>.</p>
+</blockquote>
+<p>🧠 <strong>You</strong> don’t process the input directly — instead, Bubble Tea <strong>transforms it into a <code>Msg</code></strong>.</p>
+<hr />
+<h3 id="2-msg-message">🔹 2. <strong>Msg (Message)</strong></h3>
+<blockquote>
+<p>❓ What is this?<br />
+It’s a <strong>type</strong> or <strong>struct</strong> that represents what happened.</p>
+</blockquote>
+<p>You define a custom <code>Msg</code> type to represent user actions or system events.</p>
+<p>✅ Example:</p>
+<div class="highlight"><span class="filename">Go</span><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Msg</span><span class="w"> </span><span class="kt">string</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">MsgUp</span><span class="w">   </span><span class="nx">Msg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;up&quot;</span>
+<span class="w">    </span><span class="nx">MsgDown</span><span class="w"> </span><span class="nx">Msg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;down&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Bubble Tea sends this <code>Msg</code> into the next stage.</p>
+<hr />
+<h3 id="3-updatemodel-msg">🔹 3. <strong>Update(model, msg)</strong></h3>
+<blockquote>
+<p>❓ What is this?<br />
+The <code>Update</code> function handles logic.</p>
+</blockquote>
+<p>You write logic inside <code>Update</code> to:</p>
+<ul>
+<li>
+<p>Change the state (i.e., update the model)</p>
+</li>
+<li>
+<p>Optionally trigger side effects like timers or network calls (via <code>Cmd</code>)</p>
+</li>
+</ul>
+<p>✅ Example:</p>
+<div class="highlight"><span class="filename">Go</span><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">model</span><span class="p">)</span><span class="w"> </span><span class="nx">Update</span><span class="p">(</span><span class="nx">msg</span><span class="w"> </span><span class="nx">tea</span><span class="p">.</span><span class="nx">Msg</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">model</span><span class="p">,</span><span class="w"> </span><span class="nx">tea</span><span class="p">.</span><span class="nx">Cmd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">msg</span><span class="p">.(</span><span class="kd">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">tea</span><span class="p">.</span><span class="nx">KeyMsg</span><span class="p">:</span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="nx">msg</span><span class="p">.</span><span class="nx">String</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;up&quot;</span><span class="p">:</span>
+<span class="w">            </span><span class="nx">m</span><span class="p">.</span><span class="nx">cursor</span><span class="o">--</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;down&quot;</span><span class="p">:</span>
+<span class="w">            </span><span class="nx">m</span><span class="p">.</span><span class="nx">cursor</span><span class="o">++</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">m</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>🎯 Goal: Return a new model (updated state) and optionally a command (<code>Cmd</code>).</p>
+</blockquote>
+<hr />
+<h3 id="4-new-model-cmd">🔹 4. <strong>New Model + Cmd</strong></h3>
+<blockquote>
+<p>✅ <strong>Model:</strong> The new application state after handling the message.</p>
+<p>✅ <strong>Cmd (Command):</strong> Tells Bubble Tea to run something <strong>asynchronously</strong> and return a new <code>Msg</code> later.</p>
+</blockquote>
+<p>Common use cases for <code>Cmd</code>:</p>
+<ul>
+<li>
+<p>Wait for a timer and send a tick</p>
+</li>
+<li>
+<p>Make a network request</p>
+</li>
+<li>
+<p>Read a file</p>
+</li>
+<li>
+<p>Animate something</p>
+</li>
+</ul>
+<p>✅ Example:</p>
+<div class="highlight"><span class="filename">Go</span><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nx">m</span><span class="p">,</span><span class="w"> </span><span class="nx">tea</span><span class="p">.</span><span class="nx">Tick</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">,</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"> </span><span class="nx">tea</span><span class="p">.</span><span class="nx">Msg</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">tickMsg</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div>
+<hr />
+<h3 id="5-viewmodel">🔹 5. <strong>View(model)</strong></h3>
+<blockquote>
+<p>❓ What is this?<br />
+It’s a function that takes your <strong>model (state)</strong> and returns a <strong>string</strong> to render in the terminal.</p>
+<p>🎯 Goal: Turn state into user interface.</p>
+</blockquote>
+<p>✅ Example:</p>
+<div class="highlight"><span class="filename">Go</span><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">model</span><span class="p">)</span><span class="w"> </span><span class="nx">View</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;Choose an option:\n\n&quot;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">choice</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">choices</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">cursor</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="c1">// no cursor</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">cursor</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">cursor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;&gt;&quot;</span><span class="w"> </span><span class="c1">// highlight</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nx">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">&quot;%s %s\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cursor</span><span class="p">,</span><span class="w"> </span><span class="nx">choice</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">s</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="loop-back">🔄 Loop Back</h3>
+<p>After rendering, Bubble Tea waits for the next <strong>event</strong> or <strong>message</strong>, and the cycle repeats.</p>
+<hr />
+<h3 id="visual-flow-summary">🎨 Visual Flow Summary</h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>1. User presses key          ⌨️
+2. Bubble Tea converts to →  Msg
+3. Msg sent to →             Update()
+4. Update changes →          Model + optional Cmd
+5. View() renders →          New UI based on state
+6. Back to waiting for event...
+</code></pre></div>
+<hr />
+<h3 id="real-example-flow">🔍 Real Example Flow</h3>
+<p>Let’s say the user presses the <strong>down arrow key</strong>.</p>
+<h4 id="step-by-step">Step-by-step:</h4>
+<ol>
+<li>
+<p>Key press: <code>"down"</code></p>
+</li>
+<li>
+<p>Converted to: <code>tea.KeyMsg{Type: KeyDown}</code></p>
+</li>
+<li>
+<p><code>Update()</code> sees the <code>"down"</code> key and increments <code>m.cursor</code></p>
+</li>
+<li>
+<p>New model with updated <code>cursor</code></p>
+</li>
+<li>
+<p><code>View()</code> highlights the next item in the list</p>
+</li>
+<li>
+<p>Terminal redraws the new screen</p>
+</li>
+</ol>
+<hr />
+<h3 id="why-this-architecture-is-powerful">🧠 Why This Architecture is Powerful:</h3>
+<ul>
+<li>
+<p><strong>Separation of Concerns</strong>: View is only for display. Update is only for logic.</p>
+</li>
+<li>
+<p><strong>Testable</strong>: You can test each function easily.</p>
+</li>
+<li>
+<p><strong>Async Friendly</strong>: <code>Cmd</code> makes async logic simple without goroutines everywhere.</p>
+</li>
+<li>
+<p><strong>Declarative UI</strong>: You describe what the UI should look like based on state.</p>
+</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.preview", "navigation.tabs", "navigation.tracking", "navigation.expand", "navigation.path", "navigation.top", "navigation.indexes", "navigation.prune", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
