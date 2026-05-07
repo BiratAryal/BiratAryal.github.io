@@ -1,0 +1,2190 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/DevOps/01PreparationPlan/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>01PreparationPlan - Birat Aryal Technical Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-the-right-mindset-before-tools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-header__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Birat Aryal Technical Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01PreparationPlan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-nav__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Birat Aryal Technical Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Knowledge Base
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Absolutely. I reviewed your updated CV, and the right move now is not “learning random tools,” but building a <strong>layered DevOps foundation</strong> so every line in your CV is backed by real conceptual depth and execution confidence. Your CV already spans networking, datacenter, virtualization, Kubernetes, CI/CD, IaC, observability, security, DR, and cloud operations, so the mentoring path should be structured like an <strong>engineering capability ladder</strong>, not a course list.</p>
+<p>Here is how I would mentor you from ground zero to senior-level maturity.</p>
+<h1 id="1-the-right-mindset-before-tools">1. The right mindset before tools</h1>
+<p>A senior DevOps engineer is not someone who knows many tools. A senior DevOps engineer understands:</p>
+<ul>
+<li>
+<p>how systems are built</p>
+</li>
+<li>
+<p>how systems fail</p>
+</li>
+<li>
+<p>how to automate repeatable work</p>
+</li>
+<li>
+<p>how to secure and observe systems</p>
+</li>
+<li>
+<p>how to design for recovery, scale, and change</p>
+</li>
+</ul>
+<p>So your learning order should be:</p>
+<p><strong>Fundamentals → Systems → Automation → Platforms → Reliability → Architecture</strong></p>
+<p>Not:</p>
+<p><strong>Terraform → Kubernetes → Jenkins → AWS</strong></p>
+<p>That second path creates shallow knowledge. The first path creates senior-level judgment.</p>
+<h1 id="2-your-master-roadmap">2. Your master roadmap</h1>
+<p>Based on your CV, I would break your mentoring journey into 12 learning pillars:</p>
+<ol>
+<li>
+<p>Linux and Operating System fundamentals</p>
+</li>
+<li>
+<p>Networking and datacenter fundamentals</p>
+</li>
+<li>
+<p>Virtualization and compute platforms</p>
+</li>
+<li>
+<p>Storage fundamentals</p>
+</li>
+<li>
+<p>Git, scripting, and automation basics</p>
+</li>
+<li>
+<p>CI/CD engineering fundamentals</p>
+</li>
+<li>
+<p>Cloud fundamentals, especially AWS</p>
+</li>
+<li>
+<p>Infrastructure as Code and configuration management</p>
+</li>
+<li>
+<p>Containers and Kubernetes</p>
+</li>
+<li>
+<p>Observability, logging, alerting, and SRE basics</p>
+</li>
+<li>
+<p>Security, IAM, hardening, and secrets</p>
+</li>
+<li>
+<p>Disaster recovery, architecture, and senior-level design thinking</p>
+</li>
+</ol>
+<p>This is the exact order I would teach you.</p>
+<h1 id="3-phase-0-ground-zero-foundation">3. Phase 0 — Ground zero foundation</h1>
+<p>Before DevOps, you need to be strong in these core ideas.</p>
+<h2 id="31-linux-fundamentals">3.1 Linux fundamentals</h2>
+<p>~~You cannot be strong in DevOps without being dangerous on Linux.~~</p>
+<p>~~You must deeply understand:~~</p>
+<ul>
+<li>
+<p>~~file system structure: <code>/etc</code>, <code>/var</code>, <code>/home</code>, <code>/usr</code>, <code>/opt</code>, <code>/tmp</code>~~</p>
+</li>
+<li>
+<p>~~users, groups, permissions, ownership~~</p>
+</li>
+<li>
+<p>~~processes, threads, signals~~</p>
+</li>
+<li>
+<p>~~systemd and service lifecycle~~</p>
+</li>
+<li>
+<p>packages and repositories</p>
+</li>
+<li>
+<p>networking commands</p>
+</li>
+<li>
+<p>logs and troubleshooting</p>
+</li>
+<li>
+<p>shell basics</p>
+</li>
+<li>
+<p>cron and scheduling</p>
+</li>
+<li>
+<p>disks, mounts, partitions, LVM basics</p>
+</li>
+<li>
+<p>SSH, SCP, rsync</p>
+</li>
+<li>
+<p>environment variables</p>
+</li>
+<li>
+<p>kernel basics at a practical level</p>
+</li>
+</ul>
+<p>You should be able to answer:</p>
+<ul>
+<li>
+<p>What happens when a Linux server boots?</p>
+</li>
+<li>
+<p>How does a service start and stay running?</p>
+</li>
+<li>
+<p>Why does a process become zombie or defunct?</p>
+</li>
+<li>
+<p>Why is disk full even when <code>df</code> and <code>du</code> don’t match?</p>
+</li>
+<li>
+<p>What is the difference between memory usage, cache, and swap?</p>
+</li>
+<li>
+<p>Why is a port open but service unreachable?</p>
+</li>
+</ul>
+<p>Your command muscle memory should include:<br />
+<code>ls</code>, <code>cd</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>, <code>find</code>, <code>grep</code>, <code>awk</code>, <code>sed</code>, <code>tail</code>, <code>journalctl</code>, <code>systemctl</code>, <code>ss</code>, <code>netstat</code>, <code>ip</code>, <code>curl</code>, <code>wget</code>, <code>tar</code>, <code>rsync</code>, <code>chmod</code>, <code>chown</code>, <code>ps</code>, <code>top</code>, <code>htop</code>, <code>df</code>, <code>du</code>, <code>mount</code>, <code>lsblk</code>, <code>crontab</code></p>
+<h2 id="32-windows-basics">3.2 Windows basics</h2>
+<p>Since your CV mentions hybrid infra, don’t ignore Windows.</p>
+<p>You need:</p>
+<ul>
+<li>
+<p>AD basics</p>
+</li>
+<li>
+<p>DNS and DHCP basics</p>
+</li>
+<li>
+<p>service management</p>
+</li>
+<li>
+<p>RDP</p>
+</li>
+<li>
+<p>PowerShell basics</p>
+</li>
+<li>
+<p>certificate basics</p>
+</li>
+<li>
+<p>event viewer</p>
+</li>
+<li>
+<p>Windows patching and update model</p>
+</li>
+<li>
+<p>Windows server roles</p>
+</li>
+</ul>
+<p>Not because you’ll be a Windows admin, but because real infra is hybrid.</p>
+<h1 id="4-phase-1-networking-fundamentals">4. Phase 1 — Networking fundamentals</h1>
+<p>Your CV contains routing, firewalls, segmentation, BGP, OSPF, IPSec, GRE, load balancing, DC-DR. This means your networking foundation must be very strong.</p>
+<h2 id="41-absolute-basics-you-must-master">4.1 Absolute basics you must master</h2>
+<p>Learn these until they feel natural:</p>
+<ul>
+<li>
+<p>OSI model</p>
+</li>
+<li>
+<p>TCP/IP model</p>
+</li>
+<li>
+<p>IP addressing</p>
+</li>
+<li>
+<p>subnetting</p>
+</li>
+<li>
+<p>CIDR</p>
+</li>
+<li>
+<p>routing</p>
+</li>
+<li>
+<p>switching</p>
+</li>
+<li>
+<p>ARP</p>
+</li>
+<li>
+<p>DNS</p>
+</li>
+<li>
+<p>DHCP</p>
+</li>
+<li>
+<p>NAT</p>
+</li>
+<li>
+<p>TCP vs UDP</p>
+</li>
+<li>
+<p>handshake and session concepts</p>
+</li>
+<li>
+<p>MTU and fragmentation</p>
+</li>
+<li>
+<p>VLANs</p>
+</li>
+<li>
+<p>trunks vs access ports</p>
+</li>
+<li>
+<p>STP basics</p>
+</li>
+<li>
+<p>LACP basics</p>
+</li>
+</ul>
+<p>You should be able to explain:</p>
+<ul>
+<li>
+<p>How a browser reaches a website from a client machine</p>
+</li>
+<li>
+<p>How traffic moves inside same VLAN vs different VLAN</p>
+</li>
+<li>
+<p>Why default gateway matters</p>
+</li>
+<li>
+<p>What happens when DNS fails</p>
+</li>
+<li>
+<p>Why asymmetric routing breaks stateful firewalls</p>
+</li>
+</ul>
+<h2 id="42-intermediate-networking">4.2 Intermediate networking</h2>
+<p>Then move into:</p>
+<ul>
+<li>
+<p>OSPF areas, adjacency, cost, LSA basics</p>
+</li>
+<li>
+<p>BGP peers, ASNs, path selection basics</p>
+</li>
+<li>
+<p>GRE vs IPSec</p>
+</li>
+<li>
+<p>site-to-site VPN</p>
+</li>
+<li>
+<p>firewall zones and policy flow</p>
+</li>
+<li>
+<p>ACL vs stateful firewall</p>
+</li>
+<li>
+<p>load balancer concepts: L4 vs L7</p>
+</li>
+<li>
+<p>reverse proxy</p>
+</li>
+<li>
+<p>SSL/TLS handshake</p>
+</li>
+<li>
+<p>health checks</p>
+</li>
+<li>
+<p>failover concepts</p>
+</li>
+<li>
+<p>keepalived / VRRP basics</p>
+</li>
+</ul>
+<p>You should be able to design:</p>
+<ul>
+<li>
+<p>branch-to-DC secure connectivity</p>
+</li>
+<li>
+<p>app tier / db tier segmentation</p>
+</li>
+<li>
+<p>HA load balancer topology</p>
+</li>
+<li>
+<p>DC-DR routing failover path</p>
+</li>
+</ul>
+<h2 id="43-datacenter-networking">4.3 Datacenter networking</h2>
+<p>Since your CV mentions spine-leaf and DC-DR architecture, these are senior topics. Learn them only after the fundamentals are stable.</p>
+<p>Need to understand:</p>
+<ul>
+<li>
+<p>why spine-leaf exists</p>
+</li>
+<li>
+<p>east-west vs north-south traffic</p>
+</li>
+<li>
+<p>top-of-rack switches</p>
+</li>
+<li>
+<p>ECMP basics</p>
+</li>
+<li>
+<p>redundancy domains</p>
+</li>
+<li>
+<p>failure domains</p>
+</li>
+<li>
+<p>underlay vs overlay concept</p>
+</li>
+<li>
+<p>firewall insertion points</p>
+</li>
+<li>
+<p>management plane isolation</p>
+</li>
+<li>
+<p>storage traffic separation</p>
+</li>
+<li>
+<p>backup network separation</p>
+</li>
+</ul>
+<h1 id="5-phase-2-compute-virtualization-and-infrastructure-fundamentals">5. Phase 2 — Compute, virtualization, and infrastructure fundamentals</h1>
+<p>Your CV mentions VMware, ESXi, vCenter, Proxmox, Sangfor, HA clusters, templates, provisioning.</p>
+<h2 id="51-start-with-physical-vs-virtual-thinking">5.1 Start with physical vs virtual thinking</h2>
+<p>You must understand:</p>
+<ul>
+<li>
+<p>what a server is</p>
+</li>
+<li>
+<p>what CPU, RAM, NIC, disk, RAID mean</p>
+</li>
+<li>
+<p>hypervisor type 1 vs type 2</p>
+</li>
+<li>
+<p>VM lifecycle</p>
+</li>
+<li>
+<p>templates and cloning</p>
+</li>
+<li>
+<p>snapshots vs backups</p>
+</li>
+<li>
+<p>overcommitment</p>
+</li>
+<li>
+<p>resource pools</p>
+</li>
+<li>
+<p>HA vs FT vs DRS at conceptual level</p>
+</li>
+<li>
+<p>cluster vs host vs datastore</p>
+</li>
+</ul>
+<p>You should be able to explain:</p>
+<ul>
+<li>
+<p>Why virtualization changed datacenter operations</p>
+</li>
+<li>
+<p>Why snapshot is not backup</p>
+</li>
+<li>
+<p>What happens when a host fails in a cluster</p>
+</li>
+<li>
+<p>Why storage latency kills VM performance</p>
+</li>
+</ul>
+<h2 id="52-vmware-proxmox-basics">5.2 VMware / Proxmox basics</h2>
+<p>Then learn practical operations:</p>
+<ul>
+<li>
+<p>create VM</p>
+</li>
+<li>
+<p>templates</p>
+</li>
+<li>
+<p>vSwitch / distributed switch concepts</p>
+</li>
+<li>
+<p>datastores</p>
+</li>
+<li>
+<p>vmkernel adapters</p>
+</li>
+<li>
+<p>vMotion basics</p>
+</li>
+<li>
+<p>HA basics</p>
+</li>
+<li>
+<p>cluster scheduling concepts</p>
+</li>
+<li>
+<p>host maintenance mode</p>
+</li>
+<li>
+<p>backups and restores</p>
+</li>
+</ul>
+<h1 id="6-phase-3-storage-fundamentals">6. Phase 3 — Storage fundamentals</h1>
+<p>Many DevOps engineers are weak here. Seniors are not.</p>
+<p>You need:</p>
+<ul>
+<li>
+<p>block vs file vs object storage</p>
+</li>
+<li>
+<p>SAN vs NAS</p>
+</li>
+<li>
+<p>iSCSI basics</p>
+</li>
+<li>
+<p>NFS basics</p>
+</li>
+<li>
+<p>latency, IOPS, throughput</p>
+</li>
+<li>
+<p>RAID levels</p>
+</li>
+<li>
+<p>snapshots, replication, backups</p>
+</li>
+<li>
+<p>consistency concepts</p>
+</li>
+<li>
+<p>database backup vs filesystem backup</p>
+</li>
+<li>
+<p>storage for VMs</p>
+</li>
+<li>
+<p>storage for Kubernetes</p>
+</li>
+</ul>
+<p>Then map it to your stack:</p>
+<ul>
+<li>
+<p>SAN for VMs</p>
+</li>
+<li>
+<p>Longhorn / Ceph for K8s</p>
+</li>
+<li>
+<p>MinIO for object storage</p>
+</li>
+<li>
+<p>backup platform like Veeam</p>
+</li>
+</ul>
+<p>You should know:</p>
+<ul>
+<li>
+<p>why distributed storage is operationally expensive</p>
+</li>
+<li>
+<p>why backup success does not always mean restore success</p>
+</li>
+<li>
+<p>why storage class design matters in Kubernetes</p>
+</li>
+</ul>
+<h1 id="7-phase-4-git-scripting-and-automation-basics">7. Phase 4 — Git, scripting, and automation basics</h1>
+<p>Before Terraform and Ansible, you need automation thinking.</p>
+<h2 id="71-git-fundamentals">7.1 Git fundamentals</h2>
+<p>You must know:</p>
+<ul>
+<li>
+<p>repository</p>
+</li>
+<li>
+<p>branch</p>
+</li>
+<li>
+<p>commit</p>
+</li>
+<li>
+<p>merge</p>
+</li>
+<li>
+<p>rebase</p>
+</li>
+<li>
+<p>tag</p>
+</li>
+<li>
+<p>pull request / merge request</p>
+</li>
+<li>
+<p>conflict resolution</p>
+</li>
+<li>
+<p>rollback strategies</p>
+</li>
+<li>
+<p>release tags</p>
+</li>
+<li>
+<p>versioning</p>
+</li>
+</ul>
+<p>A DevOps engineer should treat Git as a system-of-record, not just a code hosting tool.</p>
+<h2 id="72-bash-and-python-basics">7.2 Bash and Python basics</h2>
+<p>From ground zero, I would teach:</p>
+<ul>
+<li>
+<p>variables</p>
+</li>
+<li>
+<p>loops</p>
+</li>
+<li>
+<p>conditionals</p>
+</li>
+<li>
+<p>functions</p>
+</li>
+<li>
+<p>exit codes</p>
+</li>
+<li>
+<p>error handling</p>
+</li>
+<li>
+<p>parsing command output</p>
+</li>
+<li>
+<p>file manipulation</p>
+</li>
+<li>
+<p>calling APIs</p>
+</li>
+<li>
+<p>JSON/YAML handling</p>
+</li>
+</ul>
+<p>Why this matters:<br />
+If you don’t understand scripting, you will use Terraform, Ansible, and Jenkins mechanically instead of intelligently.</p>
+<h1 id="8-phase-5-cicd-fundamentals">8. Phase 5 — CI/CD fundamentals</h1>
+<p>Your CV strongly highlights Jenkins, Git-based releases, pipelines, notifications, artifact promotion, hybrid delivery.</p>
+<h2 id="81-first-learn-software-delivery-flow">8.1 First learn software delivery flow</h2>
+<p>Before Jenkins syntax, understand the delivery chain:</p>
+<ul>
+<li>
+<p>developer writes code</p>
+</li>
+<li>
+<p>code stored in Git</p>
+</li>
+<li>
+<p>pipeline triggered</p>
+</li>
+<li>
+<p>dependencies resolved</p>
+</li>
+<li>
+<p>code compiled/test executed</p>
+</li>
+<li>
+<p>artifact built</p>
+</li>
+<li>
+<p>artifact scanned</p>
+</li>
+<li>
+<p>artifact versioned</p>
+</li>
+<li>
+<p>artifact pushed to registry/repository</p>
+</li>
+<li>
+<p>deployment triggered</p>
+</li>
+<li>
+<p>rollout validated</p>
+</li>
+<li>
+<p>rollback possible</p>
+</li>
+</ul>
+<h2 id="82-cicd-core-concepts">8.2 CI/CD core concepts</h2>
+<p>You need clean understanding of:</p>
+<ul>
+<li>
+<p>CI vs CD</p>
+</li>
+<li>
+<p>pipeline stages</p>
+</li>
+<li>
+<p>runners/agents</p>
+</li>
+<li>
+<p>artifacts</p>
+</li>
+<li>
+<p>environment promotion</p>
+</li>
+<li>
+<p>secrets in pipelines</p>
+</li>
+<li>
+<p>idempotent deployment</p>
+</li>
+<li>
+<p>immutable artifacts</p>
+</li>
+<li>
+<p>canary vs blue-green vs rolling deployment</p>
+</li>
+<li>
+<p>approvals and gates</p>
+</li>
+<li>
+<p>test pyramid basics</p>
+</li>
+<li>
+<p>release management</p>
+</li>
+<li>
+<p>pipeline observability</p>
+</li>
+</ul>
+<h2 id="83-jenkins-fundamentals">8.3 Jenkins fundamentals</h2>
+<p>Then go tool-specific:</p>
+<ul>
+<li>
+<p>controller vs agent</p>
+</li>
+<li>
+<p>freestyle vs pipeline</p>
+</li>
+<li>
+<p>declarative vs scripted</p>
+</li>
+<li>
+<p>Jenkinsfile</p>
+</li>
+<li>
+<p>shared libraries</p>
+</li>
+<li>
+<p>credentials handling</p>
+</li>
+<li>
+<p>agent labels</p>
+</li>
+<li>
+<p>workspace management</p>
+</li>
+<li>
+<p>parallel stages</p>
+</li>
+<li>
+<p>post actions</p>
+</li>
+<li>
+<p>retry and timeout handling</p>
+</li>
+<li>
+<p>failure reporting</p>
+</li>
+</ul>
+<p>You should be able to explain:</p>
+<ul>
+<li>
+<p>Why pipelines fail intermittently</p>
+</li>
+<li>
+<p>Why shared libraries reduce pipeline duplication</p>
+</li>
+<li>
+<p>Why keeping business logic in Jenkinsfiles becomes messy</p>
+</li>
+<li>
+<p>How to design secure pipeline credential usage</p>
+</li>
+</ul>
+<h1 id="9-phase-6-cloud-fundamentals-with-aws">9. Phase 6 — Cloud fundamentals with AWS</h1>
+<p>Your CV mentions AWS, EKS, ECR, IAM Identity Center, ALB/NLB, EC2, VPC.</p>
+<p>Do not start AWS from services list. Start from <strong>cloud operating model</strong>.</p>
+<h2 id="91-learn-the-cloud-mindset">9.1 Learn the cloud mindset</h2>
+<p>Understand:</p>
+<ul>
+<li>
+<p>shared responsibility model</p>
+</li>
+<li>
+<p>elasticity</p>
+</li>
+<li>
+<p>pay-as-you-go</p>
+</li>
+<li>
+<p>regional design</p>
+</li>
+<li>
+<p>managed vs self-managed services</p>
+</li>
+<li>
+<p>identity-first access control</p>
+</li>
+<li>
+<p>fault isolation</p>
+</li>
+<li>
+<p>automation-first provisioning</p>
+</li>
+</ul>
+<h2 id="92-must-master-aws-foundations">9.2 Must-master AWS foundations</h2>
+<p>Start with:</p>
+<ul>
+<li>
+<p>regions and AZs</p>
+</li>
+<li>
+<p>accounts</p>
+</li>
+<li>
+<p>VPC</p>
+</li>
+<li>
+<p>subnets</p>
+</li>
+<li>
+<p>route tables</p>
+</li>
+<li>
+<p>internet gateway</p>
+</li>
+<li>
+<p>NAT gateway</p>
+</li>
+<li>
+<p>security groups</p>
+</li>
+<li>
+<p>NACLs</p>
+</li>
+<li>
+<p>EC2</p>
+</li>
+<li>
+<p>AMIs</p>
+</li>
+<li>
+<p>EBS</p>
+</li>
+<li>
+<p>ELB basics</p>
+</li>
+<li>
+<p>IAM users, roles, policies</p>
+</li>
+<li>
+<p>CloudWatch basics</p>
+</li>
+<li>
+<p>S3 fundamentals</p>
+</li>
+<li>
+<p>DNS with Route 53</p>
+</li>
+<li>
+<p>Systems Manager basics</p>
+</li>
+</ul>
+<p>Then move to:</p>
+<ul>
+<li>
+<p>ECR</p>
+</li>
+<li>
+<p>EKS</p>
+</li>
+<li>
+<p>IAM Identity Center</p>
+</li>
+<li>
+<p>autoscaling concepts</p>
+</li>
+<li>
+<p>KMS</p>
+</li>
+<li>
+<p>Secrets Manager / Parameter Store</p>
+</li>
+</ul>
+<p>You should be able to answer:</p>
+<ul>
+<li>
+<p>Why use private subnets?</p>
+</li>
+<li>
+<p>SG vs NACL?</p>
+</li>
+<li>
+<p>Why use IAM role instead of static keys?</p>
+</li>
+<li>
+<p>ALB vs NLB?</p>
+</li>
+<li>
+<p>EBS vs S3?</p>
+</li>
+<li>
+<p>Why multi-AZ matters?</p>
+</li>
+</ul>
+<h1 id="10-phase-7-infrastructure-as-code-and-configuration-management">10. Phase 7 — Infrastructure as Code and configuration management</h1>
+<p>Your CV includes Terraform, Ansible, PowerCLI, GitOps workflows, provisioning automation.</p>
+<h2 id="101-terraform-from-true-basics">10.1 Terraform from true basics</h2>
+<p>Terraform is not “write .tf files.” Terraform is a desired-state engine.</p>
+<p>You need to understand:</p>
+<ul>
+<li>
+<p>desired state</p>
+</li>
+<li>
+<p>providers</p>
+</li>
+<li>
+<p>resources</p>
+</li>
+<li>
+<p>data sources</p>
+</li>
+<li>
+<p>variables</p>
+</li>
+<li>
+<p>outputs</p>
+</li>
+<li>
+<p>state</p>
+</li>
+<li>
+<p>backend</p>
+</li>
+<li>
+<p>modules</p>
+</li>
+<li>
+<p>dependency graph</p>
+</li>
+<li>
+<p>plan vs apply</p>
+</li>
+<li>
+<p>drift</p>
+</li>
+<li>
+<p>lifecycle</p>
+</li>
+<li>
+<p>import</p>
+</li>
+<li>
+<p>remote state</p>
+</li>
+<li>
+<p>workspaces</p>
+</li>
+</ul>
+<p>Senior-level Terraform maturity means you can answer:</p>
+<ul>
+<li>
+<p>What is in terraform state and why is it sensitive?</p>
+</li>
+<li>
+<p>Why does drift happen?</p>
+</li>
+<li>
+<p>When should a module be split?</p>
+</li>
+<li>
+<p>Why can badly designed modules become an anti-pattern?</p>
+</li>
+<li>
+<p>Why is <code>terraform apply</code> from local laptop risky in enterprise environments?</p>
+</li>
+</ul>
+<h2 id="102-ansible-from-fundamentals">10.2 Ansible from fundamentals</h2>
+<p>Ansible concepts:</p>
+<ul>
+<li>
+<p>inventory</p>
+</li>
+<li>
+<p>playbook</p>
+</li>
+<li>
+<p>task</p>
+</li>
+<li>
+<p>role</p>
+</li>
+<li>
+<p>variable precedence</p>
+</li>
+<li>
+<p>idempotency</p>
+</li>
+<li>
+<p>handlers</p>
+</li>
+<li>
+<p>facts</p>
+</li>
+<li>
+<p>templates</p>
+</li>
+<li>
+<p>modules</p>
+</li>
+<li>
+<p>vault</p>
+</li>
+<li>
+<p>tags</p>
+</li>
+<li>
+<p>conditionals</p>
+</li>
+</ul>
+<p>You must understand:</p>
+<ul>
+<li>
+<p>why idempotency matters</p>
+</li>
+<li>
+<p>when to use shell vs module</p>
+</li>
+<li>
+<p>role structure</p>
+</li>
+<li>
+<p>inventory modeling</p>
+</li>
+<li>
+<p>secrets management</p>
+</li>
+<li>
+<p>Jinja2 basics</p>
+</li>
+</ul>
+<h2 id="103-gitops-thinking">10.3 GitOps thinking</h2>
+<p>GitOps is not “store YAML in Git.”</p>
+<p>It means:</p>
+<ul>
+<li>
+<p>Git is source of truth</p>
+</li>
+<li>
+<p>changes are auditable</p>
+</li>
+<li>
+<p>desired state is versioned</p>
+</li>
+<li>
+<p>automated reconciliation happens</p>
+</li>
+<li>
+<p>rollback is version-based</p>
+</li>
+<li>
+<p>drift becomes visible</p>
+</li>
+</ul>
+<h1 id="11-phase-8-containers-and-kubernetes">11. Phase 8 — Containers and Kubernetes</h1>
+<p>This is one of the biggest areas in your CV: kubeadm, Cluster API, Helm, RBAC, Ingress, Longhorn, Ceph, service accounts, Vault, EKS.</p>
+<h2 id="111-containers-before-kubernetes">11.1 Containers before Kubernetes</h2>
+<p>Learn:</p>
+<ul>
+<li>
+<p>what a container is</p>
+</li>
+<li>
+<p>namespaces and cgroups at conceptual level</p>
+</li>
+<li>
+<p>image vs container</p>
+</li>
+<li>
+<p>Dockerfile basics</p>
+</li>
+<li>
+<p>layers</p>
+</li>
+<li>
+<p>image registries</p>
+</li>
+<li>
+<p>entrypoint vs command</p>
+</li>
+<li>
+<p>bind mounts vs volumes</p>
+</li>
+<li>
+<p>environment variables</p>
+</li>
+<li>
+<p>networking basics</p>
+</li>
+<li>
+<p>why containers are not VMs</p>
+</li>
+</ul>
+<p>You should understand why:</p>
+<ul>
+<li>
+<p>image size matters</p>
+</li>
+<li>
+<p>root user in container is risky</p>
+</li>
+<li>
+<p>mutable containers are bad practice</p>
+</li>
+<li>
+<p>tagging strategy matters</p>
+</li>
+</ul>
+<h2 id="112-kubernetes-fundamentals">11.2 Kubernetes fundamentals</h2>
+<p>Do not jump into cluster deployment first.</p>
+<p>Master these objects:</p>
+<ul>
+<li>
+<p>Pod</p>
+</li>
+<li>
+<p>Deployment</p>
+</li>
+<li>
+<p>ReplicaSet</p>
+</li>
+<li>
+<p>StatefulSet</p>
+</li>
+<li>
+<p>DaemonSet</p>
+</li>
+<li>
+<p>Service</p>
+</li>
+<li>
+<p>ConfigMap</p>
+</li>
+<li>
+<p>Secret</p>
+</li>
+<li>
+<p>Namespace</p>
+</li>
+<li>
+<p>Ingress</p>
+</li>
+<li>
+<p>PV/PVC</p>
+</li>
+<li>
+<p>StorageClass</p>
+</li>
+<li>
+<p>ServiceAccount</p>
+</li>
+<li>
+<p>Role / ClusterRole</p>
+</li>
+<li>
+<p>RoleBinding / ClusterRoleBinding</p>
+</li>
+</ul>
+<p>Then cluster concepts:</p>
+<ul>
+<li>
+<p>control plane</p>
+</li>
+<li>
+<p>etcd</p>
+</li>
+<li>
+<p>scheduler</p>
+</li>
+<li>
+<p>kubelet</p>
+</li>
+<li>
+<p>kube-proxy</p>
+</li>
+<li>
+<p>CNI</p>
+</li>
+<li>
+<p>CSI</p>
+</li>
+<li>
+<p>admission control</p>
+</li>
+<li>
+<p>reconciliation loop</p>
+</li>
+</ul>
+<p>You should be able to explain:</p>
+<ul>
+<li>
+<p>why pod is ephemeral</p>
+</li>
+<li>
+<p>why service is needed</p>
+</li>
+<li>
+<p>when to use StatefulSet</p>
+</li>
+<li>
+<p>what happens when node goes NotReady</p>
+</li>
+<li>
+<p>why liveness and readiness are different</p>
+</li>
+<li>
+<p>why requests and limits matter</p>
+</li>
+<li>
+<p>why resource pressure leads to eviction</p>
+</li>
+</ul>
+<h2 id="113-kubernetes-operations-maturity">11.3 Kubernetes operations maturity</h2>
+<p>Then move to:</p>
+<ul>
+<li>
+<p>kubeadm architecture</p>
+</li>
+<li>
+<p>Cluster API concepts</p>
+</li>
+<li>
+<p>cluster bootstrap</p>
+</li>
+<li>
+<p>worker join process</p>
+</li>
+<li>
+<p>upgrades</p>
+</li>
+<li>
+<p>certificate rotation</p>
+</li>
+<li>
+<p>ingress controller</p>
+</li>
+<li>
+<p>Helm packaging</p>
+</li>
+<li>
+<p>storage integration</p>
+</li>
+<li>
+<p>secrets handling</p>
+</li>
+<li>
+<p>Vault integration</p>
+</li>
+<li>
+<p>backup/restore of etcd</p>
+</li>
+<li>
+<p>troubleshooting CrashLoopBackOff, ImagePullBackOff, Pending pods</p>
+</li>
+<li>
+<p>metrics-server basics</p>
+</li>
+<li>
+<p>RBAC troubleshooting</p>
+</li>
+</ul>
+<h1 id="12-phase-9-observability-and-sre-foundations">12. Phase 9 — Observability and SRE foundations</h1>
+<p>Your CV has Prometheus, Grafana, Loki, ELK, Nagios, SNMP, Wazuh, CrowdSec, certificate monitoring, traffic flow visibility.</p>
+<p>You need to build this in layers.</p>
+<h2 id="121-what-observability-really-means">12.1 What observability really means</h2>
+<p>Three core pillars:</p>
+<ul>
+<li>
+<p>metrics</p>
+</li>
+<li>
+<p>logs</p>
+</li>
+<li>
+<p>traces</p>
+</li>
+</ul>
+<p>Plus practical ops pillars:</p>
+<ul>
+<li>
+<p>alerting</p>
+</li>
+<li>
+<p>dashboards</p>
+</li>
+<li>
+<p>runbooks</p>
+</li>
+<li>
+<p>SLOs/SLIs</p>
+</li>
+<li>
+<p>incident workflow</p>
+</li>
+</ul>
+<h2 id="122-metrics-foundation">12.2 Metrics foundation</h2>
+<p>Learn:</p>
+<ul>
+<li>
+<p>counters</p>
+</li>
+<li>
+<p>gauges</p>
+</li>
+<li>
+<p>histograms</p>
+</li>
+<li>
+<p>summaries</p>
+</li>
+<li>
+<p>scraping model</p>
+</li>
+<li>
+<p>exporters</p>
+</li>
+<li>
+<p>label cardinality</p>
+</li>
+<li>
+<p>PromQL basics</p>
+</li>
+<li>
+<p>alert rules</p>
+</li>
+<li>
+<p>recording rules</p>
+</li>
+</ul>
+<p>You must understand:</p>
+<ul>
+<li>
+<p>why high cardinality is dangerous</p>
+</li>
+<li>
+<p>why “CPU high” alert alone is weak</p>
+</li>
+<li>
+<p>why alert fatigue happens</p>
+</li>
+<li>
+<p>why symptoms and causes should be separated</p>
+</li>
+</ul>
+<h2 id="123-logging-foundation">12.3 Logging foundation</h2>
+<p>Learn:</p>
+<ul>
+<li>
+<p>structured vs unstructured logs</p>
+</li>
+<li>
+<p>log levels</p>
+</li>
+<li>
+<p>parsing</p>
+</li>
+<li>
+<p>indexing cost</p>
+</li>
+<li>
+<p>retention</p>
+</li>
+<li>
+<p>correlation</p>
+</li>
+<li>
+<p>centralization</p>
+</li>
+<li>
+<p>noise reduction</p>
+</li>
+</ul>
+<h2 id="124-sre-basics">12.4 SRE basics</h2>
+<p>Understand:</p>
+<ul>
+<li>
+<p>SLA</p>
+</li>
+<li>
+<p>SLI</p>
+</li>
+<li>
+<p>SLO</p>
+</li>
+<li>
+<p>error budget</p>
+</li>
+<li>
+<p>toil</p>
+</li>
+<li>
+<p>MTTD, MTTR</p>
+</li>
+<li>
+<p>incident severity</p>
+</li>
+<li>
+<p>postmortem culture</p>
+</li>
+<li>
+<p>reliability vs release velocity tradeoff</p>
+</li>
+</ul>
+<h1 id="13-phase-10-security-engineering-fundamentals">13. Phase 10 — Security engineering fundamentals</h1>
+<p>Your CV includes RBAC, CIS hardening, Vault, IAM Identity Center, segmentation, certificate monitoring, Wazuh, CrowdSec.</p>
+<p>This should be learned as control layers.</p>
+<h2 id="131-first-principles">13.1 First principles</h2>
+<p>Understand:</p>
+<ul>
+<li>
+<p>CIA triad</p>
+</li>
+<li>
+<p>least privilege</p>
+</li>
+<li>
+<p>zero trust</p>
+</li>
+<li>
+<p>defense in depth</p>
+</li>
+<li>
+<p>identity over IP-based trust</p>
+</li>
+<li>
+<p>secrets lifecycle</p>
+</li>
+<li>
+<p>patching</p>
+</li>
+<li>
+<p>hardening</p>
+</li>
+<li>
+<p>auditability</p>
+</li>
+</ul>
+<h2 id="132-core-security-domains-for-devops">13.2 Core security domains for DevOps</h2>
+<p>Learn:</p>
+<ul>
+<li>
+<p>Linux hardening</p>
+</li>
+<li>
+<p>CIS concepts</p>
+</li>
+<li>
+<p>SSH security</p>
+</li>
+<li>
+<p>certificates and TLS basics</p>
+</li>
+<li>
+<p>RBAC in Kubernetes</p>
+</li>
+<li>
+<p>IAM in AWS</p>
+</li>
+<li>
+<p>secrets management</p>
+</li>
+<li>
+<p>network segmentation</p>
+</li>
+<li>
+<p>image scanning</p>
+</li>
+<li>
+<p>vulnerability management</p>
+</li>
+<li>
+<p>logging and detection</p>
+</li>
+<li>
+<p>change control</p>
+</li>
+</ul>
+<p>You should be able to answer:</p>
+<ul>
+<li>
+<p>Why hardcoding secrets is bad even in private repos</p>
+</li>
+<li>
+<p>Why Kubernetes secret is not full secret management</p>
+</li>
+<li>
+<p>Why IAM wildcards create future risk</p>
+</li>
+<li>
+<p>Why segmentation contains blast radius</p>
+</li>
+</ul>
+<h1 id="14-phase-11-databases-backup-and-recovery-basics">14. Phase 11 — Databases, backup, and recovery basics</h1>
+<p>Your CV mentions MSSQL, MySQL, PostgreSQL, corrupted DB recovery, backup automation, encryption, resilience.</p>
+<p>You do not need to become DBA-first, but you must know:</p>
+<ul>
+<li>
+<p>relational DB basics</p>
+</li>
+<li>
+<p>transactions</p>
+</li>
+<li>
+<p>indexing basics</p>
+</li>
+<li>
+<p>replication basics</p>
+</li>
+<li>
+<p>consistency basics</p>
+</li>
+<li>
+<p>backups: full, differential, incremental, transaction logs</p>
+</li>
+<li>
+<p>point-in-time recovery</p>
+</li>
+<li>
+<p>restore testing</p>
+</li>
+<li>
+<p>corruption basics</p>
+</li>
+<li>
+<p>performance basics</p>
+</li>
+<li>
+<p>connection pooling basics</p>
+</li>
+</ul>
+<p>Senior-level practical truth:<br />
+A backup is only trusted after a successful restore test.</p>
+<h1 id="15-phase-12-disaster-recovery-and-architecture-thinking">15. Phase 12 — Disaster recovery and architecture thinking</h1>
+<p>Your CV strongly positions you in DR, BC, DC-DR, capacity planning, HA, failover, recovery execution.</p>
+<p>This is senior-level territory.</p>
+<p>You need to understand:</p>
+<ul>
+<li>
+<p>HA vs DR</p>
+</li>
+<li>
+<p>RTO vs RPO</p>
+</li>
+<li>
+<p>active-active vs active-passive</p>
+</li>
+<li>
+<p>backup vs replication</p>
+</li>
+<li>
+<p>failover vs switchover</p>
+</li>
+<li>
+<p>dependency mapping</p>
+</li>
+<li>
+<p>application recovery sequence</p>
+</li>
+<li>
+<p>DNS failover</p>
+</li>
+<li>
+<p>database recovery order</p>
+</li>
+<li>
+<p>capacity headroom</p>
+</li>
+<li>
+<p>runbooks</p>
+</li>
+<li>
+<p>DR drills</p>
+</li>
+<li>
+<p>business criticality tiers</p>
+</li>
+</ul>
+<p>You should be able to design:</p>
+<ul>
+<li>
+<p>infra redundancy</p>
+</li>
+<li>
+<p>app redundancy</p>
+</li>
+<li>
+<p>recovery orchestration</p>
+</li>
+<li>
+<p>validation and rollback during DR</p>
+</li>
+<li>
+<p>communications path during incident</p>
+</li>
+</ul>
+<h1 id="16-what-senior-devops-engineer-actually-means">16. What “senior DevOps engineer” actually means</h1>
+<p>To become senior, you need growth in 5 dimensions:</p>
+<h2 id="161-technical-depth">16.1 Technical depth</h2>
+<p>You can troubleshoot down to packet flow, process state, configuration drift, and control-plane failure.</p>
+<h2 id="162-system-design">16.2 System design</h2>
+<p>You can build solutions with clear failure boundaries, automation flows, security controls, and operational ownership.</p>
+<h2 id="163-operational-maturity">16.3 Operational maturity</h2>
+<p>You think in monitoring, backups, rollbacks, audits, capacity, and incident response.</p>
+<h2 id="164-decision-making">16.4 Decision-making</h2>
+<p>You know when not to overengineer.</p>
+<h2 id="165-mentoring">16.5 Mentoring</h2>
+<p>You can explain a complex system simply to juniors and standardize team workflows.</p>
+<h1 id="17-your-structured-learning-path-from-internship-level">17. Your structured learning path from internship level</h1>
+<p>Here is the sequence I recommend for you.</p>
+<h2 id="stage-1-apprentice-foundation">Stage 1 — Apprentice foundation</h2>
+<p>Duration focus: build depth, not speed</p>
+<p>Learn in order:</p>
+<ol>
+<li>
+<p>Linux</p>
+</li>
+<li>
+<p>Networking</p>
+</li>
+<li>
+<p>Git</p>
+</li>
+<li>
+<p>Bash/Python basics</p>
+</li>
+<li>
+<p>Virtualization basics</p>
+</li>
+<li>
+<p>Storage basics</p>
+</li>
+</ol>
+<p>Goal:<br />
+You can deploy and troubleshoot a server end to end.</p>
+<h2 id="stage-2-junior-devops-foundation">Stage 2 — Junior DevOps foundation</h2>
+<p>Learn:</p>
+<ol>
+<li>
+<p>CI/CD fundamentals</p>
+</li>
+<li>
+<p>AWS fundamentals</p>
+</li>
+<li>
+<p>Terraform</p>
+</li>
+<li>
+<p>Ansible</p>
+</li>
+<li>
+<p>container basics</p>
+</li>
+<li>
+<p>monitoring basics</p>
+</li>
+</ol>
+<p>Goal:<br />
+You can automate infrastructure and delivery safely.</p>
+<h2 id="stage-3-mid-level-platform-engineer">Stage 3 — Mid-level platform engineer</h2>
+<p>Learn:</p>
+<ol>
+<li>
+<p>Kubernetes architecture</p>
+</li>
+<li>
+<p>Helm</p>
+</li>
+<li>
+<p>ingress and storage</p>
+</li>
+<li>
+<p>observability stack</p>
+</li>
+<li>
+<p>security and IAM</p>
+</li>
+<li>
+<p>GitOps patterns</p>
+</li>
+</ol>
+<p>Goal:<br />
+You can run a production platform, not just deploy apps.</p>
+<h2 id="stage-4-senior-devops-platform-maturity">Stage 4 — Senior DevOps / platform maturity</h2>
+<p>Learn:</p>
+<ol>
+<li>
+<p>multi-environment architecture</p>
+</li>
+<li>
+<p>HA/DR design</p>
+</li>
+<li>
+<p>capacity planning</p>
+</li>
+<li>
+<p>incident leadership</p>
+</li>
+<li>
+<p>compliance and hardening</p>
+</li>
+<li>
+<p>standardization and reusable platform patterns</p>
+</li>
+</ol>
+<p>Goal:<br />
+You can own platform outcomes across people, systems, and risk.</p>
+<h1 id="18-weekly-study-structure-i-would-use-to-mentor-you">18. Weekly study structure I would use to mentor you</h1>
+<p>For every topic, use this method:</p>
+<h2 id="layer-a-concept">Layer A — Concept</h2>
+<p>What it is, why it exists, what problem it solves.</p>
+<h2 id="layer-b-internal-mechanics">Layer B — Internal mechanics</h2>
+<p>How it works under the hood.</p>
+<h2 id="layer-c-hands-on-lab">Layer C — Hands-on lab</h2>
+<p>Build it yourself.</p>
+<h2 id="layer-d-troubleshooting">Layer D — Troubleshooting</h2>
+<p>Break it and fix it.</p>
+<h2 id="layer-e-production-design">Layer E — Production design</h2>
+<p>How it should be used in real environments.</p>
+<h2 id="layer-f-interview-articulation">Layer F — Interview articulation</h2>
+<p>How to explain it clearly and confidently.</p>
+<p>That is the strongest way to learn.</p>
+<h1 id="19-what-you-should-not-do">19. What you should not do</h1>
+<p>Avoid these mistakes:</p>
+<ul>
+<li>
+<p>memorizing commands without understanding flow</p>
+</li>
+<li>
+<p>learning Kubernetes before Linux and networking</p>
+</li>
+<li>
+<p>learning Terraform before understanding infrastructure</p>
+</li>
+<li>
+<p>copying CI/CD pipelines without knowing stage logic</p>
+</li>
+<li>
+<p>learning cloud only from certification notes</p>
+</li>
+<li>
+<p>relying on tutorials instead of building labs</p>
+</li>
+<li>
+<p>focusing only on deployment, not operations</p>
+</li>
+<li>
+<p>ignoring backup, logging, and rollback design</p>
+</li>
+<li>
+<p>writing metrics on CV that you cannot defend in detail</p>
+</li>
+</ul>
+<h1 id="20-how-i-suggest-we-do-this-together">20. How I suggest we do this together</h1>
+<p>We should turn your CV into a <strong>full mentoring syllabus</strong> and cover every domain one by one from zero to senior level.</p>
+<p>The best sequence for you is:</p>
+<p><strong>Module 1:</strong> Linux fundamentals<br />
+<strong>Module 2:</strong> Networking fundamentals<br />
+<strong>Module 3:</strong> Virtualization and storage<br />
+<strong>Module 4:</strong> Git, Bash, Python, Go foundations<br />
+<strong>Module 5:</strong> CI/CD and Jenkins<br />
+<strong>Module 6:</strong> AWS core services and architecture<br />
+<strong>Module 7:</strong> Terraform and Ansible<br />
+<strong>Module 8:</strong> Docker and container fundamentals<br />
+<strong>Module 9:</strong> Kubernetes from zero to production<br />
+<strong>Module 10:</strong> Observability and SRE<br />
+<strong>Module 11:</strong> Security, IAM, Vault, hardening<br />
+<strong>Module 12:</strong> DR, HA, architecture, and senior engineering mindset</p>
+<h1 id="21-my-recommendation-for-the-first-lesson">21. My recommendation for the first lesson</h1>
+<p>We should start with:</p>
+<p><strong>Linux + Networking foundations</strong></p>
+<p>Because if these two are weak, everything else becomes memorization instead of engineering.</p>
+<p>In the next step, I can build you a <strong>complete week-by-week mentoring roadmap</strong> for all 12 modules, with:</p>
+<ul>
+<li>
+<p>topics</p>
+</li>
+<li>
+<p>subtopics</p>
+</li>
+<li>
+<p>labs</p>
+</li>
+<li>
+<p>interview questions</p>
+</li>
+<li>
+<p>mini projects</p>
+</li>
+<li>
+<p>production scenarios</p>
+</li>
+<li>
+<p>revision checkpoints</p>
+</li>
+</ul>
+<p>That will turn your CV into a real execution plan.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.preview", "navigation.tabs", "navigation.tracking", "navigation.expand", "navigation.path", "navigation.top", "navigation.indexes", "navigation.prune", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

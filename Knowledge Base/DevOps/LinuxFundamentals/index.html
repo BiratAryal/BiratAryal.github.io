@@ -1,0 +1,2591 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://birataryal.github.io/Knowledge%20Base/DevOps/LinuxFundamentals/">
+      
+      
+        <link rel="prev" href="../Introduction/">
+      
+      
+        <link rel="next" href="../IssuesTroubleshooting/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Fundamentals - Birat Aryal Technical Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#boot-process" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-header__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Birat Aryal Technical Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Birat Aryal Technical Docs" class="md-nav__button md-logo" aria-label="Birat Aryal Technical Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Birat Aryal Technical Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Knowledge Base
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Knowledge Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Start Here
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Fundamentals
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fundamentals
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boot-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boot Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boot Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ec2-boot-process-pre-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖥️EC2 Boot Process - Pre-provisioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-process_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Boot Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-issues-resolutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️Possible Issues &amp; Resolutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users-groups-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Users, Groups, Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Users, Groups, Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iam-decision-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      IAM Decision Order
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-threads-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process, threads, signals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process, threads, signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Threads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemd-and-service-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systemd and service lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systemd and service lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systemd
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packages-and-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages and Repositories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packages and Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offline-package-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offline Package Repository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceisolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ResourceIsolation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ResourceIsolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cgroups-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cgroups &amp; Namespaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspecting-container-cgroup-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspecting container cgroup limits:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistent-kernel-tuning-for-kubernetes-nodes-etcsysctld99-k8sconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistent kernel tuning for Kubernetes nodes (/etc/sysctl.d/99-k8s.conf):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IssuesTroubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Production Issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Linux/Kick%20Start%20Script/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Git/Git/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Mkdocs/Mkdocs/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Mkdocs
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Nginx/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Nginx
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../SQL/Recovery_modes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Docker/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Docker
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Kubernetes/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Kubernetes
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../CAPI/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Cluster API VMWARE
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Minio/Introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Minio
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boot-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boot Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boot Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ec2-boot-process-pre-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖥️EC2 Boot Process - Pre-provisioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-process_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Boot Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-issues-resolutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️Possible Issues &amp; Resolutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users-groups-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Users, Groups, Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Users, Groups, Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iam-decision-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      IAM Decision Order
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-threads-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process, threads, signals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process, threads, signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Threads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemd-and-service-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systemd and service lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systemd and service lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systemd
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packages-and-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages and Repositories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packages and Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repositories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offline-package-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offline Package Repository
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceisolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ResourceIsolation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ResourceIsolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cgroups-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cgroups &amp; Namespaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspecting-container-cgroup-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspecting container cgroup limits:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistent-kernel-tuning-for-kubernetes-nodes-etcsysctld99-k8sconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistent kernel tuning for Kubernetes nodes (/etc/sysctl.d/99-k8s.conf):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Fundamentals</h1>
+
+<div class="admonition tip">
+<p class="admonition-title"> 📝 Author</p>
+<p><strong>Birat Aryal</strong> — <a href="https://birataryal.github.io">birataryal.github.io</a>
+ Created Date: <strong>2026-03-22</strong> <br>
+ Updated Date: Sunday 22nd March 2026 14:21:04<br />
+<strong>Website</strong> - <a href="https://birataryal.com.np">birataryal.com.np</a> <br>
+ <strong>Repository</strong> - <a href="https://github.com/BiratAryal">Birat Aryal</a> <br>
+ <strong>LinkedIn</strong> - <a href="www.linkedin.com/in/birat-aryal">Birat Aryal</a> <br>
+ DevSecOps Engineer | System Engineer | Cyber Security Analyst | Network Engineer</p>
+</div>
+<hr />
+<p>The basic set of commands or the mindset that you must have for the embedded into you muscle memory, so that it would be useful in case of any issues or troubleshooting the issues or concerns raised on any of the environment.</p>
+<h2 id="boot-process">Boot Process</h2>
+<p>The Boot Process on <em>Linux - On-premise</em> and <em>EC2 - AWS</em> are kind of similar. Apart from few components are added on the Cloud based instance creation. The EC2 Boot process only includes the additional step that would be carried out on the cloud infrastructure. 
+Like for the On-premise environment if we create the VM we define the resources first on the VMware or any of the virtualization layer.</p>
+<h3 id="ec2-boot-process-pre-provisioning">🖥️EC2 Boot Process - Pre-provisioning</h3>
+<p>When we first launch an EC2 instance AWS would process these information:</p>
+<ol>
+<li><strong>AMI ID:</strong> The AMI has the type of the Operating system that is to be deployed. This <strong><em>AMI ID</em></strong> also determines what type of boot mode is to be used. <em>UEFI/BIOS</em> E.g.. RHEL, Ubuntu etc.</li>
+<li><strong>Instance Type:</strong>  This looks which resource to apply to the Instance that is created. like t2micro, t3nano etc.</li>
+<li><strong>Subnet:</strong> What subnet is to be applied while creating an ec2 instance and where the subnet lies on which <em>VPC</em></li>
+<li><strong>Security Groups:</strong> What policies are to be applied, if needed to create the new policy then it would create the policy first.</li>
+<li><strong>Key Pair:</strong> For the accessibility of the ec2 instance what public key is to be used.</li>
+<li><strong>IAM Instance Profile:</strong> This verifies the role assigned to the EC2 instance that would be created. Suppose if the EC2 instance needs to have the access of the s3 bucket or the dynamo DB, then IAM Instance Profile would be attached which would be the separate container or the service provided by AWS which would attach the only one policy defined in the IAM role. This only acts as a wrapper as <em>EC2 API could not directly attach role</em>.</li>
+<li><strong>Block Device Mapping:</strong> This <strong>defines how the storage is attached to the instance at the launch time</strong>. We are basically telling AWS where the disk exists and where should they come from and how they should behave. The volumes are attached to the instances via Nitro and exposed to the instance as NVME devices.</li>
+<li><strong>Meta Data Options:</strong></li>
+<li><strong>User Data:</strong> This stores the first time configuration script that is to be executed inside the instance. This would be used later on at the cloud-init step.</li>
+</ol>
+<hr />
+<h3 id="boot-process_1">⚙️ Boot Process</h3>
+<p>On the EC2 once the pre-provisioning tasks are completed then once the instance or VM is created then it would be powered on this process.</p>
+<p><a class="glightbox" href="../../../images/LinuxBootProcess.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LinuxBootProcess" src="../../../images/LinuxBootProcess.jpeg" /></a></p>
+<ol>
+<li><strong>BIOS/UEFI:</strong> framework is loaded which stores the details of the partition type that is to be used either GPT or MBR.</li>
+<li><strong>POST:</strong> after the <em>BIOS</em> is loaded then it would check all the external devices like keyboard, mouse, CPU, RAM, Disks would be checked and if any corruption is seen then it would be shown on the console itself. </li>
+<li><strong>Boot Loader:</strong> Grub2 bootloader would be loaded from <code>/boot/grub2/grub.cfg</code> which would then trigger the kernel modules that would be required for the OS to boot. This presents the boot menu, and loads the selected kernel image (vmlinuz) and initial RAM disk (initramfs) into the memory. </li>
+<li><strong>Kernel Load:</strong> Once received the signal for the modules to be loaded then all the kernel dependent modules are loaded and once all the modules are loaded then it would send the signal to the init or systemd initialization. Initramfs would be mounted temporary root filesystem. Once mounted, kernes executes binary in /sbin/init which in latest linux is systemd (PID 1).</li>
+<li><strong>Init/Systemd:</strong> Systemd services would be started which would start all the services required for the system services. </li>
+<li><strong>Run Level:</strong> At this stage OS would be started and then other user level services would be started at this stage like: user login, graphical interface, network, user profiles initialization, <code>cloud init</code> initializations <code>with user data scripts</code>, configurations inside /etc</li>
+</ol>
+<hr />
+<h3 id="possible-issues-resolutions">🛠️Possible Issues &amp; Resolutions</h3>
+<h4 id="aws">☁️AWS</h4>
+<h5 id="misconfigured-etcfstab">Misconfigured /etc/fstab</h5>
+<p>If the ec2 instance is misconfigured on <code>/etc/fstab</code> then we could use the disk mounted on ec2 instance inside <code>/</code> partition, we could mount to another ec2 instance and use that instance to fix the issue.</p>
+<p>Steps:
+1. Navigate to the ec2 instance which is corrupted. (checks would fail on the instance)
+2. From instance state get the screenshot of the current state inside the ec2 instance which would give more insight of the root cause of the issue.
+3. Power off the corrupted instance
+4. Inside the storage detach the EBS storage which is mounted on the <code>/</code> partition.
+5. Create new instance and attach the corrupted detached disk as new disk inside new ec2 instance
+6. Inside the new ec2 instance new disk is seen.
+7. Using <code>file</code> command to know which partition is the old <code>/</code> partition.
+   <code>file -s /dev/nvme2n1p1</code>
+8. Mount this to any of the temporary file and patch the issue in this directory.
+   <code>mount -t xfs -o nouuid /dev/nvme2n1p1 /mnt</code>
+9. Update the <code>/etc/fstab</code> and fix the corrupted entry.
+10. Reattach the storage to the old ec2 instance and try powering up the instance.</p>
+<h4 id="vm">🐧VM</h4>
+<h5 id="misconfigured-etcfstab_1">Misconfigured /etc/fstab</h5>
+<p>Attach the live iso to the seperate disk in the VM then after follow the same process as that of the ec2 instance to fix any of the issues whether it be as normal as <code>/etc/fstab</code> or updating the <code>sysctl</code> configurations.</p>
+<h5 id="stuck-in-boot">Stuck in boot:</h5>
+<p>Edit the grub config during the boot append the line at the end to boot into rescue mode.
+   <code>systemd.unit=rescue.target</code>
+Once you would be booted to the rescue mode you could use the commands below to dig down the issues in the boot process and why is issues is raised.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Result Obtained</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>systemd-analyze</code></td>
+<td>Total boot time</td>
+</tr>
+<tr>
+<td><code>systemd-analyze critical-chain</code></td>
+<td>Check systemd unit startup ordering and critical path</td>
+</tr>
+<tr>
+<td><code>systemd-analyze plot &gt; boot.svg</code></td>
+<td>Visual timeline of the boot</td>
+</tr>
+<tr>
+<td><code>systemd-analyze blame</code></td>
+<td>Show boot time breakdown per-unit breakdown</td>
+</tr>
+<tr>
+<td><code>journalctl -xb</code></td>
+<td>Current boot logs with explanations</td>
+</tr>
+<tr>
+<td><code>journalctl -b -1 --priority=err</code></td>
+<td>View boot logs from previous failed boot</td>
+</tr>
+<tr>
+<td><code>journalctl --list-boots</code></td>
+<td>List all recorded boots</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title"> Rebuild Initramfs if corrupted</p>
+<p>dracut --force /boo/initramfs.$(uname -r).img $(uname -r)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Best Practise</p>
+<p>Always keep at least one known-good kernel entry in GRUB. Use <code>gruby --default-kernel</code>
+to verify the default kernel before rebooting other updates.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Pitfall</p>
+<p>Editing /boot/grub2/grub.cfg directly instead of using <code>grub2-mkconfig</code>. Direct edits are overwritten on kernel updates.</p>
+</div>
+<hr />
+<h2 id="directory-structure">Directory Structure</h2>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/etc</code></td>
+<td>Storing the configurations of the services installed.</td>
+</tr>
+<tr>
+<td><code>/var</code></td>
+<td>Storing the logs of the services or the system.</td>
+</tr>
+<tr>
+<td><code>/home</code></td>
+<td>Home directory of the new users created</td>
+</tr>
+<tr>
+<td><code>/usr</code></td>
+<td>Storing the user's application, libraries, documentations and binaries for all users</td>
+</tr>
+<tr>
+<td><code>/bin</code></td>
+<td>Store the executable for the basic system operations</td>
+</tr>
+<tr>
+<td><code>/opt</code></td>
+<td>Installing the additional custom applications</td>
+</tr>
+<tr>
+<td><code>/tmp</code></td>
+<td>World writeable directory created by the systems and application. Would clear the files inside this directory after reboot.</td>
+</tr>
+</tbody>
+</table>
+<p>In cloud environment the logs that are generated inside <code>/var/log</code> are shipped to CloudWatch Logs</p>
+<h2 id="users-groups-permissions">Users, Groups, Permissions</h2>
+<p>Most general commands used for the user and group manipulation in Linux are:
+<code>chmod</code> <code>chown</code> <code>usermod</code> <code>useradd</code> <code>groupadd</code>
+For creating a system user whose id is less than 1000, we could:
+<code>usermod -r -s /bin/bash birat</code>
+This would create a system user <code>birat</code> like that of <em>mysql, nginx, tomcat, wildfly, docker, kubeadm</em> and such.</p>
+<table>
+<thead>
+<tr>
+<th>Linux</th>
+<th>AWS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User</td>
+<td>IAM User</td>
+</tr>
+<tr>
+<td>Group</td>
+<td>IAM Group</td>
+</tr>
+<tr>
+<td>Permission</td>
+<td>IAM Policy</td>
+</tr>
+<tr>
+<td>Root</td>
+<td>AWS root</td>
+</tr>
+</tbody>
+</table>
+<p>In AWS IAM are collections of individual users used to simplify the permission management by attaching policies which is created in json format by defining the allowed actions (e.g. read-only, admin) to the group rather than individual users. Users could belong to the multiple group, and would inherit all the permissions. </p>
+<p>E.g.: AM policy if the user belongs to multiple groups like: One group is admin with full access to aws resources across all regions and another group has read only access to limited resources like: ec2, s3 in us-east1 <strong>then the user would have full admin privilege across all region</strong></p>
+<p>E.g: Only Use explicit deny for the guardrails only. like:
+1. Restrict regions change and deploy/build resources across other regions.
+2. Prevent deletion of the resources</p>
+<h3 id="iam-decision-order">IAM Decision Order</h3>
+<p>Explicit Deny -&gt; Highest priority 
+Explicit Allow -&gt; Evaluated only if no deny
+Default Deny -&gt; Fallback</p>
+<hr />
+<h2 id="process-threads-signals">Process, threads, signals</h2>
+<h3 id="process">Process</h3>
+<ol>
+<li>A single running instance of a program</li>
+<li>Uses memory space and seperate cgroups and namespace</li>
+<li>Has file Decriptors</li>
+</ol>
+<h3 id="threads">Threads</h3>
+<ol>
+<li>Its a light weight execution of a process.</li>
+<li>Single process would have multiple threads</li>
+<li>They share the same namespace as that of process</li>
+<li>They share the memory with other threads spawned from the process</li>
+</ol>
+<h3 id="signals">Signals</h3>
+<ol>
+<li>Its a notification mechanism that is sent to a process</li>
+<li>They tell the process about shutting down the process.</li>
+</ol>
+<h4 id="notifications-and-its-meanings">Notifications and its meanings:</h4>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGTERM</code></td>
+<td>fracefull shutdown</td>
+</tr>
+<tr>
+<td><code>SIGKILL</code></td>
+<td>force kill</td>
+</tr>
+<tr>
+<td><code>SIGHUP</code></td>
+<td>reload configurations</td>
+</tr>
+</tbody>
+</table>
+<h4 id="key-differences">Key Differences</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Process</th>
+<th>Thread</th>
+<th>Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>Execution unit</td>
+<td>Sub-unit</td>
+<td>Control mechanism</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>Isolated</td>
+<td>Shared</td>
+<td>No memory</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>IPC</td>
+<td>shared memory</td>
+<td>async event</td>
+</tr>
+<tr>
+<td>Creation cost</td>
+<td>High</td>
+<td>Low</td>
+<td>Very low</td>
+</tr>
+<tr>
+<td><strong><em>Example</em></strong></td>
+<td><strong><em>nginx</em></strong></td>
+<td><strong><em>worker thread</em></strong></td>
+<td><strong><em>kill command</em></strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="systemd-and-service-lifecycle">Systemd and service lifecycle</h2>
+<h3 id="systemd">Systemd</h3>
+<p>Its the service and system management software which would initialize the system, manages services and control the system resources from startup time and runtime. Systemd replaces the init system with new <code>systemd</code> as it is faster than init.d. This is the first process that is started in the system with <strong><em><code>PID 1</code></em></strong></p>
+<h4 id="commands-and-details-of-systemd">Commands and Details of Systemd</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>systemctl --version</code></td>
+<td>Checking version of systemd</td>
+</tr>
+<tr>
+<td><code>systemctl list-units</code></td>
+<td>List all the systemd services loaded and running on the system</td>
+</tr>
+<tr>
+<td><code>systemctl isolate graphical.target</code></td>
+<td>Switch to the graphical interface. Could use same concept to troubleshoot any stage</td>
+</tr>
+<tr>
+<td><code>systemctl edit servicename</code></td>
+<td>Edit the systemd service file.</td>
+</tr>
+<tr>
+<td><code>systemctl daemon-reload</code></td>
+<td>To refresh the configuration that is changed on the service file.</td>
+</tr>
+<tr>
+<td><code>systemctl list-units --type=timer</code></td>
+<td>Get all the timers and its associated schedules and services</td>
+</tr>
+<tr>
+<td><code>systemctl start/stop/status servicename</code></td>
+<td>To get the status of the service that is running on the system.</td>
+</tr>
+<tr>
+<td><code>journalctl -xeu servicename</code></td>
+<td>To view the logs of the service that ran</td>
+</tr>
+<tr>
+<td><code>journalctl -u servicename --since "since 30 minutes ago"</code></td>
+<td>shows logs of the systemd service of last 30 minutes.</td>
+</tr>
+<tr>
+<td><code>journalctl -u servicename -p err --since "since n minutes ago"</code></td>
+<td>Shows only error message of the service of last n minutes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="systemd-service-inside-aws">Systemd Service inside AWS</h4>
+<table>
+<thead>
+<tr>
+<th>Service Name</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cloud-init</code></td>
+<td>Running user data and assigning IP to the new instance. Configure instance on first boot.</td>
+</tr>
+<tr>
+<td><code>amazon-ssm-agent</code></td>
+<td>automation and patching the aws instance incase of any issues. Its equivalent to vmware tools but for AWS. It does not use SSH access.</td>
+</tr>
+<tr>
+<td><code>amazon-cloudwatch-agent</code></td>
+<td>This service sends the logs on /var/logs to CloudWatch</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="packages-and-repositories">Packages and Repositories</h2>
+<h3 id="packages">Packages</h3>
+<p>Its the compiled binaries in Linux which would perform the sets of tasks. Suppose if you want to know if server is reachable or not, then you could use the ping command. Then this <code>ping</code> command is the package. Or, if you want to browse the internet then you would need browser so the Firefox, brave, google chrome is the package.</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>package manager</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red Hat</td>
+<td><code>yum</code>/ <code>dnf</code></td>
+</tr>
+<tr>
+<td>Debian</td>
+<td><code>apt</code></td>
+</tr>
+<tr>
+<td>Arch</td>
+<td><code>pacman</code></td>
+</tr>
+<tr>
+<td>OpenSuse</td>
+<td><code>zypper</code></td>
+</tr>
+<tr>
+<td>Alpine</td>
+<td><code>apk</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Example</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yum install</code></td>
+<td><code>yum install -y ip-utils</code></td>
+<td>Install the specific packages like ping</td>
+</tr>
+<tr>
+<td><code>yum remove</code></td>
+<td><code>yum remove -y ping</code></td>
+<td>remove the installed packages</td>
+</tr>
+<tr>
+<td><code>yum search</code></td>
+<td><code>yum search ping</code></td>
+<td>Search for the package based on name</td>
+</tr>
+<tr>
+<td><code>yum info</code></td>
+<td><code>yum info ping</code></td>
+<td>Lists description of the package</td>
+</tr>
+<tr>
+<td><code>yum update</code></td>
+<td><code>yum update -y nginx</code></td>
+<td>update the specific package or just <code>yum update -y</code> for updating entire packages installed.</td>
+</tr>
+<tr>
+<td><code>yum repolist</code></td>
+<td><code>yum repolist</code></td>
+<td>List all the repositories set up on the system.</td>
+</tr>
+<tr>
+<td><code>yum history</code></td>
+<td><code>yum history</code></td>
+<td>Give the history of the past operations on yum packages.</td>
+</tr>
+<tr>
+<td><code>yum history undo &lt;ID&gt;</code></td>
+<td><code>yum history undo 2</code></td>
+<td>this would redo the transactions.</td>
+</tr>
+<tr>
+<td><code>yum localinstall &lt;rpm package&gt;</code></td>
+<td><code>yum localinstall nginx.rpm</code></td>
+<td>This would install the nginx package that is downloaded to the machine.</td>
+</tr>
+<tr>
+<td><code>rpm -qa</code></td>
+<td><code>rpm -qa</code></td>
+<td>This would list all the packages installed on the system.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="repositories">Repositories</h3>
+<p>Repositories are the sets of urls which would have the information of the packages that is to be installed. The configuration file for <code>yum</code> and related utilities is located at <code>/etc/yum.conf</code> and for defining the individual files for the downloading the packages the repositories could be configured in <code>/etc/yum.repos.d/</code> directory.</p>
+<p>If working on air-gapped environment or faster installation of the packages we could use the offline method by directly mounting the iso files to download the packages by adding local repositories. Its ideal for datacenters, productions, labs, servers. This provides the centralized package management.</p>
+<h3 id="offline-package-repository">Offline Package Repository</h3>
+<h4 id="1-purpose">1. Purpose</h4>
+<p>Provide a centralized package source on <strong>ServerA</strong> for offline <strong>RHEL 8/9</strong> clients (<strong>ServerB</strong>, ServerC, etc.) using:</p>
+<ul>
+<li><code>rhel-iso/</code> for <strong>BaseOS</strong> and <strong>AppStream</strong></li>
+<li><code>custom/</code> for manually uploaded RPMs</li>
+<li><code>epel/</code> optionally, only if you separately obtain real EPEL package content</li>
+</ul>
+<p>This supports normal <code>yum install</code> / <code>dnf install</code> on clients with no direct internet access, as long as packages and metadata are present on ServerA. (<a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/9.7_release_notes/distribution?utm_source=chatgpt.com" title="Chapter 3. Distribution of content in RHEL 9">Red Hat Documentation</a>)</p>
+<h4 id="2-scope">2. Scope</h4>
+<p>Applies to:</p>
+<ul>
+<li>RHEL 8 / RHEL 9</li>
+<li>Rocky Linux 8/9</li>
+<li>AlmaLinux 8/9</li>
+</ul>
+<p>This SOP assumes:</p>
+<ul>
+<li><strong>ServerA</strong> hosts packages over HTTP</li>
+<li><strong>ServerB</strong> consumes those repositories</li>
+<li>Binary DVD ISO is available for the same <strong>major version</strong> and <strong>architecture</strong> as the clients</li>
+</ul>
+<h4 id="3-architecture">3. Architecture</h4>
+<p>Repository server layout on <strong>ServerA</strong>:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>/var/www/html/repos/
+├── rhel-iso/          # copied or bind-mounted ISO content
+├── custom/            # uploaded RPMs + repodata
+└── epel/              # optional extra repo content
+</code></pre></div>
+<p>Client access pattern on <strong>ServerB</strong>:</p>
+<ul>
+<li><code>http://&lt;ServerA&gt;/repos/rhel-iso/BaseOS</code></li>
+<li><code>http://&lt;ServerA&gt;/repos/rhel-iso/AppStream</code></li>
+<li><code>http://&lt;ServerA&gt;/repos/custom</code></li>
+</ul>
+<hr />
+<h4 id="4-prerequisites">4. Prerequisites</h4>
+<h5 id="41-platform-prerequisites">4.1 Platform prerequisites</h5>
+<ul>
+<li>ServerA installed and reachable from clients over HTTP    </li>
+<li>ServerA and clients on matching OS major version and architecture</li>
+<li>RHEL 8/9 Binary DVD ISO available</li>
+<li>Sufficient disk space for ISO copy and custom RPMs</li>
+<li>Root or sudo access on ServerA and clients</li>
+</ul>
+<h5 id="42-package-prerequisites-on-servera">4.2 Package prerequisites on ServerA</h5>
+<p>Install these on ServerA:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>httpd<span class="w"> </span>createrepo_c<span class="w"> </span>rsync
+</code></pre></div>
+<p><code>createrepo_c</code> is required to generate repository metadata for the custom repo. Apache/httpd is used to publish content over HTTP. Creating a Yum/DNF repository requires metadata generation in the RPM directory. (<a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/sec-yum_repository?utm_source=chatgpt.com" title="8.4.6. Creating a Yum Repository | Deployment Guide">Red Hat Documentation</a>)</p>
+<h5 id="43-network-prerequisites">4.3 Network prerequisites</h5>
+<p>From ServerB to ServerA:</p>
+<ul>
+<li>TCP/80 reachable</li>
+<li>name resolution or static IP available</li>
+</ul>
+<h5 id="44-security-prerequisites">4.4 Security prerequisites</h5>
+<p>Decide whether you will:</p>
+<ul>
+<li>bootstrap with <code>gpgcheck=0</code>, or</li>
+<li>later implement signed repositories</li>
+</ul>
+<p>This SOP uses <code>gpgcheck=0</code> for offline bootstrap simplicity.</p>
+<hr />
+<h4 id="5-implementation-procedure">5. Implementation Procedure</h4>
+<h4 id="51-create-repository-directories-on-servera">5.1 Create repository directories on ServerA</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/html/repos/<span class="o">{</span>rhel-iso,custom,epel<span class="o">}</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/rhel-iso
+</code></pre></div>
+<h4 id="52-mount-the-binary-dvd-iso-on-servera">5.2 Mount the Binary DVD ISO on ServerA</h4>
+<p>If using an ISO file:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mount<span class="w"> </span>-o<span class="w"> </span>loop<span class="w"> </span>/path/to/rhel-9.x-x86_64-dvd.iso<span class="w"> </span>/mnt/rhel-iso
+</code></pre></div>
+<p>If using attached virtual media:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mount<span class="w"> </span>/dev/sr0<span class="w"> </span>/mnt/rhel-iso
+</code></pre></div>
+<p>Validate expected repository trees:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>ls<span class="w"> </span>-1<span class="w"> </span>/mnt/rhel-iso
+</code></pre></div>
+<p>You should see content such as <code>BaseOS</code>, <code>AppStream</code>, and <code>media.repo</code>. RHEL installation media contains BaseOS and AppStream content used during installation. (<a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/9.0_release_notes/index?utm_source=chatgpt.com" title="9.0 Release Notes | Red Hat Enterprise Linux | 9">Red Hat Documentation</a>)</p>
+<h4 id="53-publish-iso-content-under-apache">5.3 Publish ISO content under Apache</h4>
+<h5 id="preferred-method-copy-iso-contents">Preferred method: copy ISO contents</h5>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>rsync<span class="w"> </span>-aH<span class="w"> </span>/mnt/rhel-iso/<span class="w"> </span>/var/www/html/repos/rhel-iso/
+</code></pre></div>
+<p>This is operationally simpler than relying on persistent bind mounts.</p>
+<h5 id="alternative-method-bind-mount">Alternative method: bind mount</h5>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mount<span class="w"> </span>--bind<span class="w"> </span>/mnt/rhel-iso<span class="w"> </span>/var/www/html/repos/rhel-iso
+</code></pre></div>
+<p>If you use bind mount, persist it in <code>/etc/fstab</code> after validation.</p>
+<h4 id="54-initialize-the-custom-repository">5.4 Initialize the custom repository</h4>
+<p>Create metadata even if the repo starts empty or nearly empty:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>createrepo_c<span class="w"> </span>/var/www/html/repos/custom
+</code></pre></div>
+<p>A valid RPM repository requires generated <code>repodata/</code>. (<a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/sec-yum_repository?utm_source=chatgpt.com" title="8.4.6. Creating a Yum Repository | Deployment Guide">Red Hat Documentation</a>)</p>
+<h4 id="55-start-and-enable-apache">5.5 Start and enable Apache</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>httpd
+systemctl<span class="w"> </span>status<span class="w"> </span>httpd<span class="w"> </span>--no-pager
+</code></pre></div>
+<h4 id="56-open-firewall-for-http">5.6 Open firewall for HTTP</h4>
+<p>If <code>firewalld</code> is enabled:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--add-service<span class="o">=</span>http
+firewall-cmd<span class="w"> </span>--reload
+</code></pre></div>
+<h4 id="57-restore-selinux-contexts">5.7 Restore SELinux contexts</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>restorecon<span class="w"> </span>-Rv<span class="w"> </span>/var/www/html/repos
+</code></pre></div>
+<p>This ensures Apache can serve copied content under the standard web root.</p>
+<hr />
+<h4 id="6-client-configuration-on-serverb">6. Client Configuration on ServerB</h4>
+<p>Create <code>/etc/yum.repos.d/internal-offline.repo</code>:</p>
+<div class="highlight"><span class="filename">INI</span><pre><span></span><code><span class="k">[internal-baseos]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">Internal BaseOS</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">http://192.168.25.15/repos/rhel-iso/BaseOS</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">0</span>
+
+<span class="k">[internal-appstream]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">Internal AppStream</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">http://192.168.25.15/repos/rhel-iso/AppStream</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">0</span>
+
+<span class="k">[internal-custom]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">Internal Custom Repo</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">http://192.168.25.15/repos/custom</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">0</span>
+</code></pre></div>
+<p>Then refresh metadata on the client:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>clean<span class="w"> </span>all
+yum<span class="w"> </span>makecache
+yum<span class="w"> </span>repolist
+</code></pre></div>
+<p>BaseOS provides the core OS functionality; AppStream provides additional user-space applications and runtimes. Both are standard RHEL 8/9 repositories. (<a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/package_manifest/repositories?utm_source=chatgpt.com" title="Chapter 2. Repositories | Package manifest">Red Hat Documentation</a>)</p>
+<hr />
+<h4 id="7-installing-packages-from-serverb">7. Installing Packages from ServerB</h4>
+<p>Examples:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>vim
+yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>tcpdump
+yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>mtr
+</code></pre></div>
+<p>Behavior:</p>
+<ul>
+<li>If a package exists in <code>BaseOS</code> or <code>AppStream</code>, ServerB downloads it from ServerA’s ISO-backed repo.</li>
+<li>If a package exists only in <code>custom/</code>, ServerB downloads it from ServerA’s custom repo.</li>
+<li>Dependencies are resolved from all enabled internal repos on ServerA. DNF/YUM resolves packages from enabled repositories using their metadata. (<a href="https://dnf-plugins-core.readthedocs.io/en/latest/reposync.html?utm_source=chatgpt.com" title="DNF reposync Plugin — dnf-plugins-core 4.4.2-1 documentation">dnf-plugins-core.readthedocs.io</a>)</li>
+</ul>
+<hr />
+<h4 id="8-adding-new-packages-later">8. Adding New Packages Later</h4>
+<h4 id="81-add-extra-rpms-to-the-custom-repo-on-servera">8.1 Add extra RPMs to the custom repo on ServerA</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>cp<span class="w"> </span>/incoming/*.rpm<span class="w"> </span>/var/www/html/repos/custom/
+createrepo_c<span class="w"> </span>--update<span class="w"> </span>/var/www/html/repos/custom
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>/var/www/html/repos/custom
+</code></pre></div>
+<p><code>createrepo_c --update</code> refreshes metadata for an existing repository after adding packages. (<a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/sec-yum_repository?utm_source=chatgpt.com" title="8.4.6. Creating a Yum Repository | Deployment Guide">Red Hat Documentation</a>)</p>
+<h4 id="82-refresh-cache-on-clients">8.2 Refresh cache on clients</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>clean<span class="w"> </span>metadata
+yum<span class="w"> </span>makecache
+</code></pre></div>
+<h4 id="83-install-normally-on-clients">8.3 Install normally on clients</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>&lt;package&gt;
+</code></pre></div>
+<hr />
+<h4 id="9-optional-epel-handling">9. Optional: EPEL Handling</h4>
+<p>Do <strong>not</strong> confuse <code>epel-release</code> with the actual EPEL repository content.</p>
+<ul>
+<li><code>epel-release</code> is mainly the package that drops a repo definition onto a host</li>
+<li>it does <strong>not</strong> contain the full installable package set</li>
+</ul>
+<p>Only use <code>/var/www/html/repos/epel</code> if you actually copied or mirrored EPEL package content there. For offline use, that content must be obtained separately.</p>
+<hr />
+<h4 id="10-validation-procedure">10. Validation Procedure</h4>
+<h4 id="101-validate-on-servera">10.1 Validate on ServerA</h4>
+<p>Check metadata endpoints:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>curl<span class="w"> </span>-I<span class="w"> </span>http://127.0.0.1/repos/rhel-iso/BaseOS/repodata/repomd.xml
+curl<span class="w"> </span>-I<span class="w"> </span>http://127.0.0.1/repos/rhel-iso/AppStream/repodata/repomd.xml
+curl<span class="w"> </span>-I<span class="w"> </span>http://127.0.0.1/repos/custom/repodata/repomd.xml
+</code></pre></div>
+<p>Expected result:</p>
+<ul>
+<li>HTTP 200</li>
+</ul>
+<p>If using ServerA IP:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>curl<span class="w"> </span>-I<span class="w"> </span>http://192.168.25.15/repos/rhel-iso/BaseOS/repodata/repomd.xml
+</code></pre></div>
+<h4 id="102-validate-on-serverb">10.2 Validate on ServerB</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>clean<span class="w"> </span>all
+yum<span class="w"> </span>makecache
+yum<span class="w"> </span>repolist
+yum<span class="w"> </span>info<span class="w"> </span>bash
+yum<span class="w"> </span>info<span class="w"> </span>vim
+yum<span class="w"> </span>info<span class="w"> </span>mtr
+</code></pre></div>
+<p>Expected result:</p>
+<ul>
+<li>internal repositories visible in <code>yum repolist</code></li>
+<li>package metadata returned by <code>yum info</code></li>
+<li>installs succeed without internet</li>
+</ul>
+<h4 id="103-functional-validation">10.3 Functional validation</h4>
+<p>Install one package from each source:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>bash
+yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>vim
+yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>&lt;custom-package&gt;
+</code></pre></div>
+<hr />
+<h4 id="11-rollback-procedure">11. Rollback Procedure</h4>
+<h4 id="111-rollback-client-repo-change">11.1 Rollback client repo change</h4>
+<p>If client installs fail after repo cutover:</p>
+<ol>
+<li>disable the custom repo file:</li>
+</ol>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mv<span class="w"> </span>/etc/yum.repos.d/internal-offline.repo<span class="w"> </span>/etc/yum.repos.d/internal-offline.repo.disabled
+</code></pre></div>
+<ol>
+<li>clean cache:</li>
+</ol>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>clean<span class="w"> </span>all
+</code></pre></div>
+<ol>
+<li>re-enable prior repo definitions or restore backed-up <code>.repo</code> files</li>
+</ol>
+<p>Recommended before change:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>cp<span class="w"> </span>-a<span class="w"> </span>/etc/yum.repos.d<span class="w"> </span>/etc/yum.repos.d.backup.<span class="k">$(</span>date<span class="w"> </span>+%F-%H%M%S<span class="k">)</span>
+</code></pre></div>
+<h4 id="112-rollback-custom-repo-content-on-servera">11.2 Rollback custom repo content on ServerA</h4>
+<p>If newly added RPMs break resolution:</p>
+<ol>
+<li>remove the newly added RPMs</li>
+<li>rebuild metadata</li>
+</ol>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>rm<span class="w"> </span>-f<span class="w"> </span>/var/www/html/repos/custom/&lt;bad-package-pattern&gt;*.rpm
+createrepo_c<span class="w"> </span>--update<span class="w"> </span>/var/www/html/repos/custom
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>/var/www/html/repos/custom
+</code></pre></div>
+<h4 id="113-rollback-iso-publication">11.3 Rollback ISO publication</h4>
+<p>If copied ISO content is wrong or corrupted:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>/var/www/html/repos/rhel-iso/*
+rsync<span class="w"> </span>-aH<span class="w"> </span>/mnt/rhel-iso/<span class="w"> </span>/var/www/html/repos/rhel-iso/
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>/var/www/html/repos/rhel-iso
+</code></pre></div>
+<h4 id="114-service-rollback">11.4 Service rollback</h4>
+<p>If Apache changes break publication:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>httpd
+journalctl<span class="w"> </span>-u<span class="w"> </span>httpd<span class="w"> </span>-n<span class="w"> </span><span class="m">100</span><span class="w"> </span>--no-pager
+</code></pre></div>
+<p>If necessary, revert Apache config from backup.</p>
+<hr />
+<h4 id="12-troubleshooting">12. Troubleshooting</h4>
+<h4 id="121-symptom-yum-makecache-fails-on-serverb">12.1 Symptom: <code>yum makecache</code> fails on ServerB</h4>
+<p>Check:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>curl<span class="w"> </span>-I<span class="w"> </span>http://192.168.25.15/repos/rhel-iso/BaseOS/repodata/repomd.xml
+curl<span class="w"> </span>-I<span class="w"> </span>http://192.168.25.15/repos/custom/repodata/repomd.xml
+</code></pre></div>
+<p>Likely causes:</p>
+<ul>
+<li>HTTP blocked by firewall</li>
+<li>Apache not running</li>
+<li>wrong <code>baseurl</code></li>
+<li><code>repodata/</code> missing in custom repo</li>
+</ul>
+<p>A reposync copy with <code>--download-metadata</code> is directly usable, while a custom RPM directory needs <code>createrepo_c</code>. (<a href="https://dnf-plugins-core.readthedocs.io/en/latest/reposync.html?utm_source=chatgpt.com" title="DNF reposync Plugin — dnf-plugins-core 4.4.2-1 documentation">dnf-plugins-core.readthedocs.io</a>)</p>
+<h4 id="122-symptom-package-not-found">12.2 Symptom: package not found</h4>
+<p>Check:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>repolist
+yum<span class="w"> </span>list<span class="w"> </span>available<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>&lt;package&gt;
+</code></pre></div>
+<p>Likely causes:</p>
+<ul>
+<li>package is not on the ISO</li>
+<li>package was not copied to <code>custom/</code></li>
+<li>client is only pointed to BaseOS/AppStream, not custom</li>
+</ul>
+<h4 id="123-symptom-dependency-resolution-failure">12.3 Symptom: dependency resolution failure</h4>
+<p>Likely causes:</p>
+<ul>
+<li>missing dependency RPMs in <code>custom/</code></li>
+<li>required package exists in a repo not enabled on ServerB</li>
+<li>mixed OS major versions</li>
+<li>architecture mismatch</li>
+</ul>
+<h4 id="124-symptom-no-available-modular-metadata-for-modular-package">12.4 Symptom: <code>No available modular metadata for modular package</code></h4>
+<p>This is a known issue when creating a local repository from a small set of modular packages. Red Hat documents that modular packages need modular metadata; <code>modulesync</code> is recommended for redistribution of modular content. (<a href="https://access.redhat.com/solutions/4907601?utm_source=chatgpt.com" title="How to create module data for local repositories with Red ...">Red Hat Customer Portal</a>)</p>
+<p>Action:</p>
+<ul>
+<li>use full ISO AppStream where possible</li>
+<li>avoid cherry-picking modular RPMs into <code>custom/</code></li>
+<li>if redistributing modules, build repo content with <code>dnf modulesync</code></li>
+</ul>
+<h4 id="125-symptom-apache-serves-403404">12.5 Symptom: Apache serves 403/404</h4>
+<p>Check:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>httpd<span class="w"> </span>--no-pager
+ls<span class="w"> </span>-ld<span class="w"> </span>/var/www/html/repos
+ls<span class="w"> </span>-l<span class="w"> </span>/var/www/html/repos/rhel-iso/BaseOS/repodata/repomd.xml
+getenforce
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>/var/www/html/repos
+</code></pre></div>
+<p>Likely causes:</p>
+<ul>
+<li>SELinux context incorrect</li>
+<li>file path wrong</li>
+<li>Apache stopped</li>
+<li>bind mount missing after reboot</li>
+</ul>
+<h4 id="126-symptom-wrong-packages-or-dependency-conflicts">12.6 Symptom: wrong packages or dependency conflicts</h4>
+<p>Check:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>cat<span class="w"> </span>/etc/redhat-release
+uname<span class="w"> </span>-m
+yum<span class="w"> </span>repolist<span class="w"> </span>-v
+</code></pre></div>
+<p>Likely causes:</p>
+<ul>
+<li>ServerA and ServerB are on different major versions</li>
+<li>x86_64 vs aarch64 mismatch</li>
+<li>stale metadata on client</li>
+</ul>
+<hr />
+<h4 id="13-operational-controls">13. Operational Controls</h4>
+<h4 id="131-change-control">13.1 Change control</h4>
+<p>Before changing repos on ServerA:</p>
+<ul>
+<li>back up client <code>.repo</code> definitions</li>
+<li>log package additions to <code>custom/</code></li>
+<li>keep a manifest of uploaded RPMs</li>
+</ul>
+<h4 id="132-recommended-manifest-file">13.2 Recommended manifest file</h4>
+<p>On ServerA:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>find<span class="w"> </span>/var/www/html/repos/custom<span class="w"> </span>-maxdepth<span class="w"> </span><span class="m">1</span><span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.rpm&quot;</span><span class="w"> </span>-printf<span class="w"> </span><span class="s2">&quot;%f\n&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>&gt;<span class="w"> </span>/var/www/html/repos/custom/PACKAGE_MANIFEST.txt
+</code></pre></div>
+<h4 id="133-patch-cadence">13.3 Patch cadence</h4>
+<ul>
+<li>ISO-backed BaseOS/AppStream is static until you replace the ISO</li>
+<li><code>custom/</code> changes whenever you upload new RPMs</li>
+<li>document every refresh of <code>createrepo_c --update</code></li>
+</ul>
+<h4 id="134-snapshot-strategy">13.4 Snapshot strategy</h4>
+<p>Before major changes:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>cp<span class="w"> </span>-a<span class="w"> </span>/var/www/html/repos/custom<span class="w"> </span>/var/www/html/repos/custom.backup.<span class="k">$(</span>date<span class="w"> </span>+%F-%H%M%S<span class="k">)</span>
+</code></pre></div>
+<p>If the filesystem supports hardlinks/snapshots, use them to reduce storage overhead. Red Hat notes that frozen repository copies can be maintained and deduplicated with hardlinks on the same filesystem. (<a href="https://access.redhat.com/solutions/23016?utm_source=chatgpt.com" title="How to create a local mirror of the latest update for Red Hat ...">Red Hat Customer Portal</a>)</p>
+<hr />
+<h4 id="14-exact-command-set">14. Exact Command Set</h4>
+<h4 id="141-servera-build-steps">14.1 ServerA build steps</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>httpd<span class="w"> </span>createrepo_c<span class="w"> </span>rsync
+
+mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/html/repos/<span class="o">{</span>rhel-iso,custom,epel<span class="o">}</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/rhel-iso
+
+mount<span class="w"> </span>-o<span class="w"> </span>loop<span class="w"> </span>/path/to/rhel-9.x-x86_64-dvd.iso<span class="w"> </span>/mnt/rhel-iso
+rsync<span class="w"> </span>-aH<span class="w"> </span>/mnt/rhel-iso/<span class="w"> </span>/var/www/html/repos/rhel-iso/
+
+createrepo_c<span class="w"> </span>/var/www/html/repos/custom
+
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>/var/www/html/repos
+
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>httpd
+
+firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--add-service<span class="o">=</span>http
+firewall-cmd<span class="w"> </span>--reload
+
+curl<span class="w"> </span>-I<span class="w"> </span>http://127.0.0.1/repos/rhel-iso/BaseOS/repodata/repomd.xml
+curl<span class="w"> </span>-I<span class="w"> </span>http://127.0.0.1/repos/rhel-iso/AppStream/repodata/repomd.xml
+curl<span class="w"> </span>-I<span class="w"> </span>http://127.0.0.1/repos/custom/repodata/repomd.xml
+</code></pre></div>
+<h4 id="142-serverb-repo-definition">14.2 ServerB repo definition</h4>
+<div class="highlight"><span class="filename">INI</span><pre><span></span><code><span class="k">[internal-baseos]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">Internal BaseOS</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">http://192.168.25.15/repos/rhel-iso/BaseOS</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">0</span>
+
+<span class="k">[internal-appstream]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">Internal AppStream</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">http://192.168.25.15/repos/rhel-iso/AppStream</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">0</span>
+
+<span class="k">[internal-custom]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">Internal Custom Repo</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">http://192.168.25.15/repos/custom</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">0</span>
+</code></pre></div>
+<h4 id="143-serverb-validation">14.3 ServerB validation</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>clean<span class="w"> </span>all
+yum<span class="w"> </span>makecache
+yum<span class="w"> </span>repolist
+yum<span class="w"> </span>info<span class="w"> </span>bash
+yum<span class="w"> </span>info<span class="w"> </span>vim
+</code></pre></div>
+<h4 id="144-add-custom-rpms-later-on-servera">14.4 Add custom RPMs later on ServerA</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>cp<span class="w"> </span>/incoming/*.rpm<span class="w"> </span>/var/www/html/repos/custom/
+createrepo_c<span class="w"> </span>--update<span class="w"> </span>/var/www/html/repos/custom
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>/var/www/html/repos/custom
+</code></pre></div>
+<h4 id="145-refresh-on-serverb">14.5 Refresh on ServerB</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yum<span class="w"> </span>clean<span class="w"> </span>metadata
+yum<span class="w"> </span>makecache
+yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>&lt;package&gt;
+</code></pre></div>
+<hr />
+<h4 id="15-final-notes">15. Final Notes</h4>
+<p>For RHEL 8/9, this is the stable production pattern:</p>
+<ul>
+<li><strong>BaseOS/AppStream</strong> from Binary DVD ISO</li>
+<li><strong>custom/</strong> for extra RPMs</li>
+<li>Apache publication from ServerA</li>
+<li>clients consume only internal HTTP repos</li>
+</ul>
+<p>The only place you need extra caution is <strong>modular packages</strong> in AppStream. For those, prefer the full ISO AppStream repo or use <code>modulesync</code> rather than manually copying a handful of modular RPMs. (<a href="https://dnf-plugins-core.readthedocs.io/en/latest/modulesync.html?utm_source=chatgpt.com" title="DNF modulesync Plugin — dnf-plugins-core 4.4.2-1 ...">dnf-plugins-core.readthedocs.io</a>)</p>
+<p>If you want this turned into a <strong>Markdown file formatted for MkDocs/Obsidian</strong>, I can structure it with callouts, command blocks, and troubleshooting anchors.</p>
+<h2 id="resourceisolation">ResourceIsolation</h2>
+<p>For Isolating the resources and process, Linux uses two kernel features <code>cgroups</code> and <code>namespaces</code></p>
+<h3 id="cgroups-namespaces">Cgroups &amp; Namespaces</h3>
+<p><strong>Control Groups (cgroups)</strong> and namespaces are the two Linux kernel features that make containers possible. Namespaces provide process isolation by creating separate views of system resources - PID namespace gives containers their own process tree (PID 1 inside container), network namespace provides isolated network stacks, mount namespace gives separate filesystem views, UTS namespace allows separate hostnames, and user namespace maps container UIDs to host UIDs for rootless containers.</p>
+<p>Cgroups provide resource limiting and accounting. They organize processes into hierarchical groups and enforce limits on CPU time, memory usage, I/O bandwidth, and device access. Cgroups v2 (unified hierarchy) is now the default on modern kernels and uses a single hierarchy with all controllers. This is what containerd and Docker use under the hood - when you pass --memory=512m to docker run, it creates a cgroup with memory.max set to 536870912 bytes.</p>
+<p>To limit a runaway process manually using cgroups v2, you create a new cgroup, set resource limits, and move the process into it. This is extremely useful for emergency situations where a process is consuming excessive resources but you cannot immediately kill it.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># Create a new cgroup</span>
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/sys/fs/cgroup/limited_group
+<span class="c1"># Set memory limit to 512MB</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">536870912</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/fs/cgroup/limited_group/memory.max
+<span class="c1"># Set CPU limit to 50% of one core</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;50000 100000&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/fs/cgroup/limited_group/cpu.max
+<span class="c1"># Move a runaway process (PID 12345) into the limited group</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">12345</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/fs/cgroup/limited_group/cgroup.procs
+<span class="c1"># Verify</span>
+cat<span class="w"> </span>/sys/fs/cgroup/limited_group/cgroup.procs
+cat<span class="w"> </span>/sys/fs/cgroup/limited_group/memory.current
+<span class="c1"># View namespace of a container process</span>
+ls<span class="w"> </span>-la<span class="w"> </span>/proc/&lt;PID&gt;/ns/
+lsns<span class="w">                                   </span><span class="c1"># List all namespaces</span>
+nsenter<span class="w"> </span>-t<span class="w"> </span>&lt;PID&gt;<span class="w"> </span>-n<span class="w"> </span>ip<span class="w"> </span>addr<span class="w">            </span><span class="c1"># Enter network namespace</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Best Practise</p>
+<p>Use sytemd resource controls <code>(MemoryMax=, CPUQuota=)</code> for services rather than manually managing <code>cgroups</code> since systemd already manages cgroup hierarchy.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Pitfall</p>
+<p>Mixing <code>cgroups v1</code> and <code>cgroups v2</code> controllers caused unpredictable behavious. Check 
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mount<span class="p">|</span>grep<span class="w"> </span>cgroup
+</code></pre></div>
+to verify which version is active. Modern Kubernetes requires cgroups v2.</p>
+</div>
+<h3 id="inspecting-container-cgroup-limits">Inspecting container cgroup limits:</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># Find container cgroup path  </span>
+<span class="nv">CONTAINER_ID</span><span class="o">=</span><span class="k">$(</span>docker<span class="w"> </span>inspect<span class="w"> </span>--format<span class="w"> </span><span class="s1">&#39;{{.Id}}&#39;</span><span class="w"> </span>myapp<span class="k">)</span><span class="w">  </span>
+cat<span class="w"> </span>/sys/fs/cgroup/system.slice/docker-<span class="si">${</span><span class="nv">CONTAINER_ID</span><span class="si">}</span>.scope/memory.max<span class="w">  </span>
+
+<span class="c1"># Check if a pod was OOMKilledkubectl describe pod &lt;pod&gt; | grep -A5 &quot;Last State&quot;  </span>
+<span class="c1"># Look for: Reason: OOMKilled  </span>
+
+<span class="c1"># Set kernel parameters for container workloads</span>
+sysctl<span class="w"> </span>-w<span class="w"> </span>vm.swappiness<span class="o">=</span>10sysctl<span class="w"> </span>-w<span class="w"> </span>net.ipv4.ip_local_port_range<span class="o">=</span><span class="s2">&quot;1024 65535&quot;</span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.core.somaxconn<span class="o">=</span>65535sysctl<span class="w"> </span>-w<span class="w"> </span>fs.inotify.max_user_watches<span class="o">=</span>524288sysctl<span class="w"> </span>-w<span class="w"> </span>fs.inotify.max_user_instances<span class="o">=</span><span class="m">512</span>
+</code></pre></div>
+<h3 id="persistent-kernel-tuning-for-kubernetes-nodes-etcsysctld99-k8sconf">Persistent kernel tuning for Kubernetes nodes (/etc/sysctl.d/99-k8s.conf):</h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code># Network performance  
+net.core.somaxconn = 65535  
+net.ipv4.tcp_max_syn_backlog = 8192  
+net.core.netdev_max_backlog = 16384  
+net.ipv4.tcp_slow_start_after_idle = 0  
+net.ipv4.tcp_tw_reuse = 1  
+
+# Memory  
+vm.swappiness = 1  
+vm.overcommit_memory = 1  
+kernel.panic = 10  
+kernel.panic_on_oops = 1  
+
+# inotify (critical for many k8s components)  
+fs.inotify.max_user_watches = 524288  
+fs.inotify.max_user_instances = 512  
+
+# Conntrack for high-traffic nodes  
+net.netfilter.nf_conntrack_max = 1048576  
+net.netfilter.nf_conntrack_tcp_timeout_established = 86400
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.instant.preview", "navigation.tabs", "navigation.tracking", "navigation.expand", "navigation.path", "navigation.top", "navigation.indexes", "navigation.prune", "toc.follow", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.code.copy", "content.code.select"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
